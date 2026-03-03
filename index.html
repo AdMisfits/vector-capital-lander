@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vector Capital — A Modern Alternative for Your Portfolio</title>
-    <meta name="description" content="Tired of paying premium fees for outdated strategies? Vector Capital uses automated trading technology across Futures, Equities, and Crypto — built for how markets actually work today.">
+    <meta name="description" content="Tired of paying premium fees for outdated strategies? Vector Capital uses automated trading technology built for how markets actually work today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -379,6 +379,86 @@
             font-weight: 600;
             color: var(--gray-300);
             letter-spacing: 0.02em;
+        }
+
+        /* ========================
+           EXPLAINER SECTION
+           ======================== */
+        .explainer {
+            padding: 100px 40px;
+            background: var(--white);
+        }
+
+        .explainer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .explainer-inner .kicker {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .explainer-inner h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            margin-bottom: 24px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .explainer-inner > p {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 0 auto 48px;
+        }
+
+        .explainer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            text-align: left;
+        }
+
+        .explainer-card {
+            padding: 32px;
+            border-radius: 16px;
+            background: var(--off-white);
+            border: 1px solid var(--gray-200);
+        }
+
+        .explainer-card .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .explainer-card h3 {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .explainer-card p {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.6;
         }
 
         /* ========================
@@ -1450,6 +1530,7 @@
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
             .footer-bottom-left { flex-direction: column; }
             .stats-grid { grid-template-columns: 1fr; }
+            .explainer-grid { grid-template-columns: 1fr; }
             .comparison-table { grid-template-columns: 1fr; }
             .comparison-col:last-child { border-left: none; border-top: 1px solid var(--gray-800); }
             .comparison-col:last-child .comparison-col-title,
@@ -1457,7 +1538,7 @@
             .comparison-vs { top: auto; left: 50%; transform: translateX(-50%); z-index: 3; }
             .comparison-vs::after { display: none; }
             .timeline-inner { grid-template-columns: 1fr; gap: 48px; }
-            .container, .hero, .split-section, .features, .reviews, .faq, .max-section, .final-cta, .footer, .logos, .comparison, .stats-section, .timeline-section { padding-left: 20px; padding-right: 20px; }
+            .container, .hero, .split-section, .features, .reviews, .faq, .max-section, .final-cta, .footer, .logos, .comparison, .stats-section, .timeline-section, .explainer { padding-left: 20px; padding-right: 20px; }
             .hero-cards, .nav-inner { padding: 0 20px; }
             .testimonial-hero { padding: 40px 20px; min-height: 400px; }
             .testimonial-hero .hero-actions { position: static; margin-top: 24px; }
@@ -1501,7 +1582,7 @@
     <section class="hero">
         <p class="hero-kicker">Introducing Vector Capital</p>
         <h1>Your portfolio is running a playbook from 1992</h1>
-        <p class="hero-sub">High fees. Outdated strategies. A quarterly PDF instead of real answers. There's a reason the traditional approach feels broken — it is. Vector Capital is the modern alternative, using automated trading technology across Futures, Equities, and Crypto.</p>
+        <p class="hero-sub">High fees. Outdated strategies. A quarterly PDF instead of real answers. There's a reason the traditional approach feels broken — it is. Vector Capital is the modern alternative.</p>
         <div class="hero-buttons">
             <a href="#get-started" class="btn-black">Schedule a Consultation</a>
         </div>
@@ -1518,9 +1599,9 @@
             <div class="product-label">Your Live Dashboard</div>
             <div class="product-inner">
                 <h3>Portfolio Activity</h3>
-                <div class="product-stat"><span class="label">Futures Strategy</span><span class="value" style="color:#10b981">Active</span></div>
-                <div class="product-stat"><span class="label">Equities Strategy</span><span class="value" style="color:#10b981">Active</span></div>
-                <div class="product-stat"><span class="label">Crypto Strategy</span><span class="value" style="color:#10b981">Active</span></div>
+                <div class="product-stat"><span class="label">Strategy Alpha</span><span class="value" style="color:#10b981">Active</span></div>
+                <div class="product-stat"><span class="label">Strategy Beta</span><span class="value" style="color:#10b981">Active</span></div>
+                <div class="product-stat"><span class="label">Strategy Gamma</span><span class="value" style="color:#10b981">Active</span></div>
                 <div class="product-stat"><span class="label">System Uptime</span><span class="value">99.97%</span></div>
             </div>
         </div>
@@ -1535,13 +1616,39 @@
 
     <!-- LOGO BAR -->
     <section class="logos" id="how-it-works">
-        <p><strong>1,200+ investors</strong> have already switched to Vector Capital across 3 asset classes.</p>
+        <p><strong>1,200+ investors</strong> have already made the switch to Vector Capital.</p>
         <div class="logo-row">
-            <span>FUTURES</span>
-            <span>EQUITIES</span>
-            <span>CRYPTO</span>
-            <span>MULTI-ASSET</span>
-            <span>24/7 UPTIME</span>
+            <span>AUTOMATED</span>
+            <span>TRANSPARENT</span>
+            <span>REAL-TIME</span>
+            <span>DATA-DRIVEN</span>
+            <span>24/7</span>
+        </div>
+    </section>
+
+    <!-- EXPLAINER: WHAT IS VECTOR CAPITAL -->
+    <section class="explainer" id="what-is-it">
+        <div class="explainer-inner">
+            <p class="kicker">So what is it, exactly?</p>
+            <h2>Vector Capital is automated trading technology</h2>
+            <p>Instead of a person making decisions about your money based on gut feelings, phone calls, and models from the 1990s — our systems use data-driven strategies that read market conditions and respond in real time. You pick your risk level. The technology does the rest.</p>
+            <div class="explainer-grid">
+                <div class="explainer-card">
+                    <div class="num">1</div>
+                    <h3>Not a person. A system.</h3>
+                    <p>Traditional approaches rely on human judgment — which means human emotion, human bias, and human limitations. Vector replaces that with automated technology that executes consistently, 24/7, without the emotional baggage.</p>
+                </div>
+                <div class="explainer-card">
+                    <div class="num">2</div>
+                    <h3>Built to move when markets move</h3>
+                    <p>Most approaches sit and wait. "Stay the course." Our technology actively responds to changing market conditions — especially volatility. When the market gets choppy, the system doesn't freeze. It was designed for exactly that.</p>
+                </div>
+                <div class="explainer-card">
+                    <div class="num">3</div>
+                    <h3>You see everything</h3>
+                    <p>No black box. No quarterly surprises. You get a live dashboard showing exactly what's happening — every trade, every position, every metric. The kind of transparency the traditional approach never gave you.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1550,7 +1657,7 @@
         <div class="stats-grid">
             <div class="stat-card stat-card-orange">
                 <div class="stat-number">$2.1B+</div>
-                <div class="stat-desc">Traded across Futures, Equities, and Crypto. This isn't a side project.</div>
+                <div class="stat-desc">In total volume traded by our systems. This isn't a side project.</div>
             </div>
             <div class="stat-card stat-card-dark">
                 <div class="stat-number">24/7</div>
@@ -1581,7 +1688,7 @@
                 <div class="split-card-dark">
                     <div class="card-content">
                         <div class="stat">$2.1B+</div>
-                        <div class="stat-label">Traded across Futures, Equities, and Crypto — by people who decided the old way wasn't cutting it.</div>
+                        <div class="stat-label">In total volume — by people who decided the old way wasn't cutting it.</div>
                         <br>
                         <a href="#" class="btn-outline" style="color:#fff;border-color:var(--gray-600);">View Performance</a>
                     </div>
@@ -1592,9 +1699,9 @@
                         <h4>Live Strategy Performance</h4>
                         <table class="data-table">
                             <tr><th>Strategy</th><th>Status</th><th>Activity</th></tr>
-                            <tr><td>Futures</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:90%"></div></div></td></tr>
-                            <tr><td>Equities</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:75%"></div></div></td></tr>
-                            <tr><td>Crypto</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:85%"></div></div></td></tr>
+                            <tr><td>Strategy Alpha</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:90%"></div></div></td></tr>
+                            <tr><td>Strategy Beta</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:75%"></div></div></td></tr>
+                            <tr><td>Strategy Gamma</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:85%"></div></div></td></tr>
                         </table>
                     </div>
                 </div>
@@ -1631,7 +1738,7 @@
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Strategy</div>
-                    <div class="row-value">Futures, Equities, Crypto</div>
+                    <div class="row-value">Multiple modern strategies</div>
                 </div>
             </div>
             <div class="comparison-col">
@@ -1668,7 +1775,7 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                <p><strong>Three asset classes, one platform.</strong> Futures, Equities, and Crypto — all working together. Real diversification, not just stocks and bonds repackaged.</p>
+                <p><strong>Real diversification, not just repackaged.</strong> Multiple strategies working across different markets simultaneously. Not just stocks and bonds rearranged to look different.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -1748,7 +1855,7 @@
             </div>
             <div class="review-card">
                 <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>I was 100% in stocks and bonds. That's it. Vector gave me exposure to Futures and Crypto alongside Equities — real diversification, not just different flavors of the same thing.</p>
+                <p>My old approach had me in the same two buckets as everyone else. Vector opened up markets I didn't even know I could access. Real diversification for the first time.</p>
                 <div class="review-author"><div class="avatar">AP</div><div><div class="name">Amanda P.</div><div class="role">Real Estate Investor</div></div></div>
             </div>
             <div class="review-card">
@@ -1804,7 +1911,7 @@
                     <div class="timeline-dot timeline-dot-outline"></div>
                     <div class="timeline-step">Step 2</div>
                     <div class="timeline-title">Pick what fits your goals</div>
-                    <div class="timeline-desc">Choose from Futures, Equities, or Crypto strategies based on your comfort level and goals. One, two, or all three — it's your call.</div>
+                    <div class="timeline-desc">Select the strategies that match your comfort level and goals. Conservative, balanced, aggressive — or a mix. It's your call.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-outline"></div>
@@ -1823,7 +1930,7 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">What exactly is Vector Capital?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Vector Capital gives you access to automated trading technology across Futures, Equities, and Crypto. Think of it this way: hedge funds have used this kind of technology for decades to stay ahead. We made it accessible to everyday investors who want a modern alternative to the traditional approach.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Vector Capital gives you access to automated trading technology — the same kind hedge funds have used for decades to stay ahead. Instead of a person making decisions based on gut feelings and outdated models, our systems use data-driven strategies that respond to market conditions in real time. You choose your risk level. The technology handles everything else.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Do I need trading experience?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -1946,7 +2053,7 @@
             </div>
         </div>
         <div class="footer-disclaimer">
-            <strong>Risk Disclosure:</strong> Trading in Futures, Equities, and Cryptocurrency involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Vector Capital provides automated trading technology and does not provide financial, investment, or tax advice. You should carefully consider your investment objectives, level of experience, and risk appetite before using our services. Only risk capital you can afford to lose should be used for trading.
+            <strong>Risk Disclosure:</strong> All trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Vector Capital provides automated trading technology and does not provide financial, investment, or tax advice. You should carefully consider your investment objectives, level of experience, and risk appetite before using our services. Only risk capital you can afford to lose should be used for trading.
         </div>
     </footer>
 
