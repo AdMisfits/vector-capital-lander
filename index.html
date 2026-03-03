@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Capital — Institutional-Grade Trading Algorithms</title>
+    <meta name="description" content="Institutional-grade trading algorithms for Futures, Equities, and Crypto — built to thrive when markets get volatile.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --white: #ffffff;
+            --off-white: #f5f5f0;
+            --black: #0a0a0a;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --card-dark: #2a2a2a;
+            --max-width: 1200px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button { cursor: pointer; font-family: inherit; }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ========================
+           ANNOUNCEMENT BANNER
+           ======================== */
+        .banner {
+            background: var(--off-white);
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            color: var(--gray-600);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .banner strong { color: var(--black); }
+
+        /* ========================
+           NAVBAR
+           ======================== */
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo .icon {
+            width: 30px;
+            height: 30px;
+            background: var(--black);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-logo .icon svg { width: 16px; height: 16px; fill: #fff; }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--gray-600);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--black); }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-black {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--black);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-black:hover { background: var(--gray-800); }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--black);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--gray-300);
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover { border-color: var(--black); }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--black);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-white:hover { background: var(--gray-100); }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        /* ========================
+           HERO
+           ======================== */
+        .hero {
+            padding: 80px 40px 60px;
+            text-align: center;
+        }
+
+        .hero-kicker {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 76px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            max-width: 800px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .hero-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        .stars { letter-spacing: 2px; color: var(--black); }
+
+        /* ========================
+           HERO CARDS (3-column bento)
+           ======================== */
+        .hero-cards {
+            max-width: var(--max-width);
+            margin: 60px auto 0;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .hero-card {
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .hero-card-photo {
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .hero-card-product {
+            background: linear-gradient(135deg, #ff6b35, #e84393, #6c5ce7);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+        }
+
+        .hero-card-product .product-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 16px;
+        }
+
+        .hero-card-product .product-inner {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            flex: 1;
+        }
+
+        .hero-card-product .product-inner h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .product-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 14px;
+        }
+
+        .product-stat:last-child { border-bottom: none; }
+
+        .product-stat .label { color: var(--gray-500); }
+        .product-stat .value { font-weight: 600; }
+
+        .hero-card-quote {
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 32px;
+        }
+
+        .hero-card-quote blockquote {
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-card-quote .attribution {
+            font-size: 13px;
+        }
+
+        .hero-card-quote .attribution .name { color: var(--white); }
+        .hero-card-quote .attribution .role { color: var(--gray-400); }
+
+        /* ========================
+           LOGO BAR
+           ======================== */
+        .logos {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .logos p {
+            font-size: 15px;
+            color: var(--gray-500);
+            margin-bottom: 40px;
+        }
+
+        .logos p strong { color: var(--black); }
+
+        .logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 64px;
+            flex-wrap: wrap;
+        }
+
+        .logo-row span {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--gray-300);
+            letter-spacing: 0.02em;
+        }
+
+        /* ========================
+           STATS SECTION
+           ======================== */
+        .stats-section {
+            padding: 0 40px 80px;
+        }
+
+        .stats-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .stat-card {
+            border-radius: 16px;
+            padding: 48px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card-orange {
+            background: linear-gradient(135deg, #ff6b35, #e84393);
+            color: var(--white);
+        }
+
+        .stat-card-dark {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .stat-card-light {
+            background: var(--off-white);
+            color: var(--black);
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-number {
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .stat-desc {
+            font-size: 16px;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+
+        .stat-card-dark .stat-desc { color: var(--gray-400); }
+        .stat-card-light .stat-desc { color: var(--gray-500); }
+
+        /* ========================
+           SPLIT SECTION (text + cards)
+           ======================== */
+        .split-section {
+            padding: 100px 40px;
+        }
+
+        .split-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .split-text .kicker {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .split-text h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            margin-bottom: 24px;
+        }
+
+        .split-text .cta-row { margin-bottom: 40px; }
+
+        .split-text .blurb {
+            margin-bottom: 24px;
+        }
+
+        .split-text .blurb strong {
+            color: var(--black);
+        }
+
+        .split-text .blurb span {
+            color: var(--gray-500);
+        }
+
+        .split-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .split-card-dark {
+            background: var(--black);
+            border-radius: 16px;
+            padding: 40px;
+            color: var(--white);
+            display: flex;
+            gap: 24px;
+            min-height: 200px;
+        }
+
+        .split-card-dark .card-content { flex: 1; }
+
+        .split-card-dark .stat {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .split-card-dark .stat-label {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        .split-card-dark .card-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
+            background: var(--gray-700);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        .split-card-light {
+            background: linear-gradient(135deg, #ff6b35, #e84393, #6c5ce7);
+            border-radius: 16px;
+            padding: 4px;
+        }
+
+        .split-card-light-inner {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .split-card-light-inner h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: left;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .data-table td {
+            font-size: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .data-table .bar {
+            height: 6px;
+            border-radius: 3px;
+            background: var(--gray-200);
+            width: 100px;
+            position: relative;
+        }
+
+        .data-table .bar-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 3px;
+            background: #10b981;
+        }
+
+        /* ========================
+           COMPARISON (VS)
+           ======================== */
+        .comparison {
+            padding: 100px 40px;
+        }
+
+        .comparison-header {
+            max-width: var(--max-width);
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .comparison-header .kicker {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .comparison-header h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .comparison-header p {
+            font-size: 16px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison-table {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--black);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .comparison-vs {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 64px;
+            height: 64px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--black);
+            z-index: 2;
+        }
+
+        .comparison-vs::after {
+            content: '';
+            position: absolute;
+            top: 64px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100vh);
+            background: var(--gray-700);
+            z-index: -1;
+        }
+
+        .comparison-col {
+            padding: 48px 40px;
+        }
+
+        .comparison-col-title {
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 40px;
+            padding-bottom: 16px;
+        }
+
+        .comparison-col:last-child {
+            border-left: 1px solid var(--gray-800);
+        }
+
+        .comparison-col:last-child .comparison-col-title,
+        .comparison-col:last-child .comparison-row { text-align: right; }
+
+        .comparison-row {
+            padding: 20px 0;
+            border-top: 1px solid var(--gray-800);
+        }
+
+        .comparison-row .row-label {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 4px;
+        }
+
+        .comparison-row .row-value {
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        /* ========================
+           FEATURES GRID (beige bg)
+           ======================== */
+        .features {
+            background: var(--off-white);
+            padding: 100px 40px;
+        }
+
+        .features-header {
+            max-width: var(--max-width);
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .features-header h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .features-header h2 span { color: var(--gray-400); }
+
+        .features-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 32px;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover { border-color: var(--gray-300); }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--black);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--gray-500);
+        }
+
+        .feature-card p strong { color: var(--black); }
+
+        /* ========================
+           SUPPORT BAR
+           ======================== */
+        .support-bar {
+            padding: 0 40px;
+            margin-top: 48px;
+        }
+
+        .support-bar-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--black);
+            border-radius: 100px;
+            padding: 16px 16px 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .support-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gray-700);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .support-text { flex: 1; color: var(--white); }
+        .support-text .primary { font-size: 14px; font-weight: 600; }
+        .support-text .secondary { font-size: 13px; color: var(--gray-400); }
+
+        /* ========================
+           FULL-WIDTH TESTIMONIAL
+           ======================== */
+        .testimonial-hero {
+            position: relative;
+            background: var(--gray-900);
+            min-height: 500px;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px;
+            overflow: hidden;
+        }
+
+        .testimonial-hero .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+        }
+
+        .testimonial-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .testimonial-hero blockquote {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 500;
+            color: var(--white);
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-hero .attr-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .testimonial-hero .attr-role {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        .testimonial-hero .hero-actions {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .testimonial-hero .watch-link {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ========================
+           REVIEWS GRID
+           ======================== */
+        .reviews {
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .reviews .reviews-sub {
+            font-size: 15px;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+        }
+
+        .reviews .reviews-cta {
+            margin-bottom: 48px;
+        }
+
+        .reviews-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            text-align: left;
+        }
+
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .review-stars {
+            margin-bottom: 14px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--black);
+        }
+
+        .review-card p {
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-author .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gray-600);
+        }
+
+        .review-author .name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .review-author .role {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* ========================
+           SCROLLING TICKER
+           ======================== */
+        .ticker {
+            background: var(--black);
+            padding: 24px 0;
+            overflow: hidden;
+        }
+
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            animation: ticker-scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            padding: 0 40px;
+            flex-shrink: 0;
+        }
+
+        .ticker-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gray-600);
+            flex-shrink: 0;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ========================
+           TIMELINE / HOW IT WORKS
+           ======================== */
+        .timeline-section {
+            padding: 100px 40px;
+            background: var(--off-white);
+        }
+
+        .timeline-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .timeline-left .kicker {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .timeline-left h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            margin-bottom: 24px;
+        }
+
+        .timeline-left p {
+            font-size: 16px;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .timeline-right {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 14px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--gray-300);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 48px;
+        }
+
+        .timeline-item:last-child { padding-bottom: 0; }
+
+        .timeline-dot {
+            position: absolute;
+            left: -40px;
+            top: 4px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-dot-filled {
+            background: var(--black);
+        }
+
+        .timeline-dot-filled svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--white);
+        }
+
+        .timeline-dot-outline {
+            border: 2px solid var(--gray-400);
+            background: var(--off-white);
+        }
+
+        .timeline-step {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ========================
+           FAQ
+           ======================== */
+        .faq {
+            padding: 100px 40px;
+        }
+
+        .faq-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .faq h2 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+        }
+
+        .faq-list {
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black);
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .faq-q svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gray-400);
+            fill: none;
+            stroke-width: 2;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-q svg { transform: rotate(180deg); }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-a-inner {
+            padding: 0 0 24px;
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        /* ========================
+           MAX SECTION (dark card)
+           ======================== */
+        .max-section {
+            padding: 0 40px 100px;
+        }
+
+        .max-card {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            background: var(--black);
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            min-height: 480px;
+        }
+
+        .max-content {
+            padding: 60px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .max-content .kicker {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-bottom: 20px;
+        }
+
+        .max-content h2 {
+            font-size: clamp(28px, 3vw, 40px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .max-content .body {
+            font-size: 15px;
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .max-quote-block {
+            border-left: 2px solid var(--gray-600);
+            padding-left: 20px;
+            margin-bottom: 28px;
+        }
+
+        .max-quote-block p {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .max-quote-block .attr {
+            font-size: 13px;
+            color: var(--gray-500);
+            font-style: normal;
+        }
+
+        .max-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .max-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--gray-800);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-300);
+        }
+
+        .max-image {
+            background: linear-gradient(135deg, #ff6b35, #e84393, #6c5ce7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ========================
+           FINAL CTA (dark bg)
+           ======================== */
+        .final-cta {
+            background: var(--black);
+            padding: 100px 40px 60px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(32px, 5vw, 60px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            color: var(--white);
+            max-width: 700px;
+            margin: 0 auto 16px;
+        }
+
+        .final-cta .proof {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-bottom: 48px;
+        }
+
+        .final-cta .proof .stars { color: var(--gray-300); }
+
+        .cta-cards {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .cta-card-quote {
+            background: var(--card-dark);
+            border-radius: 16px;
+            padding: 36px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 260px;
+        }
+
+        .cta-card-quote blockquote {
+            font-size: 17px;
+            color: var(--gray-300);
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .cta-card-quote .attr {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-card-quote .attr .av {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gray-400);
+        }
+
+        .cta-card-quote .attr .name { font-size: 14px; font-weight: 600; color: var(--white); }
+        .cta-card-quote .attr .role { font-size: 12px; color: var(--gray-500); }
+
+        .cta-card-gradient {
+            background: linear-gradient(135deg, #ff6b35, #e84393, #6c5ce7);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ========================
+           FOOTER
+           ======================== */
+        .footer {
+            background: var(--black);
+            padding: 60px 40px 32px;
+        }
+
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col a {
+            font-size: 14px;
+            color: var(--gray-500);
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: var(--white); }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-logo-sm {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .footer-logo-sm .icon {
+            width: 24px;
+            height: 24px;
+            background: var(--white);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-sm .icon svg { width: 12px; height: 12px; fill: var(--black); }
+
+        .footer-copy {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: var(--gray-500);
+            transition: color 0.2s;
+        }
+
+        .footer-socials a:hover { color: var(--white); }
+        .footer-socials svg { width: 18px; height: 18px; fill: currentColor; }
+
+        .footer-disclaimer {
+            max-width: var(--max-width);
+            margin: 24px auto 0;
+            font-size: 11px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ========================
+           RESPONSIVE
+           ======================== */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .hero-cards { grid-template-columns: 1fr; }
+            .hero-card { min-height: 300px; }
+            .split-inner { grid-template-columns: 1fr; gap: 48px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .max-card { grid-template-columns: 1fr; }
+            .max-image { min-height: 300px; }
+            .cta-cards { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .footer-bottom-left { flex-direction: column; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .comparison-table { grid-template-columns: 1fr; }
+            .comparison-col:last-child { border-left: none; border-top: 1px solid var(--gray-800); }
+            .comparison-col:last-child .comparison-col-title,
+            .comparison-col:last-child .comparison-row { text-align: left; }
+            .comparison-vs { top: auto; left: 50%; transform: translateX(-50%); z-index: 3; }
+            .comparison-vs::after { display: none; }
+            .timeline-inner { grid-template-columns: 1fr; gap: 48px; }
+            .container, .hero, .split-section, .features, .reviews, .faq, .max-section, .final-cta, .footer, .logos, .comparison, .stats-section, .timeline-section { padding-left: 20px; padding-right: 20px; }
+            .hero-cards, .nav-inner { padding: 0 20px; }
+            .testimonial-hero { padding: 40px 20px; min-height: 400px; }
+            .testimonial-hero .hero-actions { position: static; margin-top: 24px; }
+        }
+
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ANNOUNCEMENT BANNER -->
+    <div class="banner">
+        <strong>Vector Capital is now live</strong> — Institutional-grade algorithms, now accessible to everyone.
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,3 21,19 3,19"/></svg></div>
+                Vector Capital
+            </a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#algorithms">Algorithms</a></li>
+                <li><a href="#max">About Max</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#get-started" class="btn-black">Get Started</a>
+            </div>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <p class="hero-kicker">Introducing Vector Capital</p>
+        <h1>Transforming volatility into performance</h1>
+        <p class="hero-sub">Institutional-grade trading algorithms for Futures, Equities, and Crypto — built to thrive when markets get volatile. Technology once reserved for hedge funds, now in your hands.</p>
+        <div class="hero-buttons">
+            <a href="#get-started" class="btn-black">Get Started</a>
+        </div>
+        <div class="hero-proof">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>Trusted by 1,200+ investors across 3 asset classes</span>
+        </div>
+    </section>
+
+    <!-- HERO CARDS -->
+    <div class="hero-cards">
+        <div class="hero-card hero-card-photo">Max's Photo</div>
+        <div class="hero-card hero-card-product">
+            <div class="product-label">Live Algorithm Dashboard</div>
+            <div class="product-inner">
+                <h3>Algorithm Status</h3>
+                <div class="product-stat"><span class="label">Futures Algo</span><span class="value" style="color:#10b981">Active</span></div>
+                <div class="product-stat"><span class="label">Equity Momentum</span><span class="value" style="color:#10b981">Active</span></div>
+                <div class="product-stat"><span class="label">Crypto Volatility</span><span class="value" style="color:#10b981">Active</span></div>
+                <div class="product-stat"><span class="label">Uptime</span><span class="value">99.97%</span></div>
+            </div>
+        </div>
+        <div class="hero-card hero-card-quote">
+            <blockquote>"At the fund, we used volatility as fuel. The more the market moved, the more opportunity we had. I kept asking — why does everyone else treat volatility like the enemy?"</blockquote>
+            <div class="attribution">
+                <div class="name">Max</div>
+                <div class="role">Founder, Vector Capital &middot; Former Hedge Fund Strategist</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGO BAR -->
+    <section class="logos" id="how-it-works">
+        <p><strong>Join 1,200+ investors</strong> using Vector Capital to deploy algorithms across 3 asset classes.</p>
+        <div class="logo-row">
+            <span>FUTURES</span>
+            <span>EQUITIES</span>
+            <span>CRYPTO</span>
+            <span>MULTI-ASSET</span>
+            <span>24/7 UPTIME</span>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card stat-card-orange">
+                <div class="stat-number">$2.1B+</div>
+                <div class="stat-desc">Volume processed across Futures, Equities, and Crypto markets to date.</div>
+            </div>
+            <div class="stat-card stat-card-dark">
+                <div class="stat-number">50ms</div>
+                <div class="stat-desc">Average execution speed. From signal to trade, faster than a blink.</div>
+            </div>
+            <div class="stat-card stat-card-light">
+                <div class="stat-number">99.97%</div>
+                <div class="stat-desc">Algorithm uptime across all three asset classes. Always on, always executing.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPLIT SECTION -->
+    <section class="split-section">
+        <div class="split-inner">
+            <div class="split-text">
+                <p class="kicker">Why Vector Capital</p>
+                <h2>The 60/40 portfolio was built for a world that no longer exists</h2>
+                <div class="cta-row"><a href="#get-started" class="btn-black">Get Started</a></div>
+                <div class="blurb">
+                    <strong>Markets move faster now.</strong> <span>Volatility spikes harder. And the old "stay the course" advice? It's costing you. Our algorithms are engineered to thrive in exactly these conditions.</span>
+                </div>
+                <div class="blurb">
+                    <strong>Algorithms don't have feelings.</strong> <span>They don't panic-sell at the bottom or FOMO-buy at the top. They execute based on data, backtested strategies, and real-time market signals.</span>
+                </div>
+            </div>
+            <div class="split-cards">
+                <div class="split-card-dark">
+                    <div class="card-content">
+                        <div class="stat">$2.1B+</div>
+                        <div class="stat-label">Volume processed across Futures, Equities, and Crypto markets.</div>
+                        <br>
+                        <a href="#" class="btn-outline" style="color:#fff;border-color:var(--gray-600);">View Performance</a>
+                    </div>
+                    <div class="card-img">Max's Photo</div>
+                </div>
+                <div class="split-card-light">
+                    <div class="split-card-light-inner">
+                        <h4>Live Algorithm Performance</h4>
+                        <table class="data-table">
+                            <tr><th>Algorithm</th><th>Status</th><th>Execution</th></tr>
+                            <tr><td>Futures Momentum</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:90%"></div></div></td></tr>
+                            <tr><td>Equity Volatility</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:75%"></div></div></td></tr>
+                            <tr><td>Crypto Trend</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:85%"></div></div></td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON (VS) -->
+    <section class="comparison">
+        <div class="comparison-header">
+            <p class="kicker">Compare Vector Capital</p>
+            <h2>What makes us different from the old way?</h2>
+            <p>Same markets. Completely different approach. See how algorithmic execution stacks up against the traditional playbook.</p>
+        </div>
+        <div class="comparison-table">
+            <div class="comparison-vs">VS</div>
+            <div class="comparison-col">
+                <div class="comparison-col-title">Vector Capital</div>
+                <div class="comparison-row">
+                    <div class="row-label">Execution Speed</div>
+                    <div class="row-value">Under 50ms</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Emotion</div>
+                    <div class="row-value">Zero. Algorithms only.</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Volatility</div>
+                    <div class="row-value">Opportunity</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Transparency</div>
+                    <div class="row-value">Real-time dashboard</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Asset Classes</div>
+                    <div class="row-value">Futures, Equities, Crypto</div>
+                </div>
+            </div>
+            <div class="comparison-col">
+                <div class="comparison-col-title">The Old Way</div>
+                <div class="comparison-row">
+                    <div class="row-label">Execution Speed</div>
+                    <div class="row-value">Days to weeks</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Emotion</div>
+                    <div class="row-value">Panic sells. FOMO buys.</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Volatility</div>
+                    <div class="row-value">Threat</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Transparency</div>
+                    <div class="row-value">Quarterly PDF</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Asset Classes</div>
+                    <div class="row-value">60/40 stocks & bonds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES (beige bg) -->
+    <section class="features" id="algorithms">
+        <div class="features-header">
+            <h2>Built for the modern market. <span>Six capabilities that give you an institutional edge.</span></h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+                <p><strong>Multi-market coverage</strong> across Futures, Equities, and Crypto from a single platform. Diversification without the complexity.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <p><strong>Volatility engine</strong> specifically tuned for volatile conditions. When others pull back, our algorithms lean in.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <p><strong>Real-time execution</strong> in under 50 milliseconds eliminates lag between signal and action. No manual intervention needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <p><strong>Built-in risk controls</strong> with position sizing, stop-losses, and drawdown limits. Aggressive on opportunity, conservative on risk.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                <p><strong>Backtested strategies</strong> stress-tested against decades of market data — crashes, rallies, and everything in between.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+                <p><strong>Transparent performance</strong> with live dashboards and real-time activity. No hiding behind quarterly reports.</p>
+            </div>
+        </div>
+        <div class="support-bar">
+            <div class="support-bar-inner">
+                <div class="support-avatar">M</div>
+                <div class="support-text">
+                    <div class="primary">Questions? Talk to Max directly.</div>
+                    <div class="secondary">Get a walkthrough of the algorithms and performance data.</div>
+                </div>
+                <a href="#get-started" class="btn-white">Contact us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL-WIDTH TESTIMONIAL -->
+    <section class="testimonial-hero">
+        <div class="bg-overlay"></div>
+        <div class="testimonial-hero-content">
+            <blockquote>"I was paying 1.5% annually for a strategy that underperformed the S&amp;P for three straight years. Switched to Vector six months ago. Night and day."</blockquote>
+            <div class="attr-name">Michael R.</div>
+            <div class="attr-role">Business Owner</div>
+        </div>
+        <div class="hero-actions">
+            <a href="#" class="watch-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                Watch video
+            </a>
+            <a href="#get-started" class="btn-white">Get started</a>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+        <h2>See why investors choose Vector Capital</h2>
+        <p class="reviews-sub">Real people. Real results. Technology over tradition.</p>
+        <div class="reviews-cta"><a href="#get-started" class="btn-black">Get Started</a></div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>I'm not a trader. I don't want to be. I just wanted something smarter than what I was getting. Vector made it simple.</p>
+                <div class="review-author"><div class="avatar">SK</div><div><div class="name">Sarah K.</div><div class="role">Marketing Director</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>The transparency sold me. I can see every trade, every position, every metric. My old setup sent me a quarterly PDF.</p>
+                <div class="review-author"><div class="avatar">DL</div><div><div class="name">David L.</div><div class="role">Engineer</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>When the market dropped 4% in a single day, I expected the worst. The algorithms had already adjusted. That's the difference.</p>
+                <div class="review-author"><div class="avatar">JM</div><div><div class="name">Jennifer M.</div><div class="role">Healthcare Professional</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>Paying fees whether you're up or down never sat right with me. Vector's approach finally makes sense.</p>
+                <div class="review-author"><div class="avatar">TR</div><div><div class="name">Tom R.</div><div class="role">Consultant</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>Algorithms across three asset classes from one platform. The diversification alone was worth the switch.</p>
+                <div class="review-author"><div class="avatar">AP</div><div><div class="name">Amanda P.</div><div class="role">Real Estate Investor</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>My portfolio was running on a strategy from the '90s. Vector brought it into 2026.</p>
+                <div class="review-author"><div class="avatar">RH</div><div><div class="name">Rachel H.</div><div class="role">Business Owner</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCROLLING TICKER -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <span class="ticker-item">Trade smarter.</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Deploy algorithms.</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Embrace volatility.</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Zero emotions.</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Trade smarter.</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Deploy algorithms.</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Embrace volatility.</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Zero emotions.</span>
+            <span class="ticker-dot"></span>
+        </div>
+    </div>
+
+    <!-- TIMELINE / HOW IT WORKS -->
+    <section class="timeline-section" id="get-started-steps">
+        <div class="timeline-inner">
+            <div class="timeline-left">
+                <p class="kicker">How It Works</p>
+                <h2>Get started in three simple steps</h2>
+                <p>No trading experience required. No complex setup. Choose your algorithms, fund your account, and let the systems do what they were built for.</p>
+                <a href="#get-started" class="btn-black">Get Started</a>
+            </div>
+            <div class="timeline-right">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="timeline-dot timeline-dot-filled">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="white" stroke-width="3"/></svg>
+                    </div>
+                    <div class="timeline-step">Step 1</div>
+                    <div class="timeline-title">Schedule a call with Max</div>
+                    <div class="timeline-desc">Get a personal walkthrough of the platform, see live performance data, and ask anything. No pressure, no commitment.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot timeline-dot-outline"></div>
+                    <div class="timeline-step">Step 2</div>
+                    <div class="timeline-title">Choose your algorithms</div>
+                    <div class="timeline-desc">Select from Futures, Equities, or Crypto algorithms based on your goals and risk tolerance. Deploy one or all three.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot timeline-dot-outline"></div>
+                    <div class="timeline-step">Step 3</div>
+                    <div class="timeline-title">Watch your algorithms work</div>
+                    <div class="timeline-desc">Monitor real-time performance through your dashboard. Every trade, every position, every metric — completely transparent.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="faq-inner">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">What exactly is Vector Capital?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Vector Capital provides access to institutional-grade trading algorithms across Futures, Equities, and Crypto. Think of it as deploying the same class of technology used by quantitative hedge funds — automated, data-driven, and designed for volatile markets.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Do I need trading experience?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">No. The algorithms handle trading decisions and execution. You choose which algorithms to deploy based on your risk tolerance, and the systems do the rest.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">How is this different from a robo-advisor?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Robo-advisors typically use passive index strategies with basic rebalancing. Vector's algorithms are active trading systems that analyze conditions in real-time and execute specific strategies — particularly around volatility and momentum.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Is my capital at risk?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Yes. All trading involves risk, including potential loss of principal. Our algorithms include built-in risk controls, but no system can eliminate market risk. Past performance does not guarantee future results.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Who is Max?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Max is a former hedge fund quantitative strategist with over a decade of experience in institutional trading. He founded Vector Capital to make the same class of algorithmic technology accessible to individual investors.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">What are the fees?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Our fee structure is transparent and straightforward. No hidden charges, no assets-under-management percentages that grow as your account does. Contact us for current pricing details.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Can I see performance history?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Yes. Full transparency into algorithm performance including backtested results and live trading data, accessible through your dashboard anytime.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAX SECTION (dark card) -->
+    <section class="max-section" id="max">
+        <div class="max-card">
+            <div class="max-content">
+                <p class="kicker">Meet the Founder</p>
+                <h2>Built by someone who's seen both sides</h2>
+                <p class="body">Max spent years inside the hedge fund machine — deploying the exact class of quantitative strategies that the wealthiest investors pay millions to access. He saw how institutional technology creates an unfair advantage. Vector Capital is his answer.</p>
+                <div class="max-quote-block">
+                    <p>"The more the market moved, the more opportunity we had. I kept asking — why does everyone else treat volatility like the enemy?"</p>
+                    <span class="attr">— Max, Founder</span>
+                </div>
+                <div class="max-badges">
+                    <span class="max-badge">Former Hedge Fund Strategist</span>
+                    <span class="max-badge">10+ Years Institutional</span>
+                    <span class="max-badge">Multi-Asset Algorithms</span>
+                </div>
+            </div>
+            <div class="max-image">Max's Photo</div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="get-started">
+        <h2>Transforming volatility into performance</h2>
+        <div class="proof">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &nbsp; Trusted by 1,200+ investors
+        </div>
+        <div class="cta-cards">
+            <div class="cta-card-quote">
+                <blockquote>"Vector had everything we needed. The algorithms, the transparency, the performance. It's a completely different experience."</blockquote>
+                <div class="attr">
+                    <div class="av">JB</div>
+                    <div><div class="name">Jason B.</div><div class="role">Portfolio Manager</div></div>
+                </div>
+            </div>
+            <div class="cta-card-gradient">
+                <a href="#" class="btn-white" style="font-size:16px;padding:16px 32px;">Get started now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#algorithms">Algorithms</a></li>
+                    <li><a href="#get-started">Performance</a></li>
+                    <li><a href="#get-started">Get Started</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#max">About Max</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Risk Disclosure</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">hello@vectorcapital.com</a></li>
+                    <li><a href="#">Schedule a Call</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <div class="footer-logo-sm">
+                    <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,3 21,19 3,19"/></svg></div>
+                    Vector Capital
+                </div>
+                <span class="footer-copy">&copy; 2026 Vector Capital by Vector Algorithmics</span>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="#"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="#"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <strong>Risk Disclosure:</strong> Trading in Futures, Equities, and Cryptocurrency involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Vector Capital does not provide financial, investment, or tax advice. All trading decisions are executed by automated algorithms based on predefined parameters. You should carefully consider your investment objectives, level of experience, and risk appetite before using our services. Only risk capital you can afford to lose should be used for trading.
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const answer = item.querySelector('.faq-a');
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-a').style.maxHeight = null;
+            });
+            if (!wasOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const el = document.querySelector(href);
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
