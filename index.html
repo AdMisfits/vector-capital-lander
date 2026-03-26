@@ -1554,11 +1554,22 @@
             .explainer-grid { grid-template-columns: 1fr; }
             .strategy-grid { grid-template-columns: 1fr; }
             .comparison-table { grid-template-columns: 1fr; }
-            .comparison-col:last-child { border-left: none; border-top: 1px solid var(--gray-800); }
+            .comparison-vs {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin: 0 auto;
+                width: 100%;
+                height: 48px;
+                border-radius: 0;
+                background: var(--gray-800);
+                font-size: 16px;
+            }
+            .comparison-vs::after { display: none; }
+            .comparison-col:last-child { border-left: none; }
             .comparison-col:last-child .comparison-col-title,
             .comparison-col:last-child .comparison-row { text-align: left; }
-            .comparison-vs { top: auto; left: 50%; transform: translateX(-50%); z-index: 3; }
-            .comparison-vs::after { display: none; }
             .features-grid { grid-template-columns: 1fr; }
             .fee-compare { grid-template-columns: 1fr; }
             .dd-grid { grid-template-columns: 1fr; }
@@ -1615,7 +1626,7 @@
 
     <!-- ANNOUNCEMENT BANNER -->
     <div class="banner">
-        <strong>Now accepting new clients</strong> — Schedule a consultation with Maxwell Hines, former Fixed Income Portfolio Manager at AllianceBernstein.
+        <strong>Now accepting new clients</strong> — Schedule a consultation with our team.
     </div>
 
     <!-- NAVBAR -->
@@ -1671,7 +1682,7 @@
                 <div class="product-stat"><span class="label">Futures Strategy</span><span class="value" style="color:#10b981">-[X.X]%</span></div>
             </div>
         </div>
-        <div class="hero-card hero-card-photo">Maxwell Hines's Photo</div>
+        <div class="hero-card hero-card-photo"><img src="max-headshot.jpg" alt="Maxwell Hines" style="width:100%;height:100%;object-fit:cover;"></div>
         <div class="hero-card hero-card-quote">
             <blockquote>"I managed fixed income portfolios at AllianceBernstein. Every day I watched institutional clients access strategies that everyday investors never see. The technology exists. It just wasn't available to anyone outside the gates."</blockquote>
             <div class="attribution">
@@ -1930,9 +1941,9 @@
         </div>
         <div class="support-bar">
             <div class="support-bar-inner">
-                <div class="support-avatar">MG</div>
+                <div class="support-avatar">VC</div>
                 <div class="support-text">
-                    <div class="primary">Questions? Talk to Max directly.</div>
+                    <div class="primary">Questions? Talk to our team.</div>
                     <div class="secondary">No sales pitch. Just a real conversation about whether this fits your situation.</div>
                 </div>
                 <a href="#get-started" class="btn-white">Schedule a call</a>
@@ -1960,7 +1971,7 @@
                 <div class="fee-line"><span class="amount">Flat subscription</span><span class="context">Same fee regardless of account size</span></div>
                 <div class="fee-line"><span class="amount">No AUM percentage</span><span class="context">Your fee never scales with your success</span></div>
                 <div class="fee-line"><span class="amount">No hidden charges</span><span class="context">No performance fees, no exit fees</span></div>
-                <div class="fee-line"><span class="amount">Specific pricing in your consultation</span><span class="context">Max walks through exact costs during your call</span></div>
+                <div class="fee-line"><span class="amount">Specific pricing in your consultation</span><span class="context">Our team walks through exact costs during your call</span></div>
             </div>
         </div>
         <p class="fee-bottom-note">Standard brokerage commissions and regulatory fees through your brokerage still apply. These are not Vector Capital charges.</p>
@@ -1976,7 +1987,7 @@
             <div class="dd-card">
                 <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
                 <h3>Verify Max's credentials</h3>
-                <p>Look up Maxwell Hines on FINRA BrokerCheck and LinkedIn. His AllianceBernstein fixed income PM background and Series 63 licensure are public record.</p>
+                <p>Look up <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener" style="text-decoration:underline;color:var(--black);">Maxwell Hines on LinkedIn</a> and FINRA BrokerCheck. His AllianceBernstein fixed income PM background and Series 63 licensure are public record.</p>
             </div>
             <div class="dd-card">
                 <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -2038,7 +2049,7 @@
             <div class="timeline-left">
                 <p class="kicker">Getting Started</p>
                 <h2>Three steps. No jargon. No pressure.</h2>
-                <p>You don't need trading experience. You don't need to understand algorithms. You just need a conversation with Max.</p>
+                <p>You don't need trading experience. You don't need to understand algorithms. You just need a conversation.</p>
                 <a href="#get-started" class="btn-black">Schedule a Consultation</a>
             </div>
             <div class="timeline-right">
@@ -2048,8 +2059,8 @@
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="white" stroke-width="3"/></svg>
                     </div>
                     <div class="timeline-step">Step 1</div>
-                    <div class="timeline-title">Talk to Maxwell Hines</div>
-                    <div class="timeline-desc">See the platform live. Review the performance data. Ask anything. Max personally walks through every consultation — no sales team, no junior associates.</div>
+                    <div class="timeline-title">Have a real conversation</div>
+                    <div class="timeline-desc">See the platform live. Review the performance data. Ask anything. Our team walks through every detail — no pressure, no runaround.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-outline"></div>
@@ -2098,7 +2109,7 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">What are the fees?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Vector charges a flat subscription fee — not a percentage of your assets. Your fee doesn't grow as your account grows. No AUM percentage, no performance fees, no hidden charges, no exit fees. Specific pricing is discussed during your consultation with Max. Standard brokerage commissions through your brokerage still apply separately.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Vector charges a flat subscription fee — not a percentage of your assets. Your fee doesn't grow as your account grows. No AUM percentage, no performance fees, no hidden charges, no exit fees. Specific pricing is discussed during your consultation. Standard brokerage commissions through your brokerage still apply separately.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Can I see performance data before I commit?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -2127,16 +2138,17 @@
                     <span class="max-badge">Former AB Fixed Income PM</span>
                     <span class="max-badge">Series 63 Licensed</span>
                     <span class="max-badge">Aspiring Chess GM</span>
+                    <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener" class="max-badge" style="background:var(--gray-700);cursor:pointer;">LinkedIn &rarr;</a>
                 </div>
             </div>
-            <div class="max-image">Maxwell Hines's Photo</div>
+            <div class="max-image"><img src="max-headshot.jpg" alt="Maxwell Hines" style="width:100%;height:100%;object-fit:cover;"></div>
         </div>
     </section>
 
     <!-- FINAL CTA -->
     <section class="final-cta" id="get-started">
         <h2>See the data. Ask the hard questions. Decide for yourself.</h2>
-        <p class="sub">Schedule a consultation with Maxwell Hines. Review strategy performance, understand the risk controls, and decide if Vector Capital fits your goals.</p>
+        <p class="sub">Schedule a consultation with our team. Review strategy performance, understand the risk controls, and decide if Vector Capital fits your goals.</p>
         <div class="cta-buttons">
             <a href="#" class="btn-white" style="font-size:16px;padding:16px 32px;">Schedule a Consultation</a>
         </div>
