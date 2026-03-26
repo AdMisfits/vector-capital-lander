@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vector Capital — A Modern Alternative for Your Portfolio</title>
-    <meta name="description" content="Tired of paying premium fees for outdated strategies? Vector Capital uses automated trading technology built for how markets actually work today.">
+    <title>Vector Capital — Quantitative Portfolio Strategies</title>
+    <meta name="description" content="Institutional-grade algorithmic strategies designed for risk-adjusted returns. Former AllianceBernstein Fixed Income Portfolio Manager oversight. Your brokerage account, your control.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -230,14 +230,14 @@
             font-weight: 500;
             letter-spacing: -0.02em;
             line-height: 1.05;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto 24px;
         }
 
         .hero-sub {
             font-size: 18px;
             color: var(--gray-500);
-            max-width: 600px;
+            max-width: 640px;
             margin: 0 auto 40px;
             line-height: 1.6;
         }
@@ -258,7 +258,7 @@
             color: var(--gray-400);
         }
 
-        .stars { letter-spacing: 2px; color: var(--black); }
+        .hero-proof .sep { color: var(--gray-300); }
 
         /* ========================
            HERO CARDS (3-column bento)
@@ -351,34 +351,74 @@
         .hero-card-quote .attribution .role { color: var(--gray-400); }
 
         /* ========================
-           LOGO BAR
+           TRUST / SAFETY SECTION
            ======================== */
-        .logos {
+        .trust-section {
             padding: 80px 40px;
+            background: var(--black);
+        }
+
+        .trust-header {
+            max-width: var(--max-width);
+            margin: 0 auto 48px;
             text-align: center;
         }
 
-        .logos p {
-            font-size: 15px;
-            color: var(--gray-500);
-            margin-bottom: 40px;
+        .trust-header h2 {
+            font-size: clamp(28px, 3.5vw, 44px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: var(--white);
+            margin-bottom: 16px;
         }
 
-        .logos p strong { color: var(--black); }
-
-        .logo-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 64px;
-            flex-wrap: wrap;
+        .trust-header p {
+            font-size: 16px;
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .logo-row span {
-            font-size: 20px;
+        .trust-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .trust-item {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .trust-item .trust-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 20px;
+        }
+
+        .trust-item .trust-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--white);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .trust-item h3 {
+            font-size: 17px;
             font-weight: 600;
-            color: var(--gray-300);
-            letter-spacing: 0.02em;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .trust-item p {
+            font-size: 14px;
+            color: var(--gray-400);
+            line-height: 1.6;
         }
 
         /* ========================
@@ -462,201 +502,190 @@
         }
 
         /* ========================
-           STATS SECTION
+           STRATEGY DETAIL SECTION
            ======================== */
-        .stats-section {
-            padding: 0 40px 80px;
-        }
-
-        .stats-grid {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .stat-card {
-            border-radius: 16px;
-            padding: 48px 32px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card-orange {
-            background: linear-gradient(135deg, #ff6b35, #e84393);
-            color: var(--white);
-        }
-
-        .stat-card-dark {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .stat-card-light {
-            background: var(--off-white);
-            color: var(--black);
-            border: 1px solid var(--gray-200);
-        }
-
-        .stat-number {
-            font-size: clamp(48px, 6vw, 72px);
-            font-weight: 500;
-            letter-spacing: -0.03em;
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        .stat-desc {
-            font-size: 16px;
-            line-height: 1.5;
-            opacity: 0.85;
-        }
-
-        .stat-card-dark .stat-desc { color: var(--gray-400); }
-        .stat-card-light .stat-desc { color: var(--gray-500); }
-
-        /* ========================
-           SPLIT SECTION (text + cards)
-           ======================== */
-        .split-section {
+        .strategy-section {
             padding: 100px 40px;
+            background: var(--off-white);
         }
 
-        .split-inner {
+        .strategy-header {
             max-width: var(--max-width);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
+            margin: 0 auto 48px;
+            text-align: center;
         }
 
-        .split-text .kicker {
+        .strategy-header .kicker {
             font-size: 14px;
             color: var(--gray-500);
             margin-bottom: 20px;
         }
 
-        .split-text h2 {
+        .strategy-header h2 {
             font-size: clamp(32px, 4vw, 52px);
             font-weight: 500;
             letter-spacing: -0.02em;
             line-height: 1.08;
-            margin-bottom: 24px;
-        }
-
-        .split-text .cta-row { margin-bottom: 40px; }
-
-        .split-text .blurb {
-            margin-bottom: 24px;
-        }
-
-        .split-text .blurb strong {
-            color: var(--black);
-        }
-
-        .split-text .blurb span {
-            color: var(--gray-500);
-        }
-
-        .split-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .split-card-dark {
-            background: var(--black);
-            border-radius: 16px;
-            padding: 40px;
-            color: var(--white);
-            display: flex;
-            gap: 24px;
-            min-height: 200px;
-        }
-
-        .split-card-dark .card-content { flex: 1; }
-
-        .split-card-dark .stat {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .split-card-dark .stat-label {
-            font-size: 14px;
-            color: var(--gray-400);
-        }
-
-        .split-card-dark .card-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 12px;
-            background: var(--gray-700);
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: var(--gray-400);
-        }
-
-        .split-card-light {
-            background: linear-gradient(135deg, #ff6b35, #e84393, #6c5ce7);
-            border-radius: 16px;
-            padding: 4px;
-        }
-
-        .split-card-light-inner {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
-        }
-
-        .split-card-light-inner h4 {
-            font-size: 16px;
-            font-weight: 600;
             margin-bottom: 16px;
         }
 
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
+        .strategy-header > p {
+            font-size: 16px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .data-table th {
+        .strategy-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .strategy-card-detail {
+            border-radius: 16px;
+            padding: 36px;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+        }
+
+        .strategy-name {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+
+        .strategy-risk {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        .risk-bar {
+            height: 4px;
+            background: var(--gray-200);
+            border-radius: 2px;
+            margin-bottom: 24px;
+        }
+
+        .risk-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        .risk-low { width: 30%; background: #10b981; }
+        .risk-moderate { width: 58%; background: #f59e0b; }
+        .risk-high { width: 88%; background: #ef4444; }
+
+        .strategy-desc {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .strategy-detail-row {
+            padding: 12px 0;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .strategy-detail-row .label {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .strategy-detail-row .value {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* ========================
+           PERFORMANCE DATA SECTION
+           ======================== */
+        .perf-section {
+            padding: 0 40px 80px;
+        }
+
+        .perf-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            background: var(--off-white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 48px;
+            overflow-x: auto;
+        }
+
+        .perf-inner h3 {
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .perf-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .perf-badge-backtest {
+            background: var(--gray-200);
+            color: var(--gray-600);
+        }
+
+        .perf-badge-live {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .perf-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .perf-table th {
             font-size: 12px;
             font-weight: 600;
             color: var(--gray-500);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             text-align: left;
-            padding: 8px 0;
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--gray-300);
+        }
+
+        .perf-table td {
+            font-size: 15px;
+            padding: 16px;
             border-bottom: 1px solid var(--gray-200);
         }
 
-        .data-table td {
-            font-size: 14px;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray-100);
-        }
+        .perf-table .positive { color: #10b981; font-weight: 600; }
+        .perf-table .negative { color: #ef4444; font-weight: 600; }
+        .perf-table .placeholder { color: var(--gray-400); font-style: italic; }
 
-        .data-table .bar {
-            height: 6px;
-            border-radius: 3px;
-            background: var(--gray-200);
-            width: 100px;
-            position: relative;
-        }
-
-        .data-table .bar-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            border-radius: 3px;
-            background: #10b981;
+        .perf-note {
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.6;
         }
 
         /* ========================
@@ -875,151 +904,168 @@
         .support-text .secondary { font-size: 13px; color: var(--gray-400); }
 
         /* ========================
-           FULL-WIDTH TESTIMONIAL
+           FEE SECTION
            ======================== */
-        .testimonial-hero {
-            position: relative;
-            background: var(--gray-900);
-            min-height: 500px;
-            display: flex;
-            align-items: flex-end;
-            padding: 60px;
-            overflow: hidden;
-        }
-
-        .testimonial-hero .bg-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
-        }
-
-        .testimonial-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-        }
-
-        .testimonial-hero blockquote {
-            font-size: clamp(22px, 3vw, 32px);
-            font-weight: 500;
-            color: var(--white);
-            line-height: 1.35;
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-hero .attr-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .testimonial-hero .attr-role {
-            font-size: 14px;
-            color: var(--gray-400);
-        }
-
-        .testimonial-hero .hero-actions {
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            z-index: 1;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .testimonial-hero .watch-link {
-            color: var(--white);
-            font-size: 14px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* ========================
-           REVIEWS GRID
-           ======================== */
-        .reviews {
+        .fee-section {
             padding: 100px 40px;
+        }
+
+        .fee-header {
+            max-width: var(--max-width);
+            margin: 0 auto 48px;
             text-align: center;
         }
 
-        .reviews h2 {
+        .fee-header .kicker {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .fee-header h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .fee-header p {
+            font-size: 16px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fee-compare {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .fee-card {
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .fee-card-old {
+            background: var(--off-white);
+            border: 1px solid var(--gray-200);
+        }
+
+        .fee-card-new {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .fee-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .fee-card-new h3 { color: var(--white); }
+
+        .fee-line {
+            padding: 14px 0;
+            border-top: 1px solid var(--gray-200);
+            font-size: 15px;
+        }
+
+        .fee-card-new .fee-line { border-color: var(--gray-800); }
+
+        .fee-line .amount {
+            font-weight: 600;
+            display: block;
+        }
+
+        .fee-card-new .fee-line .amount { color: var(--white); }
+        .fee-card-old .fee-line .amount { color: var(--black); }
+
+        .fee-line .context {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .fee-bottom-note {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--gray-500);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========================
+           DUE DILIGENCE (replaces reviews)
+           ======================== */
+        .dd-section {
+            padding: 100px 40px;
+            background: var(--off-white);
+        }
+
+        .dd-header {
+            max-width: var(--max-width);
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .dd-header h2 {
             font-size: clamp(32px, 4vw, 52px);
             font-weight: 500;
             letter-spacing: -0.02em;
             margin-bottom: 16px;
         }
 
-        .reviews .reviews-sub {
-            font-size: 15px;
+        .dd-header p {
+            font-size: 16px;
             color: var(--gray-500);
-            margin-bottom: 16px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .reviews .reviews-cta {
-            margin-bottom: 48px;
-        }
-
-        .reviews-grid {
+        .dd-grid {
             max-width: var(--max-width);
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 12px;
-            text-align: left;
         }
 
-        .review-card {
+        .dd-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
             border-radius: 14px;
-            padding: 28px;
+            padding: 32px;
         }
 
-        .review-stars {
-            margin-bottom: 14px;
-            font-size: 14px;
-            letter-spacing: 2px;
-            color: var(--black);
-        }
-
-        .review-card p {
-            font-size: 15px;
-            line-height: 1.5;
-            color: var(--black);
+        .dd-card .dd-icon {
+            width: 28px;
+            height: 28px;
             margin-bottom: 20px;
         }
 
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .dd-card .dd-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--black);
+            fill: none;
+            stroke-width: 1.5;
         }
 
-        .review-author .avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--gray-200);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--gray-600);
-        }
-
-        .review-author .name {
-            font-size: 14px;
+        .dd-card h3 {
+            font-size: 16px;
             font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .review-author .role {
-            font-size: 12px;
+        .dd-card p {
+            font-size: 14px;
             color: var(--gray-500);
+            line-height: 1.6;
         }
 
         /* ========================
@@ -1065,7 +1111,7 @@
            ======================== */
         .timeline-section {
             padding: 100px 40px;
-            background: var(--off-white);
+            background: var(--white);
         }
 
         .timeline-inner {
@@ -1143,7 +1189,7 @@
 
         .timeline-dot-outline {
             border: 2px solid var(--gray-400);
-            background: var(--off-white);
+            background: var(--white);
         }
 
         .timeline-step {
@@ -1171,6 +1217,7 @@
            ======================== */
         .faq {
             padding: 100px 40px;
+            background: var(--off-white);
         }
 
         .faq-inner {
@@ -1347,68 +1394,32 @@
             margin: 0 auto 16px;
         }
 
-        .final-cta .proof {
-            font-size: 14px;
+        .final-cta .sub {
+            font-size: 16px;
             color: var(--gray-400);
-            margin-bottom: 48px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
         }
 
-        .final-cta .proof .stars { color: var(--gray-300); }
-
-        .cta-cards {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .final-cta .cta-buttons {
+            display: flex;
+            justify-content: center;
             gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .cta-card-quote {
-            background: var(--card-dark);
-            border-radius: 16px;
-            padding: 36px;
-            text-align: left;
+        .final-cta .cta-badges {
+            margin-top: 32px;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 260px;
-        }
-
-        .cta-card-quote blockquote {
-            font-size: 17px;
-            color: var(--gray-300);
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-
-        .cta-card-quote .attr {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cta-card-quote .attr .av {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--gray-700);
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--gray-400);
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
-        .cta-card-quote .attr .name { font-size: 14px; font-weight: 600; color: var(--white); }
-        .cta-card-quote .attr .role { font-size: 12px; color: var(--gray-500); }
-
-        .cta-card-gradient {
-            background: linear-gradient(135deg, #ff6b35, #e84393, #6c5ce7);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .final-cta .cta-badges span {
+            font-size: 13px;
+            color: var(--gray-500);
         }
 
         /* ========================
@@ -1520,32 +1531,32 @@
             .mobile-toggle { display: block; }
             .hero-cards { grid-template-columns: 1fr; }
             .hero-card { min-height: 300px; }
-            .split-inner { grid-template-columns: 1fr; gap: 48px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .max-card { grid-template-columns: 1fr; }
-            .max-image { min-height: 300px; }
-            .cta-cards { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-            .footer-bottom-left { flex-direction: column; }
-            .stats-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr; }
             .explainer-grid { grid-template-columns: 1fr; }
+            .strategy-grid { grid-template-columns: 1fr; }
             .comparison-table { grid-template-columns: 1fr; }
             .comparison-col:last-child { border-left: none; border-top: 1px solid var(--gray-800); }
             .comparison-col:last-child .comparison-col-title,
             .comparison-col:last-child .comparison-row { text-align: left; }
             .comparison-vs { top: auto; left: 50%; transform: translateX(-50%); z-index: 3; }
             .comparison-vs::after { display: none; }
+            .features-grid { grid-template-columns: 1fr; }
+            .fee-compare { grid-template-columns: 1fr; }
+            .dd-grid { grid-template-columns: 1fr; }
             .timeline-inner { grid-template-columns: 1fr; gap: 48px; }
-            .container, .hero, .split-section, .features, .reviews, .faq, .max-section, .final-cta, .footer, .logos, .comparison, .stats-section, .timeline-section, .explainer { padding-left: 20px; padding-right: 20px; }
+            .max-card { grid-template-columns: 1fr; }
+            .max-image { min-height: 300px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .footer-bottom-left { flex-direction: column; }
+            .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .final-cta, .footer { padding-left: 20px; padding-right: 20px; }
             .hero-cards, .nav-inner { padding: 0 20px; }
-            .testimonial-hero { padding: 40px 20px; min-height: 400px; }
-            .testimonial-hero .hero-actions { position: static; margin-top: 24px; }
+            .perf-inner { padding: 24px; }
         }
 
         @media (max-width: 600px) {
             .footer-grid { grid-template-columns: 1fr; }
+            .hero-proof { flex-direction: column; gap: 4px; }
         }
     </style>
 </head>
@@ -1553,7 +1564,7 @@
 
     <!-- ANNOUNCEMENT BANNER -->
     <div class="banner">
-        <strong>Vector Capital is now live</strong> — A smarter approach for the modern investor.
+        <strong>Now accepting new clients</strong> — Schedule a consultation with Maxwell Hines, former Fixed Income Portfolio Manager at AllianceBernstein.
     </div>
 
     <!-- NAVBAR -->
@@ -1565,7 +1576,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#algorithms">Strategies</a></li>
+                <li><a href="#strategies">Strategies</a></li>
                 <li><a href="#max">About Max</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
@@ -1580,141 +1591,217 @@
 
     <!-- HERO -->
     <section class="hero">
-        <p class="hero-kicker">Introducing Vector Capital</p>
-        <h1>Your portfolio is running a playbook from 1992</h1>
-        <p class="hero-sub">High fees. Outdated strategies. A quarterly PDF instead of real answers. There's a reason the traditional approach feels broken — it is. Vector Capital is the modern alternative.</p>
+        <p class="hero-kicker">Quantitative Portfolio Strategies</p>
+        <h1>Better risk-adjusted returns, inside an account you control</h1>
+        <p class="hero-sub">Institutional-grade algorithmic strategies, designed and overseen by Maxwell Hines, former Fixed Income Portfolio Manager at AllianceBernstein. Your money stays in your own brokerage account. No leverage. No lock-ups. Full transparency.</p>
         <div class="hero-buttons">
             <a href="#get-started" class="btn-black">Schedule a Consultation</a>
+            <a href="#performance" class="btn-outline">See the Data</a>
         </div>
         <div class="hero-proof">
-            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span>1,200+ investors have already made the switch</span>
+            <span>Series 63 Licensed</span>
+            <span class="sep">&middot;</span>
+            <span>Former AB Fixed Income PM</span>
+            <span class="sep">&middot;</span>
+            <span>Your Account, Your Control</span>
         </div>
     </section>
 
     <!-- HERO CARDS -->
     <div class="hero-cards">
-        <div class="hero-card hero-card-photo">Max's Photo</div>
         <div class="hero-card hero-card-product">
-            <div class="product-label">Your Live Dashboard</div>
+            <div class="product-label">Drawdown Comparison</div>
             <div class="product-inner">
-                <h3>Portfolio Activity</h3>
-                <div class="product-stat"><span class="label">Strategy Alpha</span><span class="value" style="color:#10b981">Active</span></div>
-                <div class="product-stat"><span class="label">Strategy Beta</span><span class="value" style="color:#10b981">Active</span></div>
-                <div class="product-stat"><span class="label">Strategy Gamma</span><span class="value" style="color:#10b981">Active</span></div>
-                <div class="product-stat"><span class="label">System Uptime</span><span class="value">99.97%</span></div>
+                <h3>2022 Market Drawdown</h3>
+                <!-- PLACEHOLDER: Replace bracketed values with verified performance data -->
+                <div class="product-stat"><span class="label">S&amp;P 500</span><span class="value" style="color:#ef4444">-25.4%</span></div>
+                <div class="product-stat"><span class="label">Strategy Alpha</span><span class="value" style="color:#10b981">-[X.X]%</span></div>
+                <div class="product-stat"><span class="label">Strategy Beta</span><span class="value" style="color:#10b981">-[X.X]%</span></div>
+                <div class="product-stat"><span class="label">Strategy Gamma</span><span class="value" style="color:#f59e0b">-[X.X]%</span></div>
             </div>
         </div>
+        <div class="hero-card hero-card-photo">Maxwell Hines's Photo</div>
         <div class="hero-card hero-card-quote">
-            <blockquote>"I spent years watching everyday investors get charged premium fees for strategies that stopped working a decade ago. The technology to do better already exists — it's just been locked inside hedge funds. Until now."</blockquote>
+            <blockquote>"I managed fixed income portfolios at AllianceBernstein. Every day I watched institutional clients access strategies that everyday investors never see. The technology exists. It just wasn't available to anyone outside the gates."</blockquote>
             <div class="attribution">
-                <div class="name">Max</div>
-                <div class="role">Founder, Vector Capital &middot; Former Hedge Fund Professional</div>
+                <div class="name">Maxwell Hines</div>
+                <div class="role">Founder, Vector Capital &middot; Former Fixed Income PM, AllianceBernstein &middot; Series 63</div>
             </div>
         </div>
     </div>
 
-    <!-- LOGO BAR -->
-    <section class="logos" id="how-it-works">
-        <p><strong>1,200+ investors</strong> have already made the switch to Vector Capital.</p>
-        <div class="logo-row">
-            <span>AUTOMATED</span>
-            <span>TRANSPARENT</span>
-            <span>REAL-TIME</span>
-            <span>DATA-DRIVEN</span>
-            <span>24/7</span>
+    <!-- TRUST / SAFETY SECTION -->
+    <section class="trust-section" id="trust">
+        <div class="trust-header">
+            <h2>Your money. Your account. Your control.</h2>
+            <p>Six things every investor should verify before considering any investment strategy.</p>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
+                <h3>Your own brokerage account</h3>
+                <p>Your capital stays in an account at a US-regulated brokerage — in your name, under your control. Vector never holds your funds.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+                <h3>No funds wired to Vector</h3>
+                <p>Your money doesn't move. Vector's technology connects to your brokerage via API. Your funds stay exactly where they are.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h3>Licensed professional oversight</h3>
+                <p>Every strategy is overseen by Maxwell Hines, Series 63 licensed, former Fixed Income Portfolio Manager at AllianceBernstein.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <h3>No leverage. No margin.</h3>
+                <p>These strategies don't use borrowed money. You're never exposed to more risk than the capital you've chosen to allocate.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <h3>Full transparency</h3>
+                <p>Every trade, every position, every metric — visible in real time on your dashboard. No black boxes. No quarterly surprises.</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></div>
+                <h3>Disconnect anytime</h3>
+                <p>No lock-ups. No exit fees. No penalties. Revoke Vector's API access from your brokerage whenever you want. Your money, your decision.</p>
+            </div>
         </div>
     </section>
 
     <!-- EXPLAINER: WHAT IS VECTOR CAPITAL -->
-    <section class="explainer" id="what-is-it">
+    <section class="explainer" id="how-it-works">
         <div class="explainer-inner">
-            <p class="kicker">So what is it, exactly?</p>
-            <h2>Vector Capital is automated trading technology</h2>
-            <p>Instead of a person making decisions about your money based on gut feelings, phone calls, and models from the 1990s — our systems use data-driven strategies that read market conditions and respond in real time. You pick your risk level. The technology does the rest.</p>
+            <p class="kicker">What is Vector Capital?</p>
+            <h2>Quantitative strategies that read the market and adapt</h2>
+            <p>Instead of a human making decisions based on gut feelings and models from the 1990s, Vector's algorithmic strategies analyze market conditions and execute trades based on data. You select your risk level. The technology handles execution. Max oversees everything.</p>
             <div class="explainer-grid">
                 <div class="explainer-card">
                     <div class="num">1</div>
-                    <h3>Not a person. A system.</h3>
-                    <p>Traditional approaches rely on human judgment — which means human emotion, human bias, and human limitations. Vector replaces that with automated technology that executes consistently, 24/7, without the emotional baggage.</p>
+                    <h3>Algorithms, not emotions</h3>
+                    <p>Traditional portfolios rely on human judgment — which means human emotion, bias, and limitations. Vector's quantitative strategies execute consistently, based on data, without the panic selling or rally-chasing that costs most investors real money.</p>
                 </div>
                 <div class="explainer-card">
                     <div class="num">2</div>
-                    <h3>Built to move when markets move</h3>
-                    <p>Most approaches sit and wait. "Stay the course." Our technology actively responds to changing market conditions — especially volatility. When the market gets choppy, the system doesn't freeze. It was designed for exactly that.</p>
+                    <h3>Designed for volatility</h3>
+                    <p>Most strategies tell you to "stay the course." Vector's algorithms actively respond to changing conditions — particularly during volatile periods. When markets get choppy, the system adapts. It doesn't wait for a phone call.</p>
                 </div>
                 <div class="explainer-card">
                     <div class="num">3</div>
                     <h3>You see everything</h3>
-                    <p>No black box. No quarterly surprises. You get a live dashboard showing exactly what's happening — every trade, every position, every metric. The kind of transparency the traditional approach never gave you.</p>
+                    <p>No black box. No quarterly PDF. Your dashboard shows every trade, every position, every metric in real time. This is the transparency traditional wealth management has never offered individual investors.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS SECTION -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-card stat-card-orange">
-                <div class="stat-number">$2.1B+</div>
-                <div class="stat-desc">In total volume traded by our systems. This isn't a side project.</div>
+    <!-- STRATEGY DETAIL SECTION -->
+    <section class="strategy-section" id="strategies">
+        <div class="strategy-header">
+            <p class="kicker">Three strategies. Three risk profiles.</p>
+            <h2>You choose what matches your goals</h2>
+            <p>Each strategy targets a different balance of growth and downside protection. Run one or combine them. You're the decision-maker.</p>
+        </div>
+        <div class="strategy-grid">
+            <div class="strategy-card-detail">
+                <div class="strategy-name">Strategy Alpha</div>
+                <div class="strategy-risk">Conservative</div>
+                <div class="risk-bar"><div class="risk-bar-fill risk-low"></div></div>
+                <p class="strategy-desc">Market-neutral approach using statistical arbitrage across US equities. Designed for capital preservation with steady, consistent returns and minimal correlation to broad market swings.</p>
+                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Market-neutral, statistical arbitrage</span></div>
+                <div class="strategy-detail-row"><span class="label">Asset classes</span><span class="value">US equities</span></div>
+                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Low</span></div>
+                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Capital preservation</span></div>
             </div>
-            <div class="stat-card stat-card-dark">
-                <div class="stat-number">24/7</div>
-                <div class="stat-desc">Your portfolio doesn't sleep. It responds to market changes in real time — not after your next quarterly call.</div>
+            <div class="strategy-card-detail">
+                <div class="strategy-name">Strategy Beta</div>
+                <div class="strategy-risk">Balanced</div>
+                <div class="risk-bar"><div class="risk-bar-fill risk-moderate"></div></div>
+                <p class="strategy-desc">Quantitative long/short equity strategy targeting growth while actively managing drawdowns. Aims to capture the majority of market upside while limiting exposure during downturns.</p>
+                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Quantitative long/short</span></div>
+                <div class="strategy-detail-row"><span class="label">Asset classes</span><span class="value">US equities, ETFs</span></div>
+                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Moderate</span></div>
+                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Growth + downside management</span></div>
             </div>
-            <div class="stat-card stat-card-light">
-                <div class="stat-number">1,200+</div>
-                <div class="stat-desc">Investors who got tired of the old way and switched to something built for today's markets.</div>
+            <div class="strategy-card-detail">
+                <div class="strategy-name">Strategy Gamma</div>
+                <div class="strategy-risk">Aggressive</div>
+                <div class="risk-bar"><div class="risk-bar-fill risk-high"></div></div>
+                <p class="strategy-desc">Volatility-focused strategy designed to capitalize on market swings in both directions. Higher return potential with correspondingly higher risk. Built for investors with longer time horizons.</p>
+                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Volatility-harvesting, multi-directional</span></div>
+                <div class="strategy-detail-row"><span class="label">Asset classes</span><span class="value">US equities, options, VIX</span></div>
+                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Variable</span></div>
+                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Maximum growth potential</span></div>
             </div>
         </div>
     </section>
 
-    <!-- SPLIT SECTION -->
-    <section class="split-section">
-        <div class="split-inner">
-            <div class="split-text">
-                <p class="kicker">Why Vector Capital</p>
-                <h2>The 60/40 portfolio was built for a world that no longer exists</h2>
-                <div class="cta-row"><a href="#get-started" class="btn-black">Schedule a Consultation</a></div>
-                <div class="blurb">
-                    <strong>Markets have fundamentally changed.</strong> <span>More volatility. Faster moves. Global events rippling through your portfolio overnight. But the traditional approach? Still running the same playbook, still charging the same fees, still telling you to "stay the course."</span>
-                </div>
-                <div class="blurb">
-                    <strong>Technology doesn't panic.</strong> <span>It doesn't sell at the bottom or chase the top. It doesn't take vacations or have bad days. It executes a strategy based on data — consistently, around the clock, without the emotional baggage.</span>
-                </div>
-            </div>
-            <div class="split-cards">
-                <div class="split-card-dark">
-                    <div class="card-content">
-                        <div class="stat">$2.1B+</div>
-                        <div class="stat-label">In total volume — by people who decided the old way wasn't cutting it.</div>
-                        <br>
-                        <a href="#" class="btn-outline" style="color:#fff;border-color:var(--gray-600);">View Performance</a>
-                    </div>
-                    <div class="card-img">Max's Photo</div>
-                </div>
-                <div class="split-card-light">
-                    <div class="split-card-light-inner">
-                        <h4>Live Strategy Performance</h4>
-                        <table class="data-table">
-                            <tr><th>Strategy</th><th>Status</th><th>Activity</th></tr>
-                            <tr><td>Strategy Alpha</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:90%"></div></div></td></tr>
-                            <tr><td>Strategy Beta</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:75%"></div></div></td></tr>
-                            <tr><td>Strategy Gamma</td><td style="color:#10b981;font-weight:600">Active</td><td><div class="bar"><div class="bar-fill" style="width:85%"></div></div></td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <!-- PERFORMANCE DATA -->
+    <section class="perf-section" id="performance">
+        <div class="perf-inner">
+            <h3>Risk-Adjusted Performance</h3>
+            <!-- PLACEHOLDER: Change to perf-badge-live and update date range when using verified live data -->
+            <span class="perf-badge perf-badge-backtest">Backtested &middot; [Start Date] &ndash; [End Date]</span>
+            <table class="perf-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Strategy Alpha</th>
+                        <th>Strategy Beta</th>
+                        <th>Strategy Gamma</th>
+                        <th>S&amp;P 500</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- PLACEHOLDER: Replace all bracketed values with verified data before publishing -->
+                    <tr>
+                        <td>Total Return</td>
+                        <td class="placeholder">[XX.X%]</td>
+                        <td class="placeholder">[XX.X%]</td>
+                        <td class="placeholder">[XX.X%]</td>
+                        <td>[XX.X%]</td>
+                    </tr>
+                    <tr>
+                        <td>Max Drawdown</td>
+                        <td class="placeholder">[-X.X%]</td>
+                        <td class="placeholder">[-X.X%]</td>
+                        <td class="placeholder">[-XX.X%]</td>
+                        <td class="negative">-25.4%</td>
+                    </tr>
+                    <tr>
+                        <td>Sharpe Ratio</td>
+                        <td class="placeholder">[X.XX]</td>
+                        <td class="placeholder">[X.XX]</td>
+                        <td class="placeholder">[X.XX]</td>
+                        <td>[X.XX]</td>
+                    </tr>
+                    <tr>
+                        <td>Recovery Time</td>
+                        <td class="placeholder">[X months]</td>
+                        <td class="placeholder">[X months]</td>
+                        <td class="placeholder">[X months]</td>
+                        <td>[XX months]</td>
+                    </tr>
+                    <tr>
+                        <td>Win Rate</td>
+                        <td class="placeholder">[XX%]</td>
+                        <td class="placeholder">[XX%]</td>
+                        <td class="placeholder">[XX%]</td>
+                        <td>&mdash;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="perf-note">Past performance, whether backtested or live, does not guarantee future results. All trading involves risk, including potential loss of principal. Backtested results are hypothetical and subject to inherent limitations. Full methodology documentation available upon request during your consultation.</p>
         </div>
     </section>
 
     <!-- COMPARISON (VS) -->
     <section class="comparison">
         <div class="comparison-header">
-            <p class="kicker">The Old Way vs. The New Way</p>
-            <h2>You already know something isn't working</h2>
-            <p>Same markets. Completely different experience. Here's what changes when you stop settling for the traditional playbook.</p>
+            <p class="kicker">What Actually Changes</p>
+            <h2>Your current approach vs. Vector Capital</h2>
+            <p>Same markets. Different strategy, different structure, different transparency.</p>
         </div>
         <div class="comparison-table">
             <div class="comparison-vs">VS</div>
@@ -1722,34 +1809,38 @@
                 <div class="comparison-col-title">Vector Capital</div>
                 <div class="comparison-row">
                     <div class="row-label">When Markets Drop</div>
-                    <div class="row-value">Already responding</div>
+                    <div class="row-value">Algorithms adapt in real time</div>
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Decision Making</div>
-                    <div class="row-value">Data-driven technology</div>
+                    <div class="row-value">Quantitative, data-driven</div>
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Volatility</div>
-                    <div class="row-value">Opportunity</div>
+                    <div class="row-value">Strategies designed for it</div>
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Visibility</div>
-                    <div class="row-value">Real-time dashboard</div>
+                    <div class="row-value">Real-time dashboard, every trade</div>
                 </div>
                 <div class="comparison-row">
-                    <div class="row-label">Strategy</div>
-                    <div class="row-value">Multiple modern strategies</div>
+                    <div class="row-label">Your Money</div>
+                    <div class="row-value">Your brokerage, your control</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Fee Structure</div>
+                    <div class="row-value">Flat fee — never scales with AUM</div>
                 </div>
             </div>
             <div class="comparison-col">
-                <div class="comparison-col-title">The Traditional Approach</div>
+                <div class="comparison-col-title">Traditional Advisor</div>
                 <div class="comparison-row">
                     <div class="row-label">When Markets Drop</div>
                     <div class="row-value">"Stay the course"</div>
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Decision Making</div>
-                    <div class="row-value">Human emotion</div>
+                    <div class="row-value">Human emotion + outdated models</div>
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Volatility</div>
@@ -1760,108 +1851,122 @@
                     <div class="row-value">Quarterly PDF</div>
                 </div>
                 <div class="comparison-row">
-                    <div class="row-label">Strategy</div>
-                    <div class="row-value">60/40 since 1992</div>
+                    <div class="row-label">Your Money</div>
+                    <div class="row-value">Managed by someone else</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Fee Structure</div>
+                    <div class="row-value">1% AUM — grows as you succeed</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FEATURES (beige bg) -->
-    <section class="features" id="algorithms">
+    <section class="features" id="features">
         <div class="features-header">
-            <h2>Everything the traditional approach isn't. <span>Here's what actually changes when you switch.</span></h2>
+            <h2>What changes when you switch. <span>The details that matter.</span></h2>
         </div>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                <p><strong>Real diversification, not just repackaged.</strong> Multiple strategies working across different markets simultaneously. Not just stocks and bonds rearranged to look different.</p>
+                <p><strong>Real diversification, not cosmetic.</strong> Multiple quantitative strategies working across different market conditions simultaneously. Not stocks and bonds rearranged to look different.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                <p><strong>Volatility is the opportunity.</strong> Most approaches treat market swings as something to endure. Ours is built to capitalize on them. When everyone else is hiding, your portfolio is working.</p>
+                <p><strong>Volatility is built into the strategy.</strong> Most approaches treat market swings as something to endure. Vector's algorithms are designed to adapt during volatile periods — not just survive them.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                <p><strong>Your portfolio responds in real time.</strong> Not next quarter. Not next week. When market conditions change, your strategy adapts — automatically, without you lifting a finger.</p>
+                <p><strong>Real-time execution.</strong> When conditions change, your strategies adapt automatically. Not next quarter. Not after a phone call. In the moment.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <p><strong>Risk management is built in, not bolted on.</strong> Automatic position limits, stop-losses, and drawdown protection. You get the upside potential without hoping someone remembered to set a limit.</p>
+                <p><strong>Risk management is structural.</strong> Position limits, stop-losses, and drawdown protection are built into every strategy. Not bolted on as an afterthought.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                <p><strong>Battle-tested, not theoretical.</strong> Every strategy has been stress-tested against decades of real market data — crashes, rallies, and everything your traditional approach wasn't prepared for.</p>
+                <p><strong>Stress-tested against real history.</strong> Every strategy backtested against decades of market data — crashes, rallies, flash events — before going live. Documented, not theoretical.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-                <p><strong>See everything, anytime.</strong> Live dashboard with every trade, every position, every metric. No more waiting 90 days for a PDF that raises more questions than it answers.</p>
+                <p><strong>Every trade, visible.</strong> Live dashboard with every position, every metric, in real time. No more waiting 90 days for a report that raises more questions than it answers.</p>
             </div>
         </div>
         <div class="support-bar">
             <div class="support-bar-inner">
-                <div class="support-avatar">M</div>
+                <div class="support-avatar">MG</div>
                 <div class="support-text">
                     <div class="primary">Questions? Talk to Max directly.</div>
-                    <div class="secondary">No sales pitch. Just a real conversation about whether this is right for you.</div>
+                    <div class="secondary">No sales pitch. Just a real conversation about whether this fits your situation.</div>
                 </div>
-                <a href="#get-started" class="btn-white">Contact us</a>
+                <a href="#get-started" class="btn-white">Schedule a call</a>
             </div>
         </div>
     </section>
 
-    <!-- FULL-WIDTH TESTIMONIAL -->
-    <section class="testimonial-hero">
-        <div class="bg-overlay"></div>
-        <div class="testimonial-hero-content">
-            <blockquote>"I was paying premium fees every year for a strategy that couldn't keep up with the market. Three straight years. I finally asked myself — what exactly am I paying for? Switched to Vector six months ago. Night and day."</blockquote>
-            <div class="attr-name">Michael R.</div>
-            <div class="attr-role">Business Owner</div>
+    <!-- FEE SECTION -->
+    <section class="fee-section" id="fees">
+        <div class="fee-header">
+            <p class="kicker">Fee Structure</p>
+            <h2>Your success shouldn't cost you more</h2>
+            <p>Traditional advisors charge a percentage of your assets. Their fee grows every time your account does. Vector doesn't work that way.</p>
         </div>
-        <div class="hero-actions">
-            <a href="#" class="watch-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
-                Watch video
-            </a>
-            <a href="#get-started" class="btn-white">Schedule a consultation</a>
+        <div class="fee-compare">
+            <div class="fee-card fee-card-old">
+                <h3>Traditional Advisor (1% AUM)</h3>
+                <div class="fee-line"><span class="amount">$5,000/year</span><span class="context">on a $500K portfolio</span></div>
+                <div class="fee-line"><span class="amount">$10,000/year</span><span class="context">on a $1M portfolio</span></div>
+                <div class="fee-line"><span class="amount">$20,000/year</span><span class="context">on a $2M portfolio</span></div>
+                <div class="fee-line"><span class="amount">Your fee grows as you grow</span><span class="context">You're penalized for your own success</span></div>
+            </div>
+            <div class="fee-card fee-card-new">
+                <h3>Vector Capital</h3>
+                <div class="fee-line"><span class="amount">Flat subscription</span><span class="context">Same fee regardless of account size</span></div>
+                <div class="fee-line"><span class="amount">No AUM percentage</span><span class="context">Your fee never scales with your success</span></div>
+                <div class="fee-line"><span class="amount">No hidden charges</span><span class="context">No performance fees, no exit fees</span></div>
+                <div class="fee-line"><span class="amount">Specific pricing in your consultation</span><span class="context">Max walks through exact costs during your call</span></div>
+            </div>
         </div>
+        <p class="fee-bottom-note">Standard brokerage commissions and regulatory fees through your brokerage still apply. These are not Vector Capital charges.</p>
     </section>
 
-    <!-- REVIEWS -->
-    <section class="reviews">
-        <h2>People who made the switch</h2>
-        <p class="reviews-sub">They're not traders. They're not finance people. They just got tired of the old way.</p>
-        <div class="reviews-cta"><a href="#get-started" class="btn-black">Schedule a Consultation</a></div>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>I don't know anything about trading. I don't want to. I just got tired of paying for a strategy that wasn't going anywhere. Vector made it simple to switch.</p>
-                <div class="review-author"><div class="avatar">SK</div><div><div class="name">Sarah K.</div><div class="role">Marketing Director</div></div></div>
+    <!-- DUE DILIGENCE (replaces testimonials) -->
+    <section class="dd-section">
+        <div class="dd-header">
+            <h2>Don't take our word for it. Verify everything.</h2>
+            <p>We built Vector for skeptical investors. Here's how to do your homework.</p>
+        </div>
+        <div class="dd-grid">
+            <div class="dd-card">
+                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <h3>Verify Max's credentials</h3>
+                <p>Look up Maxwell Hines on FINRA BrokerCheck and LinkedIn. His AllianceBernstein fixed income PM background and Series 63 licensure are public record.</p>
             </div>
-            <div class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>What sold me was being able to actually see what's happening with my money. Every trade, every position, in real time. Before this, I got a PDF every three months and had to just... trust it.</p>
-                <div class="review-author"><div class="avatar">DL</div><div><div class="name">David L.</div><div class="role">Engineer</div></div></div>
+            <div class="dd-card">
+                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h3>Confirm brokerage regulation</h3>
+                <p>Your account is held at an SEC/FINRA-regulated brokerage. Verify their registration independently on the SEC website.</p>
             </div>
-            <div class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>When the market dropped 4% in a day, I braced for the worst. Checked my dashboard — the system had already adjusted. That's the difference. Nobody had to make a phone call.</p>
-                <div class="review-author"><div class="avatar">JM</div><div><div class="name">Jennifer M.</div><div class="role">Healthcare Professional</div></div></div>
+            <div class="dd-card">
+                <div class="dd-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <h3>Review strategy documentation</h3>
+                <p>Full backtesting methodology, risk parameters, and performance data available during your consultation. Ask the hard questions.</p>
             </div>
-            <div class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>The thing that always bothered me was paying the same fee whether my portfolio went up or down. The traditional setup rewards them regardless. Vector's model actually made me feel like we were on the same side.</p>
-                <div class="review-author"><div class="avatar">TR</div><div><div class="name">Tom R.</div><div class="role">Consultant</div></div></div>
+            <div class="dd-card">
+                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                <h3>Read the risk disclosures</h3>
+                <p>Full risk disclosure is at the bottom of this page and in every document we provide. All trading involves risk, including loss of principal.</p>
             </div>
-            <div class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>My old approach had me in the same two buckets as everyone else. Vector opened up markets I didn't even know I could access. Real diversification for the first time.</p>
-                <div class="review-author"><div class="avatar">AP</div><div><div class="name">Amanda P.</div><div class="role">Real Estate Investor</div></div></div>
+            <div class="dd-card">
+                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+                <h3>Talk to existing clients</h3>
+                <p>Client references available upon request during your consultation. Hear directly from people using Vector's strategies.</p>
             </div>
-            <div class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>My friend asked what I was doing differently. I said I stopped paying someone to tell me to "stay the course" and started using technology that actually responds to the market. She signed up the next week.</p>
-                <div class="review-author"><div class="avatar">RH</div><div><div class="name">Rachel H.</div><div class="role">Business Owner</div></div></div>
+            <div class="dd-card">
+                <div class="dd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <h3>Take your time</h3>
+                <p>No pressure. No artificial urgency. No "limited spots." If Vector is right for you, it'll still be here when you're ready.</p>
             </div>
         </div>
     </section>
@@ -1869,21 +1974,25 @@
     <!-- SCROLLING TICKER -->
     <div class="ticker">
         <div class="ticker-track">
-            <span class="ticker-item">Stop settling.</span>
+            <span class="ticker-item">Risk-adjusted returns</span>
             <span class="ticker-dot"></span>
-            <span class="ticker-item">Demand better.</span>
+            <span class="ticker-item">Your account</span>
             <span class="ticker-dot"></span>
-            <span class="ticker-item">Make the switch.</span>
+            <span class="ticker-item">Zero leverage</span>
             <span class="ticker-dot"></span>
-            <span class="ticker-item">Modern approach.</span>
+            <span class="ticker-item">Full transparency</span>
             <span class="ticker-dot"></span>
-            <span class="ticker-item">Stop settling.</span>
+            <span class="ticker-item">Licensed oversight</span>
             <span class="ticker-dot"></span>
-            <span class="ticker-item">Demand better.</span>
+            <span class="ticker-item">Risk-adjusted returns</span>
             <span class="ticker-dot"></span>
-            <span class="ticker-item">Make the switch.</span>
+            <span class="ticker-item">Your account</span>
             <span class="ticker-dot"></span>
-            <span class="ticker-item">Modern approach.</span>
+            <span class="ticker-item">Zero leverage</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Full transparency</span>
+            <span class="ticker-dot"></span>
+            <span class="ticker-item">Licensed oversight</span>
             <span class="ticker-dot"></span>
         </div>
     </div>
@@ -1892,9 +2001,9 @@
     <section class="timeline-section" id="get-started-steps">
         <div class="timeline-inner">
             <div class="timeline-left">
-                <p class="kicker">How It Works</p>
-                <h2>Switching is easier than you think</h2>
-                <p>No trading experience needed. No complicated setup. No jargon. Just a conversation, a decision, and a dashboard you'll actually want to check.</p>
+                <p class="kicker">Getting Started</p>
+                <h2>Three steps. No jargon. No pressure.</h2>
+                <p>You don't need trading experience. You don't need to understand algorithms. You just need a conversation with Max.</p>
                 <a href="#get-started" class="btn-black">Schedule a Consultation</a>
             </div>
             <div class="timeline-right">
@@ -1904,20 +2013,20 @@
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="white" stroke-width="3"/></svg>
                     </div>
                     <div class="timeline-step">Step 1</div>
-                    <div class="timeline-title">Have a real conversation</div>
-                    <div class="timeline-desc">Talk to Max. See the platform live. Ask the hard questions. No sales pitch, no pressure — just an honest look at whether Vector Capital is right for you.</div>
+                    <div class="timeline-title">Talk to Maxwell Hines</div>
+                    <div class="timeline-desc">See the platform live. Review the performance data. Ask anything. Max personally walks through every consultation — no sales team, no junior associates.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-outline"></div>
                     <div class="timeline-step">Step 2</div>
-                    <div class="timeline-title">Pick what fits your goals</div>
-                    <div class="timeline-desc">Select the strategies that match your comfort level and goals. Conservative, balanced, aggressive — or a mix. It's your call.</div>
+                    <div class="timeline-title">Choose your strategies</div>
+                    <div class="timeline-desc">Select Alpha, Beta, Gamma, or any combination based on your risk tolerance and goals. Conservative, balanced, aggressive — your call.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-outline"></div>
                     <div class="timeline-step">Step 3</div>
-                    <div class="timeline-title">Finally see what's happening with your money</div>
-                    <div class="timeline-desc">Open your dashboard anytime. Every trade, every position, every metric. No more waiting. No more wondering.</div>
+                    <div class="timeline-title">Connect your brokerage account</div>
+                    <div class="timeline-desc">Link your existing brokerage via API. Your money stays put. The strategies begin executing. You watch everything in real time on your dashboard.</div>
                 </div>
             </div>
         </div>
@@ -1930,31 +2039,39 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">What exactly is Vector Capital?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Vector Capital gives you access to automated trading technology — the same kind hedge funds have used for decades to stay ahead. Instead of a person making decisions based on gut feelings and outdated models, our systems use data-driven strategies that respond to market conditions in real time. You choose your risk level. The technology handles everything else.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Vector Capital provides quantitative portfolio strategies — algorithmic systems that analyze market conditions and execute trades based on data. You connect your own brokerage account, choose your strategies, and the algorithms handle execution. Maxwell Hines, former Fixed Income Portfolio Manager at AllianceBernstein and Series 63 licensee, oversees every strategy. You retain full ownership and control of your account at all times.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Do I need trading experience?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Not at all. Most of our clients have zero trading background. The technology handles everything. You just choose which strategies match your comfort level, and the systems take it from there.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">No. The algorithms handle trade execution. You choose which strategies match your risk tolerance — conservative, balanced, or aggressive — and the technology does the rest. You decide which strategies to run and how much capital to allocate.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">How is this different from a robo-advisor?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Robo-advisors are mostly just index funds with automatic rebalancing — a digital version of the same old strategy. Vector is fundamentally different. Our technology actively responds to market conditions in real time, particularly around volatility. It's not a set-it-and-forget-it model — it's an active, modern approach.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Robo-advisors are mostly index funds with automatic rebalancing — a digital wrapper on the same 60/40 strategy. Vector's quantitative strategies actively respond to market conditions in real time, particularly around volatility. These are institutional-grade algorithms, the kind typically reserved for hedge fund clients, not a set-it-and-forget-it index wrapper.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Is my capital at risk?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Yes — all investing involves risk, including potential loss of principal. That's true here and it's true with any approach. The difference is our technology has built-in risk controls that respond automatically. But no system can eliminate market risk entirely. Past performance does not guarantee future results.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Yes. All trading involves risk, including potential loss of principal. That's true with any investment approach. Vector's strategies include built-in risk controls — position limits, stop-losses, drawdown protection — but no system eliminates market risk entirely. Past performance does not guarantee future results. Only allocate capital you can afford to lose.</div></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Who is Max?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Max spent over a decade inside hedge funds, where the wealthiest investors pay millions for access to this kind of technology. He started Vector Capital because he believed everyday investors deserved better than the traditional approach — and he'd seen firsthand that the technology to deliver it already existed.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Who is Maxwell Hines?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Maxwell Hines is the founder of Vector Capital. He managed fixed income portfolios at AllianceBernstein and holds a Series 63 license. At AB, he saw firsthand how institutional clients accessed quantitative strategies that delivered better risk-adjusted returns than anything available to individual investors. He started Vector to make that same caliber of technology accessible to everyone, with full transparency and professional oversight.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Where does my money go?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Nowhere. Your money stays in your own account at a US-regulated brokerage, in your name. Vector connects via API to execute trades based on the strategies you've selected. We never hold, transfer, or have withdrawal access to your funds. You can revoke API access at any time.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">What are the fees?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Transparent and straightforward. No hidden charges, no percentage-of-assets fees that grow as your account does (unlike the traditional model where you pay more as you succeed more). Schedule a consultation for current pricing details.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Vector charges a flat subscription fee — not a percentage of your assets. Your fee doesn't grow as your account grows. No AUM percentage, no performance fees, no hidden charges, no exit fees. Specific pricing is discussed during your consultation with Max. Standard brokerage commissions through your brokerage still apply separately.</div></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Can I see performance history?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Absolutely. Full transparency is the whole point. You get access to historical performance data and live trading activity through your dashboard — anytime, not just when someone decides to send you a report.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Can I see performance data before I commit?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Yes. Full backtesting methodology, historical performance data, and risk metrics are reviewed during your consultation. Once onboarded, your dashboard shows live trading activity, positions, and performance — available anytime, not just when someone decides to send you a report.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Can I disconnect at any time?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="faq-a"><div class="faq-a-inner">Yes. No lock-ups, no exit fees, no penalties. Revoke Vector's API access from your brokerage at any time. Your money stays in your account. Your positions remain as-is. It's your account — you're always in control.</div></div>
                 </div>
             </div>
         </div>
@@ -1965,39 +2082,33 @@
         <div class="max-card">
             <div class="max-content">
                 <p class="kicker">Meet the Founder</p>
-                <h2>He saw what the wealthy have access to. Then he opened the door.</h2>
-                <p class="body">Max spent years inside hedge funds, where the wealthiest investors pay millions for access to technology that everyday investors don't even know exists. He saw the gap between what's available to the few and what's offered to everyone else. Vector Capital is his way of closing it.</p>
+                <h2>Fixed income portfolio management at AllianceBernstein. Then he opened the door for everyone else.</h2>
+                <p class="body">Max managed fixed income portfolios at AllianceBernstein, where institutional clients paid millions for access to quantitative strategies that individual investors never saw. The technology delivered better risk-adjusted returns. It just wasn't available outside the gates. Vector Capital is his answer to that gap.</p>
                 <div class="max-quote-block">
-                    <p>"The technology to do better has existed for years. It was just locked behind hedge fund gates. I kept asking — why should your approach to the market be stuck in the '90s just because you're not a billionaire?"</p>
-                    <span class="attr">— Max, Founder</span>
+                    <p>"At AB, I managed fixed income strategies for institutional clients using the same quantitative approach that individual investors couldn't access at any price. The technology works. The only question was: why should access depend on your net worth?"</p>
+                    <span class="attr">— Maxwell Hines, Founder</span>
                 </div>
                 <div class="max-badges">
-                    <span class="max-badge">Former Hedge Fund Professional</span>
-                    <span class="max-badge">10+ Years Institutional</span>
-                    <span class="max-badge">Built for Everyday Investors</span>
+                    <span class="max-badge">Former AB Fixed Income PM</span>
+                    <span class="max-badge">Series 63 Licensed</span>
+                    <span class="max-badge">Aspiring Chess GM</span>
                 </div>
             </div>
-            <div class="max-image">Max's Photo</div>
+            <div class="max-image">Maxwell Hines's Photo</div>
         </div>
     </section>
 
     <!-- FINAL CTA -->
     <section class="final-cta" id="get-started">
-        <h2>Your money deserves a modern approach</h2>
-        <div class="proof">
-            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &nbsp; 1,200+ investors have already switched
+        <h2>See the data. Ask the hard questions. Decide for yourself.</h2>
+        <p class="sub">Schedule a consultation with Maxwell Hines. Review strategy performance, understand the risk controls, and decide if Vector Capital fits your goals.</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn-white" style="font-size:16px;padding:16px 32px;">Schedule a Consultation</a>
         </div>
-        <div class="cta-cards">
-            <div class="cta-card-quote">
-                <blockquote>"I spent years feeling like something was off with my approach but didn't know what the alternative was. Vector was it. The transparency alone made me wonder why I waited so long."</blockquote>
-                <div class="attr">
-                    <div class="av">JB</div>
-                    <div><div class="name">Jason B.</div><div class="role">Portfolio Manager</div></div>
-                </div>
-            </div>
-            <div class="cta-card-gradient">
-                <a href="#" class="btn-white" style="font-size:16px;padding:16px 32px;">Schedule a consultation</a>
-            </div>
+        <div class="cta-badges">
+            <span>Former AB Fixed Income PM</span>
+            <span>Series 63 Licensed</span>
+            <span>Your Account, Your Control</span>
         </div>
     </section>
 
@@ -2008,9 +2119,9 @@
                 <h4>Platform</h4>
                 <ul>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#algorithms">Strategies</a></li>
-                    <li><a href="#get-started">Performance</a></li>
-                    <li><a href="#get-started">Schedule a Consultation</a></li>
+                    <li><a href="#strategies">Strategies</a></li>
+                    <li><a href="#performance">Performance</a></li>
+                    <li><a href="#fees">Fees</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -2019,7 +2130,6 @@
                     <li><a href="#max">About Max</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -2031,10 +2141,10 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Support</h4>
+                <h4>Contact</h4>
                 <ul>
                     <li><a href="#">hello@vectorcapital.com</a></li>
-                    <li><a href="#">Schedule a Call</a></li>
+                    <li><a href="#get-started">Schedule a Consultation</a></li>
                 </ul>
             </div>
         </div>
@@ -2053,7 +2163,7 @@
             </div>
         </div>
         <div class="footer-disclaimer">
-            <strong>Risk Disclosure:</strong> All trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Vector Capital provides automated trading technology and does not provide financial, investment, or tax advice. You should carefully consider your investment objectives, level of experience, and risk appetite before using our services. Only risk capital you can afford to lose should be used for trading.
+            <strong>Important Disclosures:</strong> Vector Capital provides quantitative trading technology and algorithmic portfolio strategies. Vector Capital does not provide personalized financial advice, investment management, or act as a fiduciary. All investment decisions are made by you, the account owner. Maxwell Hines oversees strategy design and operation as a Series 63 licensed professional. All trading involves substantial risk of loss and is not suitable for all investors. Past performance, whether backtested or live, is not indicative of future results. Your capital is held in your own account at a US-regulated brokerage; Vector Capital does not hold, manage, or have withdrawal access to client funds. You should carefully consider your investment objectives, level of experience, and risk appetite before using these strategies. Only risk capital you can afford to lose should be used for trading.
         </div>
     </footer>
 
