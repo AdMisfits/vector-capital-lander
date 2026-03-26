@@ -464,7 +464,6 @@
             padding: 32px;
             border-radius: 16px;
             background: var(--off-white);
-            border: 1px solid var(--gray-200);
         }
 
         .explainer-card .num {
@@ -533,14 +532,13 @@
             max-width: var(--max-width);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
 
         .strategy-card-detail {
             border-radius: 16px;
             padding: 36px;
-            border: 1px solid var(--gray-200);
             background: var(--white);
         }
 
@@ -613,7 +611,6 @@
             max-width: var(--max-width);
             margin: 0 auto;
             background: var(--off-white);
-            border: 1px solid var(--gray-200);
             border-radius: 20px;
             padding: 48px;
             overflow-x: auto;
@@ -826,13 +823,12 @@
 
         .feature-card {
             background: var(--white);
-            border: 1px solid var(--gray-200);
             border-radius: 14px;
             padding: 32px;
             transition: all 0.2s;
         }
 
-        .feature-card:hover { border-color: var(--gray-300); }
+        .feature-card:hover { opacity: 0.85; }
 
         .feature-icon {
             width: 48px;
@@ -945,7 +941,6 @@
 
         .fee-card-old {
             background: var(--off-white);
-            border: 1px solid var(--gray-200);
         }
 
         .fee-card-new {
@@ -1030,7 +1025,6 @@
 
         .dd-card {
             background: var(--white);
-            border: 1px solid var(--gray-200);
             border-radius: 14px;
             padding: 32px;
         }
@@ -1604,9 +1598,8 @@
                 <h3>2022 Market Drawdown</h3>
                 <!-- PLACEHOLDER: Replace bracketed values with verified performance data -->
                 <div class="product-stat"><span class="label">S&amp;P 500</span><span class="value" style="color:#ef4444">-25.4%</span></div>
-                <div class="product-stat"><span class="label">Strategy Alpha</span><span class="value" style="color:#10b981">-[X.X]%</span></div>
-                <div class="product-stat"><span class="label">Strategy Beta</span><span class="value" style="color:#10b981">-[X.X]%</span></div>
-                <div class="product-stat"><span class="label">Strategy Gamma</span><span class="value" style="color:#f59e0b">-[X.X]%</span></div>
+                <div class="product-stat"><span class="label">Equities Strategy</span><span class="value" style="color:#10b981">-[X.X]%</span></div>
+                <div class="product-stat"><span class="label">Futures Strategy</span><span class="value" style="color:#10b981">-[X.X]%</span></div>
             </div>
         </div>
         <div class="hero-card hero-card-photo">Maxwell Hines's Photo</div>
@@ -1688,40 +1681,30 @@
     <!-- STRATEGY DETAIL SECTION -->
     <section class="strategy-section" id="strategies">
         <div class="strategy-header">
-            <p class="kicker">Three strategies. Three risk profiles.</p>
+            <p class="kicker">Two strategies. Two markets.</p>
             <h2>You choose what matches your goals</h2>
-            <p>Each strategy targets a different balance of growth and downside protection. Run one or combine them. You're the decision-maker.</p>
+            <p>Each strategy targets a different market and risk profile. Run one or both. You're the decision-maker.</p>
         </div>
         <div class="strategy-grid">
             <div class="strategy-card-detail">
-                <div class="strategy-name">Strategy Alpha</div>
-                <div class="strategy-risk">Conservative</div>
-                <div class="risk-bar"><div class="risk-bar-fill risk-low"></div></div>
-                <p class="strategy-desc">Market-neutral approach using statistical arbitrage across US equities. Designed for capital preservation with steady, consistent returns and minimal correlation to broad market swings.</p>
-                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Market-neutral, statistical arbitrage</span></div>
-                <div class="strategy-detail-row"><span class="label">Asset classes</span><span class="value">US equities</span></div>
-                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Low</span></div>
-                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Capital preservation</span></div>
-            </div>
-            <div class="strategy-card-detail">
-                <div class="strategy-name">Strategy Beta</div>
-                <div class="strategy-risk">Balanced</div>
+                <div class="strategy-name">Equities Strategy</div>
+                <div class="strategy-risk">Multi-stock portfolio</div>
                 <div class="risk-bar"><div class="risk-bar-fill risk-moderate"></div></div>
-                <p class="strategy-desc">Quantitative long/short equity strategy targeting growth while actively managing drawdowns. Aims to capture the majority of market upside while limiting exposure during downturns.</p>
-                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Quantitative long/short</span></div>
-                <div class="strategy-detail-row"><span class="label">Asset classes</span><span class="value">US equities, ETFs</span></div>
+                <p class="strategy-desc">Quantitative strategy that trades a diversified basket of US stocks. Algorithmic selection and position sizing based on market conditions, momentum signals, and risk parameters.</p>
+                <div class="strategy-detail-row"><span class="label">What it trades</span><span class="value">US equities (diversified basket)</span></div>
+                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Quantitative stock selection</span></div>
                 <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Moderate</span></div>
-                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Growth + downside management</span></div>
+                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Broad equity exposure with active management</span></div>
             </div>
             <div class="strategy-card-detail">
-                <div class="strategy-name">Strategy Gamma</div>
-                <div class="strategy-risk">Aggressive</div>
+                <div class="strategy-name">Futures Strategy</div>
+                <div class="strategy-risk">Nasdaq futures</div>
                 <div class="risk-bar"><div class="risk-bar-fill risk-high"></div></div>
-                <p class="strategy-desc">Volatility-focused strategy designed to capitalize on market swings in both directions. Higher return potential with correspondingly higher risk. Built for investors with longer time horizons.</p>
-                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Volatility-harvesting, multi-directional</span></div>
-                <div class="strategy-detail-row"><span class="label">Asset classes</span><span class="value">US equities, options, VIX</span></div>
-                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Variable</span></div>
-                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Maximum growth potential</span></div>
+                <p class="strategy-desc">Algorithmic strategy focused on Nasdaq futures. Designed to capture directional moves in the index with built-in risk controls and systematic entry/exit rules.</p>
+                <div class="strategy-detail-row"><span class="label">What it trades</span><span class="value">Nasdaq futures (NQ)</span></div>
+                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Directional futures trading</span></div>
+                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Higher</span></div>
+                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Growth-oriented, higher risk tolerance</span></div>
             </div>
         </div>
     </section>
@@ -1736,9 +1719,8 @@
                 <thead>
                     <tr>
                         <th>Metric</th>
-                        <th>Strategy Alpha</th>
-                        <th>Strategy Beta</th>
-                        <th>Strategy Gamma</th>
+                        <th>Equities Strategy</th>
+                        <th>Futures Strategy</th>
                         <th>S&amp;P 500</th>
                     </tr>
                 </thead>
@@ -1748,19 +1730,16 @@
                         <td>Total Return</td>
                         <td class="placeholder">[XX.X%]</td>
                         <td class="placeholder">[XX.X%]</td>
-                        <td class="placeholder">[XX.X%]</td>
                         <td>[XX.X%]</td>
                     </tr>
                     <tr>
                         <td>Max Drawdown</td>
                         <td class="placeholder">[-X.X%]</td>
                         <td class="placeholder">[-X.X%]</td>
-                        <td class="placeholder">[-XX.X%]</td>
                         <td class="negative">-25.4%</td>
                     </tr>
                     <tr>
                         <td>Sharpe Ratio</td>
-                        <td class="placeholder">[X.XX]</td>
                         <td class="placeholder">[X.XX]</td>
                         <td class="placeholder">[X.XX]</td>
                         <td>[X.XX]</td>
@@ -1769,12 +1748,10 @@
                         <td>Recovery Time</td>
                         <td class="placeholder">[X months]</td>
                         <td class="placeholder">[X months]</td>
-                        <td class="placeholder">[X months]</td>
                         <td>[XX months]</td>
                     </tr>
                     <tr>
                         <td>Win Rate</td>
-                        <td class="placeholder">[XX%]</td>
                         <td class="placeholder">[XX%]</td>
                         <td class="placeholder">[XX%]</td>
                         <td>&mdash;</td>
@@ -2009,7 +1986,7 @@
                     <div class="timeline-dot timeline-dot-outline"></div>
                     <div class="timeline-step">Step 2</div>
                     <div class="timeline-title">Choose your strategies</div>
-                    <div class="timeline-desc">Select Alpha, Beta, Gamma, or any combination based on your risk tolerance and goals. Conservative, balanced, aggressive — your call.</div>
+                    <div class="timeline-desc">Select the Equities strategy, the Futures strategy, or both — based on your risk tolerance and goals. Your call.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-outline"></div>
@@ -2032,7 +2009,7 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Do I need trading experience?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">No. The algorithms handle trade execution. You choose which strategies match your risk tolerance — conservative, balanced, or aggressive — and the technology does the rest. You decide which strategies to run and how much capital to allocate.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">No. The algorithms handle trade execution. You choose which strategies match your goals — equities, futures, or both — and the technology does the rest. You decide which strategies to run and how much capital to allocate.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">How is this different from a robo-advisor?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
