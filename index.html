@@ -204,6 +204,8 @@
             padding: 8px;
         }
 
+        .mobile-cta { display: none; }
+
         /* ========================
            HERO
            ======================== */
@@ -1509,8 +1511,43 @@
            RESPONSIVE
            ======================== */
         @media (max-width: 900px) {
-            .nav-links { display: none; }
+            /* NAV: mobile slide-down menu */
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                border-bottom: 1px solid var(--gray-200);
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            .nav-links.show { display: flex; }
+            .nav-links li { padding: 0; }
+            .nav-links a {
+                display: block;
+                padding: 14px 20px;
+                font-size: 16px;
+            }
+            .nav-links a:hover { background: var(--gray-100); }
+            .nav-cta { display: none; }
             .mobile-toggle { display: block; }
+            .mobile-cta { display: block; }
+            .mobile-cta a {
+                margin: 8px 20px 12px;
+                display: block;
+                background: var(--black);
+                color: var(--white) !important;
+                text-align: center;
+                padding: 14px 20px;
+                border-radius: 100px;
+                font-weight: 600;
+            }
+
+            /* GRIDS → single column */
             .hero-cards { grid-template-columns: 1fr; }
             .hero-card { min-height: 300px; }
             .trust-grid { grid-template-columns: 1fr; }
@@ -1531,15 +1568,46 @@
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
             .footer-bottom-left { flex-direction: column; }
+
+            /* SPACING: tighter padding on mobile */
             .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .final-cta, .footer { padding-left: 20px; padding-right: 20px; }
             .hero-cards { padding: 0 20px 80px; }
             .nav-inner { padding: 0 20px; }
             .perf-inner { padding: 24px; }
+            .max-content { padding: 40px 24px; }
+            .comparison-col { padding: 36px 24px; }
+
+            /* HERO: stack buttons, smaller text */
+            .hero { padding: 48px 20px 40px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-buttons .btn-black,
+            .hero-buttons .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
+
+            /* SUPPORT BAR: stack on mobile */
+            .support-bar-inner { border-radius: 16px; flex-direction: column; text-align: center; padding: 24px; }
+
+            /* TICKER: smaller text */
+            .ticker-item { font-size: 24px; padding: 0 24px; }
         }
 
         @media (max-width: 600px) {
             .footer-grid { grid-template-columns: 1fr; }
             .hero-proof { flex-direction: column; gap: 4px; }
+            .hero h1 { font-size: 32px; }
+            .hero-sub { font-size: 16px; }
+            .banner { font-size: 13px; padding: 10px 16px; }
+            .nav-inner { height: 60px; }
+            .nav-links { top: 60px; }
+            .nav-logo { font-size: 17px; }
+            .nav-logo img { width: 20px; height: 20px; }
+            .trust-header h2, .fee-header h2, .dd-header h2, .comparison-header h2, .strategy-header h2 { font-size: 28px; }
+            .explainer-inner h2, .timeline-left h2 { font-size: 28px; }
+            .faq h2 { font-size: 32px; }
+            .final-cta h2 { font-size: 28px; }
+            .max-content h2 { font-size: 24px; }
+            .features-header h2 { font-size: 28px; }
+            .hero-card { min-height: 240px; }
+            .hero-card-quote blockquote { font-size: 18px; }
         }
     </style>
 </head>
@@ -1562,6 +1630,7 @@
                 <li><a href="#strategies">Strategies</a></li>
                 <li><a href="#max">About Max</a></li>
                 <li><a href="#faq">FAQ</a></li>
+                <li class="mobile-cta"><a href="#get-started">Schedule a Consultation</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#get-started" class="btn-black">Schedule a Consultation</a>
@@ -2147,6 +2216,12 @@
                 answer.style.maxHeight = answer.scrollHeight + 'px';
             }
         }
+
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('show');
+            });
+        });
 
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', function(e) {
