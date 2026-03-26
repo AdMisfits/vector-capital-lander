@@ -266,7 +266,7 @@
         .hero-cards {
             max-width: var(--max-width);
             margin: 60px auto 0;
-            padding: 0 40px;
+            padding: 0 40px 80px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 12px;
@@ -613,7 +613,7 @@
            PERFORMANCE DATA SECTION
            ======================== */
         .perf-section {
-            padding: 0 40px 80px;
+            padding: 80px 40px;
         }
 
         .perf-inner {
@@ -1285,7 +1285,7 @@
            MAX SECTION (dark card)
            ======================== */
         .max-section {
-            padding: 0 40px 100px;
+            padding: 100px 40px;
         }
 
         .max-card {
@@ -1427,6 +1427,7 @@
            ======================== */
         .footer {
             background: var(--black);
+            border-top: 1px solid var(--gray-800);
             padding: 60px 40px 32px;
         }
 
@@ -1550,7 +1551,8 @@
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
             .footer-bottom-left { flex-direction: column; }
             .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .final-cta, .footer { padding-left: 20px; padding-right: 20px; }
-            .hero-cards, .nav-inner { padding: 0 20px; }
+            .hero-cards { padding: 0 20px 80px; }
+            .nav-inner { padding: 0 20px; }
             .perf-inner { padding: 24px; }
         }
 
@@ -1571,7 +1573,7 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,3 21,19 3,19"/></svg></div>
+                <div class="icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 0L24 12L12 24L0 12Z M8 8L5 12L12 19L19 12L16 8L12 12Z"/></svg></div>
                 Vector Capital
             </a>
             <ul class="nav-links">
@@ -2151,7 +2153,7 @@
         <div class="footer-bottom">
             <div class="footer-bottom-left">
                 <div class="footer-logo-sm">
-                    <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,3 21,19 3,19"/></svg></div>
+                    <div class="icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 0L24 12L12 24L0 12Z M8 8L5 12L12 19L19 12L16 8L12 12Z"/></svg></div>
                     Vector Capital
                 </div>
                 <span class="footer-copy">&copy; 2026 Vector Capital by Vector Algorithmics</span>
