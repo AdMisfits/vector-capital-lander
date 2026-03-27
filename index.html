@@ -1769,56 +1769,22 @@
         </div>
     </section>
 
-    <!-- PERFORMANCE DATA -->
+    <!-- PERFORMANCE WIDGET -->
     <section class="perf-section" id="performance">
-        <div class="perf-inner">
-            <h3>Risk-Adjusted Performance</h3>
-            <!-- PLACEHOLDER: Change to perf-badge-live and update date range when using verified live data -->
-            <span class="perf-badge perf-badge-backtest">Backtested &middot; [Start Date] &ndash; [End Date]</span>
-            <table class="perf-table">
-                <thead>
-                    <tr>
-                        <th>Metric</th>
-                        <th>Equities Strategy</th>
-                        <th>Futures Strategy</th>
-                        <th>S&amp;P 500</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- PLACEHOLDER: Replace all bracketed values with verified data before publishing -->
-                    <tr>
-                        <td>Total Return</td>
-                        <td class="placeholder">[XX.X%]</td>
-                        <td class="placeholder">[XX.X%]</td>
-                        <td>[XX.X%]</td>
-                    </tr>
-                    <tr>
-                        <td>Max Drawdown</td>
-                        <td class="placeholder">[-X.X%]</td>
-                        <td class="placeholder">[-X.X%]</td>
-                        <td class="negative">-25.4%</td>
-                    </tr>
-                    <tr>
-                        <td>Sharpe Ratio</td>
-                        <td class="placeholder">[X.XX]</td>
-                        <td class="placeholder">[X.XX]</td>
-                        <td>[X.XX]</td>
-                    </tr>
-                    <tr>
-                        <td>Recovery Time</td>
-                        <td class="placeholder">[X months]</td>
-                        <td class="placeholder">[X months]</td>
-                        <td>[XX months]</td>
-                    </tr>
-                    <tr>
-                        <td>Win Rate</td>
-                        <td class="placeholder">[XX%]</td>
-                        <td class="placeholder">[XX%]</td>
-                        <td>&mdash;</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="perf-note">Past performance, whether backtested or live, does not guarantee future results. All trading involves risk, including potential loss of principal. Backtested results are hypothetical and subject to inherent limitations. Full methodology documentation available upon request during your consultation.</p>
+        <div class="perf-inner" style="background: #131722; padding: 48px 40px;">
+            <div style="text-align: center; margin-bottom: 32px;">
+                <p style="font-size: 14px; color: var(--gray-400); margin-bottom: 16px;">Live Performance</p>
+                <h3 style="font-size: clamp(28px, 3.5vw, 44px); color: var(--white); letter-spacing: -0.02em; margin-bottom: 12px;">See the technology in action</h3>
+                <p style="font-size: 15px; color: var(--gray-500); max-width: 500px; margin: 0 auto;">Real strategies. Real data. Not a backtest — this is what's actually happening.</p>
+            </div>
+            <iframe
+                src="https://ais-pre-5vufwuur3tffssyu4ol4fe-48571280145.asia-east1.run.app/?widget=true&strategies=AMZN_1H,S%26P%20500%20(SPY)&colors=ff9900,e41a1c&range=1Y&bg=131722"
+                width="100%"
+                height="500px"
+                frameborder="0"
+                style="border-radius: 8px; overflow: hidden;"
+            ></iframe>
+            <p class="perf-note" style="color: var(--gray-500);">Past performance, whether backtested or live, does not guarantee future results. All trading involves risk, including potential loss of principal.</p>
         </div>
     </section>
 
