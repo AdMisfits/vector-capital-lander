@@ -680,6 +680,30 @@
             line-height: 1.6;
         }
 
+        .range-btn {
+            background: transparent;
+            border: 1px solid var(--gray-700);
+            color: var(--gray-400);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .range-btn:hover {
+            border-color: var(--gray-500);
+            color: var(--white);
+        }
+
+        .range-btn.active {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
         /* ========================
            COMPARISON (VS)
            ======================== */
@@ -1585,7 +1609,9 @@
             .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .final-cta, .footer { padding-left: 20px; padding-right: 20px; }
             .hero-cards { padding: 0 20px 80px; }
             .nav-inner { padding: 0 20px; }
-            .perf-inner { padding: 24px; }
+            .perf-inner { padding: 24px 12px !important; }
+            #perf-widget { height: 400px !important; }
+            .range-btn { padding: 6px 12px; font-size: 12px; }
             .max-content { padding: 40px 24px; }
             .comparison-col { padding: 36px 24px; }
 
@@ -1775,8 +1801,17 @@
                 <h3 style="font-size: clamp(28px, 3.5vw, 44px); color: var(--white); letter-spacing: -0.02em; margin-bottom: 12px;">See the technology in action</h3>
                 <p style="font-size: 15px; color: var(--gray-500); max-width: 500px; margin: 0 auto;">Real strategies. Real data. Not a backtest — this is what's actually happening.</p>
             </div>
+            <div class="perf-range-tabs" style="display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;">
+                <button class="range-btn active" data-range="1M">1M</button>
+                <button class="range-btn" data-range="3M">3M</button>
+                <button class="range-btn" data-range="6M">6M</button>
+                <button class="range-btn" data-range="YTD">YTD</button>
+                <button class="range-btn" data-range="1Y">1Y</button>
+                <button class="range-btn" data-range="All">All</button>
+            </div>
             <iframe
-                src="https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Grass%20Fed%20Prime%20Beef%20Futures,Multi_Strat,AAPL_1H,TSLA_1H,NVDA_1H,AMZN_1H,PLTR_1H&benchmarks=S%26P%20500%20(SPY)&colors=8d6e63,26a69a,e2e8f0,f781bf,76b900,ff9900,4a4e59&range=All&bg=131722"
+                id="perf-widget"
+                src="https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Grass%20Fed%20Prime%20Beef%20Futures,Multi_Strat,AAPL_1H,TSLA_1H,NVDA_1H,AMZN_1H,PLTR_1H&benchmarks=S%26P%20500%20(SPY)&colors=8d6e63,26a69a,e2e8f0,f781bf,76b900,ff9900,4a4e59&range=1M&bg=131722"
                 width="100%"
                 height="550px"
                 frameborder="0"
@@ -2174,6 +2209,16 @@
                 answer.style.maxHeight = answer.scrollHeight + 'px';
             }
         }
+
+        // Performance widget range switcher
+        const baseUrl = 'https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Grass%20Fed%20Prime%20Beef%20Futures,Multi_Strat,AAPL_1H,TSLA_1H,NVDA_1H,AMZN_1H,PLTR_1H&benchmarks=S%26P%20500%20(SPY)&colors=8d6e63,26a69a,e2e8f0,f781bf,76b900,ff9900,4a4e59&bg=131722&range=';
+        document.querySelectorAll('.range-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('perf-widget').src = baseUrl + this.dataset.range;
+            });
+        });
 
         document.querySelectorAll('.nav-links a').forEach(a => {
             a.addEventListener('click', function() {
