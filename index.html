@@ -704,6 +704,30 @@
             border-color: var(--white);
         }
 
+        .strat-btn {
+            background: transparent;
+            border: 1px solid var(--gray-700);
+            color: var(--gray-400);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .strat-btn:hover {
+            border-color: var(--gray-500);
+            color: var(--white);
+        }
+
+        .strat-btn.active {
+            background: var(--gray-800);
+            border-color: var(--gray-500);
+            color: var(--white);
+        }
+
         /* ========================
            COMPARISON (VS)
            ======================== */
@@ -1611,7 +1635,7 @@
             .nav-inner { padding: 0 20px; }
             .perf-inner { padding: 24px 12px !important; }
             #perf-widget { height: 400px !important; }
-            .range-btn { padding: 6px 12px; font-size: 12px; }
+            .range-btn, .strat-btn { padding: 6px 12px; font-size: 12px; }
             .max-content { padding: 40px 24px; }
             .comparison-col { padding: 36px 24px; }
 
@@ -1798,8 +1822,17 @@
         <div class="perf-inner" style="background: #131722; padding: 48px 40px;">
             <div style="text-align: center; margin-bottom: 32px;">
                 <p style="font-size: 14px; color: var(--gray-400); margin-bottom: 16px;">Live Performance</p>
-                <h3 style="font-size: clamp(28px, 3.5vw, 44px); color: var(--white); letter-spacing: -0.02em; margin-bottom: 12px;">See the technology in action</h3>
-                <p style="font-size: 15px; color: var(--gray-500); max-width: 500px; margin: 0 auto;">Real strategies. Real data. Not a backtest — this is what's actually happening.</p>
+                <h3 style="font-size: clamp(28px, 3.5vw, 44px); color: var(--white); letter-spacing: -0.02em; margin-bottom: 12px;">See how we stack up</h3>
+                <p style="font-size: 15px; color: var(--gray-500); max-width: 500px; margin: 0 auto;">Our Multi-Strategy vs the S&P 500. Add more strategies to compare.</p>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;">
+                <button class="strat-btn active" data-strat="Multi_Strat" data-color="26a69a">Multi-Strategy</button>
+                <button class="strat-btn" data-strat="AAPL_1H" data-color="e2e8f0">AAPL</button>
+                <button class="strat-btn" data-strat="TSLA_1H" data-color="f781bf">TSLA</button>
+                <button class="strat-btn" data-strat="NVDA_1H" data-color="76b900">NVDA</button>
+                <button class="strat-btn" data-strat="AMZN_1H" data-color="ff9900">AMZN</button>
+                <button class="strat-btn" data-strat="PLTR_1H" data-color="4a4e59">PLTR</button>
+                <button class="strat-btn" data-strat="Grass%20Fed%20Prime%20Beef%20Futures" data-color="8d6e63">Beef Futures</button>
             </div>
             <div class="perf-range-tabs" style="display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;">
                 <button class="range-btn active" data-range="1M">1M</button>
@@ -1811,7 +1844,7 @@
             </div>
             <iframe
                 id="perf-widget"
-                src="https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Grass%20Fed%20Prime%20Beef%20Futures,Multi_Strat,AAPL_1H,TSLA_1H,NVDA_1H,AMZN_1H,PLTR_1H&benchmarks=S%26P%20500%20(SPY)&colors=8d6e63,26a69a,e2e8f0,f781bf,76b900,ff9900,4a4e59&range=1M&bg=131722"
+                src="https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Multi_Strat&benchmarks=S%26P%20500%20(SPY)&colors=26a69a&range=1M&bg=131722"
                 width="100%"
                 height="550px"
                 frameborder="0"
@@ -2210,13 +2243,38 @@
             }
         }
 
-        // Performance widget range switcher
-        const baseUrl = 'https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Grass%20Fed%20Prime%20Beef%20Futures,Multi_Strat,AAPL_1H,TSLA_1H,NVDA_1H,AMZN_1H,PLTR_1H&benchmarks=S%26P%20500%20(SPY)&colors=8d6e63,26a69a,e2e8f0,f781bf,76b900,ff9900,4a4e59&bg=131722&range=';
+        // Performance widget controls
+        function updateWidget() {
+            const active = document.querySelectorAll('.strat-btn.active');
+            const strats = [];
+            const colors = [];
+            active.forEach(b => { strats.push(b.dataset.strat); colors.push(b.dataset.color); });
+            if (strats.length === 0) return;
+            const range = document.querySelector('.range-btn.active').dataset.range;
+            const url = 'https://fyntrak-348113805849.us-west1.run.app/?widget=true'
+                + '&strategies=' + strats.join(',')
+                + '&benchmarks=S%26P%20500%20(SPY)'
+                + '&colors=' + colors.join(',')
+                + '&bg=131722&range=' + range;
+            document.getElementById('perf-widget').src = url;
+        }
+
+        document.querySelectorAll('.strat-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                if (document.querySelectorAll('.strat-btn.active').length === 0) {
+                    this.classList.add('active');
+                    return;
+                }
+                updateWidget();
+            });
+        });
+
         document.querySelectorAll('.range-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-                document.getElementById('perf-widget').src = baseUrl + this.dataset.range;
+                updateWidget();
             });
         });
 
