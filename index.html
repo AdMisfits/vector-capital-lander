@@ -1633,7 +1633,8 @@
             .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .final-cta, .footer { padding-left: 20px; padding-right: 20px; }
             .hero-cards { padding: 0 20px 80px; }
             .nav-inner { padding: 0 20px; }
-            .perf-inner { padding: 24px 12px !important; }
+            .perf-section { padding: 40px 0 !important; }
+            .perf-inner { padding: 24px 8px !important; border-radius: 0 !important; }
             #perf-widget { height: 400px !important; }
             .range-btn, .strat-btn { padding: 6px 12px; font-size: 12px; }
             .max-content { padding: 40px 24px; }
@@ -1834,14 +1835,6 @@
                 <button class="strat-btn" data-strat="AMZN_1H" data-color="ff9900">AMZN</button>
                 <button class="strat-btn" data-strat="PLTR_1H" data-color="4a4e59">PLTR</button>
             </div>
-            <div class="perf-range-tabs" style="display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;">
-                <button class="range-btn active" data-range="1M">1M</button>
-                <button class="range-btn" data-range="3M">3M</button>
-                <button class="range-btn" data-range="6M">6M</button>
-                <button class="range-btn" data-range="YTD">YTD</button>
-                <button class="range-btn" data-range="1Y">1Y</button>
-                <button class="range-btn" data-range="All">All</button>
-            </div>
             <iframe
                 id="perf-widget"
                 src="https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Grass%20Fed%20Prime%20Beef%20Futures&benchmarks=S%26P%20500%20(SPY)&colors=8d6e63&range=1M&bg=131722"
@@ -1852,6 +1845,14 @@
                 style="display: block; border: none; border-radius: 8px;"
                 title="Vector Capital Performance"
             ></iframe>
+            <div class="perf-range-tabs" style="display: flex; justify-content: center; gap: 8px; margin-top: 24px; flex-wrap: wrap;">
+                <button class="range-btn active" data-range="1M">1M</button>
+                <button class="range-btn" data-range="3M">3M</button>
+                <button class="range-btn" data-range="6M">6M</button>
+                <button class="range-btn" data-range="YTD">YTD</button>
+                <button class="range-btn" data-range="1Y">1Y</button>
+                <button class="range-btn" data-range="All">All</button>
+            </div>
             <p class="perf-note" style="color: var(--gray-500);">Past performance, whether backtested or live, does not guarantee future results. All trading involves risk, including potential loss of principal.</p>
         </div>
     </section>
