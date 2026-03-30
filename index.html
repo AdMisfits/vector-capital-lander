@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vector Capital — Algorithmic Portfolio Strategies</title>
-    <meta name="description" content="Institutional-grade algorithmic strategies designed for risk-adjusted returns. Former AllianceBernstein Fixed Income Portfolio Manager oversight. Your brokerage account, your control.">
+    <meta name="description" content="Institutional-grade algorithmic strategies designed for risk-adjusted returns. 10+ years market experience, 7 years inside major institutions. Your brokerage account, your control.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1416,13 +1416,13 @@
         /* ========================
            FINAL CTA (dark bg)
            ======================== */
-        .final-cta {
+        .smart-capture-section {
             background: var(--black);
             padding: 100px 40px 60px;
             text-align: center;
         }
 
-        .final-cta h2 {
+        .smart-capture-section h2 {
             font-size: clamp(32px, 5vw, 60px);
             font-weight: 500;
             letter-spacing: -0.02em;
@@ -1432,7 +1432,7 @@
             margin: 0 auto 16px;
         }
 
-        .final-cta .sub {
+        .smart-capture-section .sub {
             font-size: 16px;
             color: var(--gray-400);
             max-width: 600px;
@@ -1440,14 +1440,14 @@
             line-height: 1.6;
         }
 
-        .final-cta .cta-buttons {
+        .smart-capture-section .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
         }
 
-        .final-cta .cta-badges {
+        .smart-capture-section .cta-badges {
             margin-top: 32px;
             display: flex;
             justify-content: center;
@@ -1455,7 +1455,7 @@
             flex-wrap: wrap;
         }
 
-        .final-cta .cta-badges span {
+        .smart-capture-section .cta-badges span {
             font-size: 13px;
             color: var(--gray-500);
         }
@@ -1630,7 +1630,7 @@
             .footer-bottom-left { flex-direction: column; }
 
             /* SPACING: tighter padding on mobile */
-            .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .final-cta, .footer { padding-left: 20px; padding-right: 20px; }
+            .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .smart-capture-section, .footer { padding-left: 20px; padding-right: 20px; }
             .hero-cards { padding: 0 20px 80px; }
             .nav-inner { padding: 0 20px; }
             .perf-section { padding: 40px 0 !important; }
@@ -1666,20 +1666,687 @@
             .trust-header h2, .fee-header h2, .dd-header h2, .comparison-header h2, .strategy-header h2 { font-size: 28px; }
             .explainer-inner h2, .timeline-left h2 { font-size: 28px; }
             .faq h2 { font-size: 32px; }
-            .final-cta h2 { font-size: 28px; }
+            .smart-capture-section h2 { font-size: 28px; }
             .max-content h2 { font-size: 24px; }
             .features-header h2 { font-size: 28px; }
             .hero-card { min-height: 240px; }
             .hero-card-quote blockquote { font-size: 18px; }
+        }
+
+        /* ========================
+           SMART CAPTURE EMBED
+           ======================== */
+        .smart-capture-section {
+            background: var(--black);
+            padding: 100px 40px 60px;
+            text-align: center;
+        }
+
+        .smart-capture-header h2 {
+            font-size: clamp(32px, 5vw, 60px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            color: var(--white);
+            max-width: 700px;
+            margin: 0 auto 16px;
+        }
+
+        .smart-capture-header .sub {
+            font-size: 16px;
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .smart-capture-section .cta-badges {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .smart-capture-section .cta-badges span {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* Smart capture widget scoped styles */
+        .smart-capture-section .page-shell {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .smart-capture-section .capture-layout {
+            flex: 1;
+            width: min(100%, 960px);
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .smart-capture-section .capture-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 0 24px;
+        }
+
+        .smart-capture-section .step-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-500);
+            transition: color 0.2s;
+        }
+
+        .smart-capture-section .step-pill::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray-600);
+            transition: background 0.2s;
+        }
+
+        .smart-capture-section .step-pill.active { color: var(--white); }
+        .smart-capture-section .step-pill.active::before { background: var(--white); }
+
+        .smart-capture-section .topbar-badge { display: none; }
+
+        .smart-capture-section .capture-card {
+            display: grid;
+            grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+            border: 1px solid var(--gray-700);
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .smart-capture-section .form-panel {
+            padding: 32px 28px 28px;
+            border-right: 1px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            background: var(--white);
+        }
+
+        .smart-capture-section .panel-header {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .smart-capture-section .eyebrow { display: none; }
+
+        .smart-capture-section .step-meta {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 500;
+            color: #86868b;
+        }
+
+        .smart-capture-section .panel-title {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            color: #1d1d1f;
+        }
+
+        .smart-capture-section .panel-description {
+            margin: 0;
+            font-size: 15px;
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+
+        .smart-capture-section .panel-body {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-height: 280px;
+        }
+
+        .smart-capture-section .lead-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .smart-capture-section .field-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .smart-capture-section .field-label-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .smart-capture-section .field-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #6e6e73;
+        }
+
+        .smart-capture-section .field-hint {
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        .smart-capture-section .text-input,
+        .smart-capture-section .select-input,
+        .smart-capture-section .textarea-input {
+            width: 100%;
+            padding: 11px 14px;
+            font-size: 15px;
+            border: 1.5px solid #dadce0;
+            border-radius: 10px;
+            background: var(--white);
+            color: #1d1d1f;
+            outline: none;
+            transition: border-color 0.15s;
+            font-family: inherit;
+        }
+
+        .smart-capture-section .text-input::placeholder,
+        .smart-capture-section .textarea-input::placeholder { color: #c0c0c5; }
+
+        .smart-capture-section .text-input:focus,
+        .smart-capture-section .select-input:focus,
+        .smart-capture-section .textarea-input:focus { border-color: #0071e3; }
+
+        .smart-capture-section .text-input.invalid,
+        .smart-capture-section .select-input.invalid,
+        .smart-capture-section .textarea-input.invalid,
+        .smart-capture-section .choice-card.invalid { border-color: #ff3b30; }
+
+        .smart-capture-section .textarea-input { min-height: 100px; resize: vertical; }
+
+        .smart-capture-section .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .smart-capture-section .choice-card {
+            position: relative;
+            border: 1.5px solid #dadce0;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 12px 13px;
+            transition: border-color 0.15s, background 0.15s;
+            cursor: pointer;
+        }
+
+        .smart-capture-section .choice-card:hover { border-color: #b0b0b6; }
+
+        .smart-capture-section .choice-card.checked {
+            border-color: #1d1d1f;
+            background: #fafafa;
+        }
+
+        .smart-capture-section .choice-card input { position: absolute; opacity: 0; pointer-events: none; }
+
+        .smart-capture-section .choice-title {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #1d1d1f;
+        }
+
+        .smart-capture-section .choice-description {
+            display: block;
+            margin-top: 2px;
+            font-size: 12px;
+            color: #86868b;
+            line-height: 1.4;
+        }
+
+        .smart-capture-section .field-error {
+            color: #ff3b30;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .smart-capture-section .field-error:empty { display: none; }
+
+        .smart-capture-section .field-note {
+            margin: 0;
+            font-size: 12px;
+            color: #86868b;
+            line-height: 1.5;
+        }
+
+        .smart-capture-section .field-note a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+
+        .smart-capture-section .field-note a:hover { text-decoration: underline; }
+
+        .smart-capture-section .panel-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .smart-capture-section .button {
+            border: none;
+            border-radius: 10px;
+            padding: 13px 18px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s, transform 0.1s;
+            font-family: inherit;
+        }
+
+        .smart-capture-section .button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .smart-capture-section .button-primary {
+            flex: 1;
+            background: #1d1d1f;
+            color: #fff;
+        }
+
+        .smart-capture-section .button-primary:hover:not(:disabled) { background: #333; }
+
+        .smart-capture-section .button-secondary {
+            flex: 0 0 auto;
+            background: #fafafa;
+            color: #1d1d1f;
+            border: 1px solid #dadce0;
+        }
+
+        .smart-capture-section .button-secondary:hover:not(:disabled) { background: #f0f0f2; }
+
+        .smart-capture-section .status-message {
+            margin: 0;
+            font-size: 13px;
+            color: #86868b;
+        }
+
+        /* Result states */
+        .smart-capture-section .result-shell {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .smart-capture-section .result-state {
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid #dadce0;
+            background: #fafafa;
+        }
+
+        .smart-capture-section .result-state.success {
+            border-color: #c6f0d0;
+            background: #e8f8ed;
+        }
+
+        .smart-capture-section .result-state.failure {
+            border-color: #ffd4d4;
+            background: #fff2f2;
+        }
+
+        .smart-capture-section .result-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .smart-capture-section .result-icon.success { background: #c6f0d0; color: #1a7d35; }
+        .smart-capture-section .result-icon.failure { background: #ffd4d4; color: #c0392b; }
+
+        .smart-capture-section .result-title {
+            margin: 0 0 6px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+        }
+
+        .smart-capture-section .result-copy {
+            margin: 0;
+            color: #6e6e73;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .smart-capture-section .summary-card,
+        .smart-capture-section .highlight-card {
+            border: 1px solid #dadce0;
+            border-radius: 10px;
+            padding: 14px;
+            background: var(--white);
+        }
+
+        .smart-capture-section .summary-heading,
+        .smart-capture-section .highlight-heading {
+            margin: 0 0 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6e6e73;
+        }
+
+        .smart-capture-section .summary-list { display: grid; gap: 10px; }
+
+        .smart-capture-section .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f2;
+        }
+
+        .smart-capture-section .summary-row:last-child { padding-bottom: 0; border-bottom: none; }
+
+        .smart-capture-section .summary-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .smart-capture-section .summary-value {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: right;
+            max-width: 60%;
+            color: #1d1d1f;
+        }
+
+        .smart-capture-section .highlight-grid { display: grid; gap: 10px; }
+
+        .smart-capture-section .highlight-title {
+            margin: 0 0 3px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .smart-capture-section .highlight-copy {
+            margin: 0;
+            font-size: 13px;
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+
+        /* Calendar panel */
+        .smart-capture-section .calendar-panel {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+            position: relative;
+            background: var(--white);
+        }
+
+        .smart-capture-section .calendar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid #dadce0;
+            background: #fafafa;
+        }
+
+        .smart-capture-section .calendar-kicker {
+            margin: 0;
+            font-size: 13px;
+            color: #86868b;
+        }
+
+        .smart-capture-section .calendar-kicker strong {
+            color: #6e6e73;
+            font-weight: 500;
+        }
+
+        .smart-capture-section .calendar-title {
+            margin: 0;
+            font-size: 13px;
+            color: #0071e3;
+            text-decoration: none;
+        }
+
+        .smart-capture-section .calendar-note { display: none; }
+
+        .smart-capture-section .calendar-frame-wrap {
+            position: relative;
+            flex: 1;
+            min-height: 550px;
+        }
+
+        .smart-capture-section .calendar-frame {
+            width: 100%;
+            min-height: 550px;
+            border: none;
+            display: block;
+            background: var(--white);
+        }
+
+        .smart-capture-section .calendar-frame:not([hidden]) {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        .smart-capture-section .calendar-frame[hidden] {
+            display: none !important;
+        }
+
+        .smart-capture-section .calendar-placeholder,
+        .smart-capture-section .calendar-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            z-index: 2;
+        }
+
+        .smart-capture-section .calendar-placeholder {
+            background: #fafafa;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 14px;
+            z-index: 3;
+        }
+
+        .smart-capture-section .calendar-placeholder[hidden] {
+            display: none;
+        }
+
+        .smart-capture-section .calendar-overlay {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(1px);
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .smart-capture-section .calendar-overlay.unlocked {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .smart-capture-section .overlay-card {
+            max-width: 280px;
+            border-radius: 12px;
+            background: var(--white);
+            border: 1px solid #dadce0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 18px;
+            text-align: center;
+        }
+
+        .smart-capture-section .overlay-title {
+            margin: 0 0 6px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .smart-capture-section .overlay-copy {
+            margin: 0;
+            color: #6e6e73;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .smart-capture-section .page-footer {
+            padding: 16px 24px;
+            text-align: center;
+        }
+
+        .smart-capture-section .legal-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .smart-capture-section .legal-links a {
+            font-size: 12px;
+            color: var(--gray-400);
+            text-decoration: none;
+        }
+
+        .smart-capture-section .legal-links a:hover { text-decoration: underline; }
+
+        /* Qualified state: hide form, full-width calendar */
+        body[data-capture-state="qualified"] .smart-capture-section .form-panel {
+            display: none;
+        }
+
+        body[data-capture-state="qualified"] .smart-capture-section .capture-card {
+            grid-template-columns: 1fr;
+        }
+
+        body[data-capture-state="qualified"] .smart-capture-section .calendar-panel,
+        body[data-capture-state="qualified"] .smart-capture-section .calendar-frame-wrap {
+            min-height: auto !important;
+            height: auto !important;
+            flex: none;
+        }
+
+        body[data-capture-state="qualified"] .smart-capture-section .calendar-frame {
+            min-height: 800px !important;
+            height: auto !important;
+        }
+
+        body[data-capture-state="qualified"] .smart-capture-section .capture-card {
+            height: auto;
+            min-height: auto;
+        }
+
+        /* Tablet: stack */
+        @media (max-width: 860px) {
+            .smart-capture-section .capture-card {
+                grid-template-columns: 1fr;
+            }
+
+            .smart-capture-section .form-panel {
+                border-right: none;
+                border-bottom: 1px solid #dadce0;
+            }
+
+            .smart-capture-section .calendar-panel { min-height: auto; }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .smart-capture-section { padding: 60px 20px 40px; }
+
+            .smart-capture-section .capture-topbar {
+                padding: 0 0 16px;
+                gap: 16px;
+            }
+
+            .smart-capture-section .step-pill { font-size: 13px; }
+
+            .smart-capture-section .capture-card {
+                border-radius: 10px;
+            }
+
+            .smart-capture-section .form-panel {
+                padding: 20px 16px 18px;
+                gap: 16px;
+            }
+
+            .smart-capture-section .panel-header { gap: 4px; }
+            .smart-capture-section .panel-title { font-size: 20px; }
+            .smart-capture-section .panel-description { font-size: 14px; }
+
+            .smart-capture-section .panel-body {
+                min-height: unset;
+                gap: 12px;
+            }
+
+            .smart-capture-section .lead-form { gap: 10px; }
+            .smart-capture-section .field-wrap { gap: 4px; }
+
+            .smart-capture-section .text-input,
+            .smart-capture-section .select-input,
+            .smart-capture-section .textarea-input {
+                padding: 11px 12px;
+                font-size: 15px;
+            }
+
+            .smart-capture-section .choice-grid {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .smart-capture-section .choice-card { padding: 11px 12px; }
+
+            .smart-capture-section .button {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+
+            .smart-capture-section .calendar-header {
+                padding: 12px 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .smart-capture-section .summary-row { flex-direction: column; }
+            .smart-capture-section .summary-value { max-width: 100%; text-align: left; }
+            .smart-capture-section .result-title { font-size: 16px; }
+            .smart-capture-section .result-copy { font-size: 13px; }
         }
     </style>
 </head>
 <body>
 
     <!-- ANNOUNCEMENT BANNER -->
-    <div class="banner">
-        <strong>Now accepting new clients</strong> — Schedule a consultation with our team.
-    </div>
+    <a href="#get-started" class="banner" style="display:block;text-decoration:none;cursor:pointer;">
+        <strong>Now accepting new clients</strong> — Book a free strategy session &rarr;
+    </a>
 
     <!-- NAVBAR -->
     <nav class="nav">
@@ -1707,8 +2374,8 @@
     <!-- HERO -->
     <section class="hero">
         <p class="hero-kicker">Algorithmic Portfolio Strategies</p>
-        <h1>A modern alternative to traditional advisory</h1>
-        <p class="hero-sub">Institutional-grade algorithmic strategies, designed and overseen by Maxwell Hines, former Fixed Income Portfolio Manager at AllianceBernstein. Your money stays in your own brokerage account. No leverage. No lock-ups. Full transparency.</p>
+        <h1>Stop paying 1% for strategies that underperform the algorithm</h1>
+        <p class="hero-sub">Institutional-grade algorithmic strategies that adapt in real time — designed and overseen by Maxwell Hines, with 10+ years in the markets and 7 years inside major institutions. Your money stays in your own brokerage account. No leverage. No lock-ups. Full transparency.</p>
         <div class="hero-buttons">
             <a href="#get-started" class="btn-black">Schedule a Consultation</a>
             <a href="#performance" class="btn-outline">See the Data</a>
@@ -1716,7 +2383,7 @@
         <div class="hero-proof">
             <span>Series 63 Licensed</span>
             <span class="sep">&middot;</span>
-            <span>Former AB Fixed Income PM</span>
+            <span>10+ Years Market Experience</span>
             <span class="sep">&middot;</span>
             <span>Your Account, Your Control</span>
         </div>
@@ -1743,7 +2410,7 @@
             <div class="trust-item">
                 <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                 <h3>Licensed professional oversight</h3>
-                <p>Every strategy is overseen by Maxwell Hines, Series 63 licensed, former Fixed Income Portfolio Manager at AllianceBernstein.</p>
+                <p>Every strategy is overseen by Maxwell Hines — Series 63 licensed, with 10+ years of market experience and 7 years inside major institutions including AllianceBernstein.</p>
             </div>
             <div class="trust-item">
                 <div class="trust-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -1815,6 +2482,9 @@
                 <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Higher</span></div>
                 <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Growth-oriented, higher risk tolerance</span></div>
             </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+            <a href="#get-started" class="btn-black" style="font-size:15px;padding:14px 28px;">Book a Free Strategy Session</a>
         </div>
     </section>
 
@@ -1901,7 +2571,7 @@
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Decision Making</div>
-                    <div class="row-value">Human emotion + outdated models</div>
+                    <div class="row-value">Human emotion &amp; herd mentality</div>
                 </div>
                 <div class="comparison-row">
                     <div class="row-label">Volatility</div>
@@ -1990,6 +2660,9 @@
             </div>
         </div>
         <p class="fee-bottom-note">Standard brokerage commissions and regulatory fees through your brokerage still apply. These are not Vector Capital charges.</p>
+        <div style="text-align:center;margin-top:32px;">
+            <a href="#get-started" class="btn-black" style="font-size:15px;padding:14px 28px;">See Exact Pricing in Your Consultation</a>
+        </div>
     </section>
 
     <!-- DUE DILIGENCE (replaces testimonials) -->
@@ -2002,7 +2675,7 @@
             <div class="dd-card">
                 <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
                 <h3>Verify Max's credentials</h3>
-                <p>Look up <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener" style="text-decoration:underline;color:var(--black);">Maxwell Hines on LinkedIn</a> and FINRA BrokerCheck. His AllianceBernstein fixed income PM background and Series 63 licensure are public record.</p>
+                <p>Look up <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener" style="text-decoration:underline;color:var(--black);">Maxwell Hines on LinkedIn</a> and FINRA BrokerCheck. His 10+ years of market experience, institutional background, and Series 63 licensure are public record.</p>
             </div>
             <div class="dd-card">
                 <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -2063,14 +2736,14 @@
         <div class="max-card">
             <div class="max-content">
                 <p class="kicker">Meet the Founder</p>
-                <h2>Fixed income portfolio management at AllianceBernstein. Then he opened the door for everyone else.</h2>
-                <p class="body">Max managed fixed income portfolios at AllianceBernstein, where institutional clients paid millions for access to algorithmic strategies that individual investors never saw. The technology delivered better risk-adjusted returns. It just wasn't available outside the gates. Vector Capital is his answer to that gap.</p>
+                <h2>10+ years in the markets. 7 years inside major institutions. Then he opened the door for everyone else.</h2>
+                <p class="body">With over a decade of market experience and seven years inside major institutions including AllianceBernstein, Max saw firsthand how sophisticated strategies delivered better risk-adjusted returns — but were gatekept for the ultra-wealthy. Vector Capital is his answer to that gap.</p>
                 <div class="max-quote-block">
-                    <p>"At AB, I managed fixed income strategies for institutional clients using the same algorithmic approach that individual investors couldn't access at any price. The technology works. The only question was: why should access depend on your net worth?"</p>
+                    <p>"As a former financial advisor and portfolio manager, I know exactly how the math works when advisors charge 1% per year, and over time, it compounds more in their favor than yours. That never sat right with me. I also know the strategies that sophisticated institutions use to build real wealth, but they're gatekept for the ultra-wealthy. That didn't sit right with me either. So I asked a simple question: why can't everyday investors access institutional-grade strategies without being ultra wealthy or surrendering 1% of their wealth every single year? That's exactly what we've built with Vector Capital."</p>
                     <span class="attr">— Maxwell Hines, Founder</span>
                 </div>
                 <div class="max-badges">
-                    <span class="max-badge">Former AB Fixed Income PM</span>
+                    <span class="max-badge">10+ Years Market Experience</span>
                     <span class="max-badge">Series 63 Licensed</span>
                     <span class="max-badge">Aspiring Chess GM</span>
                     <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener" class="max-badge" style="background:var(--gray-700);cursor:pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gray-300)" style="flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
@@ -2122,7 +2795,7 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">What exactly is Vector Capital?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Vector Capital provides algorithmic portfolio strategies — algorithmic systems that analyze market conditions and execute trades based on data. You connect your own brokerage account, choose your strategies, and the algorithms handle execution. Maxwell Hines, former Fixed Income Portfolio Manager at AllianceBernstein and Series 63 licensee, oversees every strategy. You retain full ownership and control of your account at all times.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Vector Capital provides algorithmic portfolio strategies — algorithmic systems that analyze market conditions and execute trades based on data. You connect your own brokerage account, choose your strategies, and the algorithms handle execution. Maxwell Hines, with 10+ years of market experience and 7 years inside major institutions, Series 63 licensee, oversees every strategy. You retain full ownership and control of your account at all times.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Do I need trading experience?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -2138,7 +2811,7 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Who is Maxwell Hines?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Maxwell Hines is the founder of Vector Capital. He managed fixed income portfolios at AllianceBernstein and holds a Series 63 license. At AB, he saw firsthand how institutional clients accessed algorithmic strategies that delivered better risk-adjusted returns than anything available to individual investors. He started Vector to make that same caliber of technology accessible to everyone, with full transparency and professional oversight.</div></div>
+                    <div class="faq-a"><div class="faq-a-inner">Maxwell Hines is the founder of Vector Capital. With 10+ years of market experience and 7 years inside major institutions including AllianceBernstein, he holds a Series 63 license. He saw firsthand how institutional clients accessed algorithmic strategies that delivered better risk-adjusted returns than anything available to individual investors. He started Vector to make that same caliber of technology accessible to everyone, with full transparency and professional oversight.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)">Where does my money go?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -2160,15 +2833,82 @@
         </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="final-cta" id="get-started">
-        <h2>See the data. Ask the hard questions. Decide for yourself.</h2>
-        <p class="sub">Schedule a consultation with our team. Review strategy performance, understand the risk controls, and decide if Vector Capital fits your goals.</p>
-        <div class="cta-buttons">
-            <a href="#" class="btn-white" style="font-size:16px;padding:16px 32px;">Schedule a Consultation</a>
+    <!-- SMART CAPTURE: FORM + CALENDAR -->
+    <section class="smart-capture-section" id="get-started">
+        <div class="smart-capture-header">
+            <h2>See the data. Ask the hard questions. Decide for yourself.</h2>
+            <p class="sub">Book a free strategy session — review live performance data, understand the risk controls, and see exactly how Vector would handle your capital. No obligation, no sales pitch.</p>
         </div>
+        <div class="page-shell" id="smartCaptureShell">
+            <main class="capture-layout">
+                <section class="capture-topbar">
+                    <div class="topbar-badge" id="brandBadge">Smart lead capture</div>
+                    <div class="step-pills" style="display:contents">
+                        <div class="step-pill active" id="stepPillForm">Fill out the form</div>
+                        <div class="step-pill" id="stepPillBooking">Book your event</div>
+                    </div>
+                </section>
+
+                <section class="capture-card">
+                    <section class="form-panel">
+                        <div class="panel-header">
+                            <p class="eyebrow" id="panelEyebrow">Lead screen</p>
+                            <p class="step-meta" id="stepMeta">Step 1 of 2</p>
+                            <h1 class="panel-title" id="panelTitle">Book a Strategy Session</h1>
+                            <p class="panel-description" id="panelDescription">One focused call to see exactly how our all-weather approach would treat your capital.</p>
+                        </div>
+
+                        <div class="panel-body" id="panelBody"></div>
+
+                        <div class="panel-actions">
+                            <button class="button button-secondary" type="button" id="secondaryAction" hidden>Back</button>
+                            <button class="button button-primary" type="button" id="primaryAction">Continue</button>
+                        </div>
+
+                        <p class="status-message" id="statusMessage" hidden></p>
+                    </section>
+
+                    <aside class="calendar-panel" id="calendarPanel">
+                        <div class="calendar-header">
+                            <div>
+                                <p class="calendar-kicker" id="calendarKicker">Times shown in <strong data-user-timezone>your timezone</strong></p>
+                                <h2 class="calendar-title" id="calendarTitle" style="display:none">Your booking page</h2>
+                            </div>
+                            <p class="calendar-note" id="calendarNote">Complete the intake to unlock the calendar.</p>
+                        </div>
+
+                        <div class="calendar-frame-wrap">
+                            <div class="calendar-overlay" id="calendarOverlay">
+                                <div class="overlay-card">
+                                    <p class="overlay-title" id="calendarOverlayTitle">Please fill out the form before choosing your time slot.</p>
+                                    <p class="overlay-copy" id="calendarOverlayCopy"></p>
+                                </div>
+                            </div>
+
+                            <div class="calendar-placeholder" id="calendarPlaceholder" hidden>
+                                <p id="calendarPlaceholderText">Add your GHL booking URL in <code>config.js</code> to render the calendar here.</p>
+                            </div>
+
+                            <iframe
+                                class="calendar-frame"
+                                id="bookingFrame"
+                                title="Book your event"
+                                loading="lazy"
+                                scrolling="auto"
+                                src="about:blank"
+                            ></iframe>
+                        </div>
+                    </aside>
+                </section>
+            </main>
+
+            <footer class="page-footer" id="smartCaptureFooter">
+                <nav class="legal-links" id="legalLinks"></nav>
+            </footer>
+        </div>
+
         <div class="cta-badges">
-            <span>Former AB Fixed Income PM</span>
+            <span>10+ Years Market Experience</span>
             <span>Series 63 Licensed</span>
             <span>Your Account, Your Control</span>
         </div>
@@ -2298,5 +3038,24 @@
             });
         });
     </script>
+
+    <!-- Smart Capture: Supabase + Config + App -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Timezone detection for smart capture
+        (function() {
+            try {
+                var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                var el = document.querySelector('[data-user-timezone]');
+                if (el && tz) {
+                    el.textContent = tz.replace(/_/g, ' ').replace(/\//g, ' / ');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+    <!-- GHL form embed script for calendar -->
+    <script src="https://links.vectoralgorithmics.io/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
