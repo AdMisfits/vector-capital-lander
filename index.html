@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vector Capital — Algorithmic Portfolio Strategies</title>
-    <meta name="description" content="Institutional-grade algorithmic strategies designed for risk-adjusted returns. 10+ years market experience, 7 years inside major institutions. Your brokerage account, your control.">
+    <meta name="description"
+        content="Institutional-grade algorithmic strategies designed for risk-adjusted returns. 10+ years market experience, 7 years inside major institutions. Your brokerage account, your control.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-N2V7G684');</script>
+    <!-- End Google Tag Manager -->
     <style>
         @font-face {
             font-family: 'Geist';
@@ -16,6 +28,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'Geist';
             src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
@@ -23,6 +36,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'Geist';
             src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
@@ -30,6 +44,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'Geist';
             src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Bold.woff2') format('woff2');
@@ -38,7 +53,13 @@
             font-display: swap;
         }
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         :root {
             --white: #ffffff;
@@ -57,7 +78,9 @@
             --max-width: 1200px;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -68,8 +91,15 @@
             overflow-x: hidden;
         }
 
-        a { color: inherit; text-decoration: none; }
-        button { cursor: pointer; font-family: inherit; }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+        }
 
         .container {
             max-width: var(--max-width);
@@ -88,7 +118,10 @@
             color: var(--gray-600);
             border-bottom: 1px solid var(--gray-200);
         }
-        .banner strong { color: var(--black); }
+
+        .banner strong {
+            color: var(--black);
+        }
 
         /* ========================
            NAVBAR
@@ -138,7 +171,9 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--black); }
+        .nav-links a:hover {
+            color: var(--black);
+        }
 
         .nav-cta {
             display: flex;
@@ -161,7 +196,9 @@
             transition: all 0.2s;
         }
 
-        .btn-black:hover { background: var(--gray-800); }
+        .btn-black:hover {
+            background: var(--gray-800);
+        }
 
         .btn-outline {
             display: inline-flex;
@@ -178,7 +215,9 @@
             transition: all 0.2s;
         }
 
-        .btn-outline:hover { border-color: var(--black); }
+        .btn-outline:hover {
+            border-color: var(--black);
+        }
 
         .btn-white {
             display: inline-flex;
@@ -195,7 +234,9 @@
             transition: all 0.2s;
         }
 
-        .btn-white:hover { background: var(--gray-100); }
+        .btn-white:hover {
+            background: var(--gray-100);
+        }
 
         .mobile-toggle {
             display: none;
@@ -204,7 +245,9 @@
             padding: 8px;
         }
 
-        .mobile-cta { display: none; }
+        .mobile-cta {
+            display: none;
+        }
 
         /* ========================
            HERO
@@ -253,7 +296,9 @@
             color: var(--gray-400);
         }
 
-        .hero-proof .sep { color: var(--gray-300); }
+        .hero-proof .sep {
+            color: var(--gray-300);
+        }
 
         /* ========================
            HERO CARDS (3-column bento)
@@ -292,7 +337,7 @@
 
         .hero-card-product .product-label {
             font-size: 14px;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 16px;
         }
 
@@ -317,10 +362,17 @@
             font-size: 14px;
         }
 
-        .product-stat:last-child { border-bottom: none; }
+        .product-stat:last-child {
+            border-bottom: none;
+        }
 
-        .product-stat .label { color: var(--gray-500); }
-        .product-stat .value { font-weight: 600; }
+        .product-stat .label {
+            color: var(--gray-500);
+        }
+
+        .product-stat .value {
+            font-weight: 600;
+        }
 
         .hero-card-quote {
             background: var(--black);
@@ -342,8 +394,13 @@
             font-size: 13px;
         }
 
-        .hero-card-quote .attribution .name { color: var(--white); }
-        .hero-card-quote .attribution .role { color: var(--gray-400); }
+        .hero-card-quote .attribution .name {
+            color: var(--white);
+        }
+
+        .hero-card-quote .attribution .role {
+            color: var(--gray-400);
+        }
 
         /* ========================
            TRUST / SAFETY SECTION
@@ -447,7 +504,7 @@
             margin-right: auto;
         }
 
-        .explainer-inner > p {
+        .explainer-inner>p {
             font-size: 18px;
             color: var(--gray-500);
             line-height: 1.7;
@@ -523,7 +580,7 @@
             margin-bottom: 16px;
         }
 
-        .strategy-header > p {
+        .strategy-header>p {
             font-size: 16px;
             color: var(--gray-500);
             max-width: 600px;
@@ -572,9 +629,20 @@
             border-radius: 2px;
         }
 
-        .risk-low { width: 30%; background: #10b981; }
-        .risk-moderate { width: 58%; background: #f59e0b; }
-        .risk-high { width: 88%; background: #ef4444; }
+        .risk-low {
+            width: 30%;
+            background: #10b981;
+        }
+
+        .risk-moderate {
+            width: 58%;
+            background: #f59e0b;
+        }
+
+        .risk-high {
+            width: 88%;
+            background: #ef4444;
+        }
 
         .strategy-desc {
             font-size: 15px;
@@ -669,9 +737,20 @@
             border-bottom: 1px solid var(--gray-200);
         }
 
-        .perf-table .positive { color: #10b981; font-weight: 600; }
-        .perf-table .negative { color: #ef4444; font-weight: 600; }
-        .perf-table .placeholder { color: var(--gray-400); font-style: italic; }
+        .perf-table .positive {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .perf-table .negative {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .perf-table .placeholder {
+            color: var(--gray-400);
+            font-style: italic;
+        }
 
         .perf-note {
             margin-top: 24px;
@@ -822,7 +901,9 @@
         }
 
         .comparison-col:last-child .comparison-col-title,
-        .comparison-col:last-child .comparison-row { text-align: right; }
+        .comparison-col:last-child .comparison-row {
+            text-align: right;
+        }
 
         .comparison-row {
             padding: 20px 0;
@@ -862,7 +943,9 @@
             line-height: 1.1;
         }
 
-        .features-header h2 span { color: var(--gray-400); }
+        .features-header h2 span {
+            color: var(--gray-400);
+        }
 
         .features-grid {
             max-width: var(--max-width);
@@ -879,7 +962,9 @@
             transition: all 0.2s;
         }
 
-        .feature-card:hover { opacity: 0.85; }
+        .feature-card:hover {
+            opacity: 0.85;
+        }
 
         .feature-icon {
             width: 48px;
@@ -904,7 +989,9 @@
             color: var(--gray-500);
         }
 
-        .feature-card p strong { color: var(--black); }
+        .feature-card p strong {
+            color: var(--black);
+        }
 
         /* ========================
            SUPPORT BAR
@@ -939,9 +1026,20 @@
             color: #fff;
         }
 
-        .support-text { flex: 1; color: var(--white); }
-        .support-text .primary { font-size: 14px; font-weight: 600; }
-        .support-text .secondary { font-size: 13px; color: var(--gray-400); }
+        .support-text {
+            flex: 1;
+            color: var(--white);
+        }
+
+        .support-text .primary {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .support-text .secondary {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
 
         /* ========================
            FEE SECTION
@@ -1005,7 +1103,9 @@
             margin-bottom: 24px;
         }
 
-        .fee-card-new h3 { color: var(--white); }
+        .fee-card-new h3 {
+            color: var(--white);
+        }
 
         .fee-line {
             padding: 14px 0;
@@ -1013,15 +1113,22 @@
             font-size: 15px;
         }
 
-        .fee-card-new .fee-line { border-color: var(--gray-800); }
+        .fee-card-new .fee-line {
+            border-color: var(--gray-800);
+        }
 
         .fee-line .amount {
             font-weight: 600;
             display: block;
         }
 
-        .fee-card-new .fee-line .amount { color: var(--white); }
-        .fee-card-old .fee-line .amount { color: var(--black); }
+        .fee-card-new .fee-line .amount {
+            color: var(--white);
+        }
+
+        .fee-card-old .fee-line .amount {
+            color: var(--black);
+        }
 
         .fee-line .context {
             font-size: 13px;
@@ -1140,8 +1247,13 @@
         }
 
         @keyframes ticker-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* ========================
@@ -1201,7 +1313,9 @@
             padding-bottom: 48px;
         }
 
-        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
 
         .timeline-dot {
             position: absolute;
@@ -1303,7 +1417,9 @@
             transition: transform 0.3s;
         }
 
-        .faq-item.open .faq-q svg { transform: rotate(180deg); }
+        .faq-item.open .faq-q svg {
+            transform: rotate(180deg);
+        }
 
         .faq-a {
             max-height: 0;
@@ -1410,7 +1526,7 @@
             align-items: center;
             justify-content: center;
             font-size: 14px;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         /* ========================
@@ -1497,7 +1613,9 @@
             transition: color 0.2s;
         }
 
-        .footer-col a:hover { color: var(--white); }
+        .footer-col a:hover {
+            color: var(--white);
+        }
 
         .footer-bottom {
             max-width: var(--max-width);
@@ -1545,8 +1663,15 @@
             transition: color 0.2s;
         }
 
-        .footer-socials a:hover { color: var(--white); }
-        .footer-socials svg { width: 18px; height: 18px; fill: currentColor; }
+        .footer-socials a:hover {
+            color: var(--white);
+        }
+
+        .footer-socials svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
 
         .footer-disclaimer {
             max-width: var(--max-width);
@@ -1560,6 +1685,7 @@
            RESPONSIVE
            ======================== */
         @media (max-width: 900px) {
+
             /* NAV: mobile slide-down menu */
             .nav-links {
                 display: none;
@@ -1572,19 +1698,39 @@
                 flex-direction: column;
                 gap: 0;
                 padding: 8px 0;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             }
-            .nav-links.show { display: flex; }
-            .nav-links li { padding: 0; }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 0;
+            }
+
             .nav-links a {
                 display: block;
                 padding: 14px 20px;
                 font-size: 16px;
             }
-            .nav-links a:hover { background: var(--gray-100); }
-            .nav-cta { display: none; }
-            .mobile-toggle { display: block; }
-            .mobile-cta { display: block; }
+
+            .nav-links a:hover {
+                background: var(--gray-100);
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .mobile-cta {
+                display: block;
+            }
+
             .mobile-cta a {
                 margin: 8px 20px 12px;
                 display: block;
@@ -1597,17 +1743,36 @@
             }
 
             /* GRIDS → single column */
-            .hero-cards { grid-template-columns: 1fr; }
-            .hero-card { min-height: 300px; }
-            .trust-grid { grid-template-columns: 1fr; }
-            .explainer-grid { grid-template-columns: 1fr; }
-            .strategy-grid { grid-template-columns: 1fr; }
-            .comparison-table { grid-template-columns: 1fr; }
+            .hero-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                min-height: 300px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .explainer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+
             .comparison-vs {
                 width: 100%;
                 padding: 0;
                 height: auto;
             }
+
             .comparison-vs::before {
                 width: 100%;
                 height: 48px;
@@ -1616,61 +1781,219 @@
                 color: var(--black);
                 font-size: 16px;
             }
-            .comparison-vs::after { display: none; }
+
+            .comparison-vs::after {
+                display: none;
+            }
+
             .comparison-col:last-child .comparison-col-title,
-            .comparison-col:last-child .comparison-row { text-align: left; }
-            .features-grid { grid-template-columns: 1fr; }
-            .fee-compare { grid-template-columns: 1fr; }
-            .dd-grid { grid-template-columns: 1fr; }
-            .timeline-inner { grid-template-columns: 1fr; gap: 48px; }
-            .max-card { grid-template-columns: 1fr; }
-            .max-image { min-height: 300px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-            .footer-bottom-left { flex-direction: column; }
+            .comparison-col:last-child .comparison-row {
+                text-align: left;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fee-compare {
+                grid-template-columns: 1fr;
+            }
+
+            .dd-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .max-card {
+                grid-template-columns: 1fr;
+            }
+
+            .max-image {
+                min-height: 300px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .footer-bottom-left {
+                flex-direction: column;
+            }
 
             /* SPACING: tighter padding on mobile */
-            .container, .hero, .trust-section, .explainer, .strategy-section, .perf-section, .comparison, .features, .fee-section, .dd-section, .timeline-section, .faq, .max-section, .smart-capture-section, .footer { padding-left: 20px; padding-right: 20px; }
-            .hero-cards { padding: 0 20px 80px; }
-            .nav-inner { padding: 0 20px; }
-            .perf-section { padding: 40px 0 !important; }
-            .perf-inner { padding: 24px 8px !important; border-radius: 0 !important; }
-            #perf-widget { height: 400px !important; }
-            .range-btn, .strat-btn { padding: 6px 12px; font-size: 12px; }
-            .max-content { padding: 40px 24px; }
-            .comparison-col { padding: 36px 24px; }
+            .container,
+            .hero,
+            .trust-section,
+            .explainer,
+            .strategy-section,
+            .perf-section,
+            .comparison,
+            .features,
+            .fee-section,
+            .dd-section,
+            .timeline-section,
+            .faq,
+            .max-section,
+            .smart-capture-section,
+            .footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero-cards {
+                padding: 0 20px 80px;
+            }
+
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .perf-section {
+                padding: 40px 0 !important;
+            }
+
+            .perf-inner {
+                padding: 24px 8px !important;
+                border-radius: 0 !important;
+            }
+
+            #perf-widget {
+                height: 400px !important;
+            }
+
+            .range-btn,
+            .strat-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .max-content {
+                padding: 40px 24px;
+            }
+
+            .comparison-col {
+                padding: 36px 24px;
+            }
 
             /* HERO: stack buttons, smaller text */
-            .hero { padding: 48px 20px 40px; }
-            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero {
+                padding: 48px 20px 40px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .hero-buttons .btn-black,
-            .hero-buttons .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
+            .hero-buttons .btn-outline {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+            }
 
             /* SUPPORT BAR: stack on mobile */
-            .support-bar-inner { border-radius: 16px; flex-direction: column; text-align: center; padding: 24px; }
+            .support-bar-inner {
+                border-radius: 16px;
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+            }
 
             /* TICKER: smaller text */
-            .ticker-item { font-size: 24px; padding: 0 24px; }
+            .ticker-item {
+                font-size: 24px;
+                padding: 0 24px;
+            }
         }
 
         @media (max-width: 600px) {
-            .footer-grid { grid-template-columns: 1fr; }
-            .hero-proof { flex-direction: column; gap: 4px; }
-            .hero h1 { font-size: 32px; }
-            .hero-sub { font-size: 16px; }
-            .banner { font-size: 13px; padding: 10px 16px; }
-            .nav-inner { height: 60px; }
-            .nav-links { top: 60px; }
-            .nav-logo { font-size: 17px; }
-            .nav-logo img { width: 20px; height: 20px; }
-            .trust-header h2, .fee-header h2, .dd-header h2, .comparison-header h2, .strategy-header h2 { font-size: 28px; }
-            .explainer-inner h2, .timeline-left h2 { font-size: 28px; }
-            .faq h2 { font-size: 32px; }
-            .smart-capture-section h2 { font-size: 28px; }
-            .max-content h2 { font-size: 24px; }
-            .features-header h2 { font-size: 28px; }
-            .hero-card { min-height: 240px; }
-            .hero-card-quote blockquote { font-size: 18px; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-proof {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-sub {
+                font-size: 16px;
+            }
+
+            .banner {
+                font-size: 13px;
+                padding: 10px 16px;
+            }
+
+            .nav-inner {
+                height: 60px;
+            }
+
+            .nav-links {
+                top: 60px;
+            }
+
+            .nav-logo {
+                font-size: 17px;
+            }
+
+            .nav-logo img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .trust-header h2,
+            .fee-header h2,
+            .dd-header h2,
+            .comparison-header h2,
+            .strategy-header h2 {
+                font-size: 28px;
+            }
+
+            .explainer-inner h2,
+            .timeline-left h2 {
+                font-size: 28px;
+            }
+
+            .faq h2 {
+                font-size: 32px;
+            }
+
+            .smart-capture-section h2 {
+                font-size: 28px;
+            }
+
+            .max-content h2 {
+                font-size: 24px;
+            }
+
+            .features-header h2 {
+                font-size: 28px;
+            }
+
+            .hero-card {
+                min-height: 240px;
+            }
+
+            .hero-card-quote blockquote {
+                font-size: 18px;
+            }
         }
 
         /* ========================
@@ -1755,10 +2078,17 @@
             transition: background 0.2s;
         }
 
-        .smart-capture-section .step-pill.active { color: var(--white); }
-        .smart-capture-section .step-pill.active::before { background: var(--white); }
+        .smart-capture-section .step-pill.active {
+            color: var(--white);
+        }
 
-        .smart-capture-section .topbar-badge { display: none; }
+        .smart-capture-section .step-pill.active::before {
+            background: var(--white);
+        }
+
+        .smart-capture-section .topbar-badge {
+            display: none;
+        }
 
         .smart-capture-section .capture-card {
             display: grid;
@@ -1785,7 +2115,9 @@
             gap: 6px;
         }
 
-        .smart-capture-section .eyebrow { display: none; }
+        .smart-capture-section .eyebrow {
+            display: none;
+        }
 
         .smart-capture-section .step-meta {
             margin: 0;
@@ -1863,18 +2195,27 @@
         }
 
         .smart-capture-section .text-input::placeholder,
-        .smart-capture-section .textarea-input::placeholder { color: #c0c0c5; }
+        .smart-capture-section .textarea-input::placeholder {
+            color: #c0c0c5;
+        }
 
         .smart-capture-section .text-input:focus,
         .smart-capture-section .select-input:focus,
-        .smart-capture-section .textarea-input:focus { border-color: #0071e3; }
+        .smart-capture-section .textarea-input:focus {
+            border-color: #0071e3;
+        }
 
         .smart-capture-section .text-input.invalid,
         .smart-capture-section .select-input.invalid,
         .smart-capture-section .textarea-input.invalid,
-        .smart-capture-section .choice-card.invalid { border-color: #ff3b30; }
+        .smart-capture-section .choice-card.invalid {
+            border-color: #ff3b30;
+        }
 
-        .smart-capture-section .textarea-input { min-height: 100px; resize: vertical; }
+        .smart-capture-section .textarea-input {
+            min-height: 100px;
+            resize: vertical;
+        }
 
         .smart-capture-section .choice-grid {
             display: grid;
@@ -1892,14 +2233,20 @@
             cursor: pointer;
         }
 
-        .smart-capture-section .choice-card:hover { border-color: #b0b0b6; }
+        .smart-capture-section .choice-card:hover {
+            border-color: #b0b0b6;
+        }
 
         .smart-capture-section .choice-card.checked {
             border-color: #1d1d1f;
             background: #fafafa;
         }
 
-        .smart-capture-section .choice-card input { position: absolute; opacity: 0; pointer-events: none; }
+        .smart-capture-section .choice-card input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
 
         .smart-capture-section .choice-title {
             display: block;
@@ -1923,7 +2270,9 @@
             font-weight: 500;
         }
 
-        .smart-capture-section .field-error:empty { display: none; }
+        .smart-capture-section .field-error:empty {
+            display: none;
+        }
 
         .smart-capture-section .field-note {
             margin: 0;
@@ -1937,7 +2286,9 @@
             text-decoration: none;
         }
 
-        .smart-capture-section .field-note a:hover { text-decoration: underline; }
+        .smart-capture-section .field-note a:hover {
+            text-decoration: underline;
+        }
 
         .smart-capture-section .panel-actions {
             display: flex;
@@ -1956,7 +2307,10 @@
             font-family: inherit;
         }
 
-        .smart-capture-section .button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .smart-capture-section .button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
         .smart-capture-section .button-primary {
             flex: 1;
@@ -1964,7 +2318,9 @@
             color: #fff;
         }
 
-        .smart-capture-section .button-primary:hover:not(:disabled) { background: #333; }
+        .smart-capture-section .button-primary:hover:not(:disabled) {
+            background: #333;
+        }
 
         .smart-capture-section .button-secondary {
             flex: 0 0 auto;
@@ -1973,7 +2329,9 @@
             border: 1px solid #dadce0;
         }
 
-        .smart-capture-section .button-secondary:hover:not(:disabled) { background: #f0f0f2; }
+        .smart-capture-section .button-secondary:hover:not(:disabled) {
+            background: #f0f0f2;
+        }
 
         .smart-capture-section .status-message {
             margin: 0;
@@ -2015,8 +2373,15 @@
             margin-bottom: 10px;
         }
 
-        .smart-capture-section .result-icon.success { background: #c6f0d0; color: #1a7d35; }
-        .smart-capture-section .result-icon.failure { background: #ffd4d4; color: #c0392b; }
+        .smart-capture-section .result-icon.success {
+            background: #c6f0d0;
+            color: #1a7d35;
+        }
+
+        .smart-capture-section .result-icon.failure {
+            background: #ffd4d4;
+            color: #c0392b;
+        }
 
         .smart-capture-section .result-title {
             margin: 0 0 6px;
@@ -2049,7 +2414,10 @@
             color: #6e6e73;
         }
 
-        .smart-capture-section .summary-list { display: grid; gap: 10px; }
+        .smart-capture-section .summary-list {
+            display: grid;
+            gap: 10px;
+        }
 
         .smart-capture-section .summary-row {
             display: flex;
@@ -2059,7 +2427,10 @@
             border-bottom: 1px solid #f0f0f2;
         }
 
-        .smart-capture-section .summary-row:last-child { padding-bottom: 0; border-bottom: none; }
+        .smart-capture-section .summary-row:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
 
         .smart-capture-section .summary-label {
             font-size: 12px;
@@ -2077,7 +2448,10 @@
             color: #1d1d1f;
         }
 
-        .smart-capture-section .highlight-grid { display: grid; gap: 10px; }
+        .smart-capture-section .highlight-grid {
+            display: grid;
+            gap: 10px;
+        }
 
         .smart-capture-section .highlight-title {
             margin: 0 0 3px;
@@ -2130,7 +2504,9 @@
             text-decoration: none;
         }
 
-        .smart-capture-section .calendar-note { display: none; }
+        .smart-capture-section .calendar-note {
+            display: none;
+        }
 
         .smart-capture-section .calendar-frame-wrap {
             position: relative;
@@ -2197,7 +2573,7 @@
             border-radius: 12px;
             background: var(--white);
             border: 1px solid #dadce0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             padding: 18px;
             text-align: center;
         }
@@ -2234,7 +2610,9 @@
             text-decoration: none;
         }
 
-        .smart-capture-section .legal-links a:hover { text-decoration: underline; }
+        .smart-capture-section .legal-links a:hover {
+            text-decoration: underline;
+        }
 
         /* Qualified state: hide form, full-width calendar */
         body[data-capture-state="qualified"] .smart-capture-section .form-panel {
@@ -2273,19 +2651,25 @@
                 border-bottom: 1px solid #dadce0;
             }
 
-            .smart-capture-section .calendar-panel { min-height: auto; }
+            .smart-capture-section .calendar-panel {
+                min-height: auto;
+            }
         }
 
         /* Mobile */
         @media (max-width: 600px) {
-            .smart-capture-section { padding: 60px 20px 40px; }
+            .smart-capture-section {
+                padding: 60px 20px 40px;
+            }
 
             .smart-capture-section .capture-topbar {
                 padding: 0 0 16px;
                 gap: 16px;
             }
 
-            .smart-capture-section .step-pill { font-size: 13px; }
+            .smart-capture-section .step-pill {
+                font-size: 13px;
+            }
 
             .smart-capture-section .capture-card {
                 border-radius: 10px;
@@ -2296,17 +2680,30 @@
                 gap: 16px;
             }
 
-            .smart-capture-section .panel-header { gap: 4px; }
-            .smart-capture-section .panel-title { font-size: 20px; }
-            .smart-capture-section .panel-description { font-size: 14px; }
+            .smart-capture-section .panel-header {
+                gap: 4px;
+            }
+
+            .smart-capture-section .panel-title {
+                font-size: 20px;
+            }
+
+            .smart-capture-section .panel-description {
+                font-size: 14px;
+            }
 
             .smart-capture-section .panel-body {
                 min-height: unset;
                 gap: 12px;
             }
 
-            .smart-capture-section .lead-form { gap: 10px; }
-            .smart-capture-section .field-wrap { gap: 4px; }
+            .smart-capture-section .lead-form {
+                gap: 10px;
+            }
+
+            .smart-capture-section .field-wrap {
+                gap: 4px;
+            }
 
             .smart-capture-section .text-input,
             .smart-capture-section .select-input,
@@ -2320,7 +2717,9 @@
                 gap: 6px;
             }
 
-            .smart-capture-section .choice-card { padding: 11px 12px; }
+            .smart-capture-section .choice-card {
+                padding: 11px 12px;
+            }
 
             .smart-capture-section .button {
                 padding: 12px 16px;
@@ -2334,13 +2733,26 @@
                 gap: 4px;
             }
 
-            .smart-capture-section .summary-row { flex-direction: column; }
-            .smart-capture-section .summary-value { max-width: 100%; text-align: left; }
-            .smart-capture-section .result-title { font-size: 16px; }
-            .smart-capture-section .result-copy { font-size: 13px; }
+            .smart-capture-section .summary-row {
+                flex-direction: column;
+            }
+
+            .smart-capture-section .summary-value {
+                max-width: 100%;
+                text-align: left;
+            }
+
+            .smart-capture-section .result-title {
+                font-size: 16px;
+            }
+
+            .smart-capture-section .result-copy {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- ANNOUNCEMENT BANNER -->
@@ -2366,7 +2778,11 @@
                 <a href="#get-started" class="btn-black">Schedule a Consultation</a>
             </div>
             <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
             </button>
         </div>
     </nav>
@@ -2398,34 +2814,57 @@
         </div>
         <div class="trust-grid">
             <div class="trust-item">
-                <div class="trust-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
+                <div class="trust-icon"><svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 9h18" />
+                    </svg></div>
                 <h3>Your own brokerage account</h3>
-                <p>Your capital stays in an account at a US-regulated brokerage — in your name, under your control. Vector never holds your funds.</p>
+                <p>Your capital stays in an account at a US-regulated brokerage — in your name, under your control.
+                    Vector never holds your funds.</p>
             </div>
             <div class="trust-item">
-                <div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+                <div class="trust-icon"><svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+                    </svg></div>
                 <h3>No funds wired to Vector</h3>
-                <p>Your money doesn't move. Vector's technology connects to your brokerage via API. Your funds stay exactly where they are.</p>
+                <p>Your money doesn't move. Vector's technology connects to your brokerage via API. Your funds stay
+                    exactly where they are.</p>
             </div>
             <div class="trust-item">
-                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div class="trust-icon"><svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg></div>
                 <h3>Licensed professional oversight</h3>
-                <p>Every strategy is overseen by Maxwell Hines — Series 63 licensed, with 10+ years of market experience and 7 years inside major institutions including AllianceBernstein.</p>
+                <p>Every strategy is overseen by Maxwell Hines — Series 63 licensed, with 10+ years of market experience
+                    and 7 years inside major institutions including AllianceBernstein.</p>
             </div>
             <div class="trust-item">
-                <div class="trust-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <div class="trust-icon"><svg viewBox="0 0 24 24">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg></div>
                 <h3>No leverage. No margin.</h3>
-                <p>These strategies don't use borrowed money. You're never exposed to more risk than the capital you've chosen to allocate.</p>
+                <p>These strategies don't use borrowed money. You're never exposed to more risk than the capital you've
+                    chosen to allocate.</p>
             </div>
             <div class="trust-item">
-                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <div class="trust-icon"><svg viewBox="0 0 24 24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg></div>
                 <h3>Full transparency</h3>
-                <p>Every trade, every position, every metric — visible in real time on your dashboard. No black boxes. No quarterly surprises.</p>
+                <p>Every trade, every position, every metric — visible in real time on your dashboard. No black boxes.
+                    No quarterly surprises.</p>
             </div>
             <div class="trust-item">
-                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></div>
+                <div class="trust-icon"><svg viewBox="0 0 24 24">
+                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg></div>
                 <h3>Disconnect anytime</h3>
-                <p>No lock-ups. No exit fees. No penalties. Revoke Vector's API access from your brokerage whenever you want. Your money, your decision.</p>
+                <p>No lock-ups. No exit fees. No penalties. Revoke Vector's API access from your brokerage whenever you
+                    want. Your money, your decision.</p>
             </div>
         </div>
     </section>
@@ -2435,22 +2874,30 @@
         <div class="explainer-inner">
             <p class="kicker">What is Vector Capital?</p>
             <h2>Algorithmic portfolios that outperform the advisor playbook</h2>
-            <p>Instead of a human making decisions based on gut feelings and models from the 1990s, Vector's algorithmic strategies analyze market conditions and execute trades based on data. You select your risk level. The technology handles execution. Max oversees everything.</p>
+            <p>Instead of a human making decisions based on gut feelings and models from the 1990s, Vector's algorithmic
+                strategies analyze market conditions and execute trades based on data. You select your risk level. The
+                technology handles execution. Max oversees everything.</p>
             <div class="explainer-grid">
                 <div class="explainer-card">
                     <div class="num">1</div>
                     <h3>Algorithms, not emotions</h3>
-                    <p>Traditional portfolios rely on human judgment — which means human emotion, bias, and limitations. Vector's algorithmic strategies execute consistently, based on data, without the panic selling or rally-chasing that costs most investors real money.</p>
+                    <p>Traditional portfolios rely on human judgment — which means human emotion, bias, and limitations.
+                        Vector's algorithmic strategies execute consistently, based on data, without the panic selling
+                        or rally-chasing that costs most investors real money.</p>
                 </div>
                 <div class="explainer-card">
                     <div class="num">2</div>
                     <h3>Designed for volatility</h3>
-                    <p>Most strategies tell you to "stay the course." Vector's algorithms actively respond to changing conditions — particularly during volatile periods. When markets get choppy, the system adapts. It doesn't wait for a phone call.</p>
+                    <p>Most strategies tell you to "stay the course." Vector's algorithms actively respond to changing
+                        conditions — particularly during volatile periods. When markets get choppy, the system adapts.
+                        It doesn't wait for a phone call.</p>
                 </div>
                 <div class="explainer-card">
                     <div class="num">3</div>
                     <h3>You see everything</h3>
-                    <p>No black box. No quarterly PDF. Your dashboard shows every trade, every position, every metric in real time. This is the transparency traditional wealth management has never offered individual investors.</p>
+                    <p>No black box. No quarterly PDF. Your dashboard shows every trade, every position, every metric in
+                        real time. This is the transparency traditional wealth management has never offered individual
+                        investors.</p>
                 </div>
             </div>
         </div>
@@ -2461,30 +2908,42 @@
         <div class="strategy-header">
             <p class="kicker">Two strategies. Two markets.</p>
             <h2>You choose what matches your goals</h2>
-            <p>Each strategy targets a different market and risk profile. Run one or both. You're the decision-maker.</p>
+            <p>Each strategy targets a different market and risk profile. Run one or both. You're the decision-maker.
+            </p>
         </div>
         <div class="strategy-grid">
             <div class="strategy-card-detail">
                 <div class="strategy-name">Equities Strategy</div>
                 <div class="strategy-risk">Multi-stock portfolio</div>
-                <p class="strategy-desc">Algorithmic strategy that trades a diversified basket of US stocks. Algorithmic selection and position sizing based on market conditions, momentum signals, and risk parameters.</p>
-                <div class="strategy-detail-row"><span class="label">What it trades</span><span class="value">US equities (diversified basket)</span></div>
-                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Algorithmic stock selection</span></div>
-                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Moderate</span></div>
-                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Broad equity exposure with active management</span></div>
+                <p class="strategy-desc">Algorithmic strategy that trades a diversified basket of US stocks. Algorithmic
+                    selection and position sizing based on market conditions, momentum signals, and risk parameters.</p>
+                <div class="strategy-detail-row"><span class="label">What it trades</span><span class="value">US
+                        equities (diversified basket)</span></div>
+                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Algorithmic
+                        stock selection</span></div>
+                <div class="strategy-detail-row"><span class="label">Market correlation</span><span
+                        class="value">Moderate</span></div>
+                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Broad equity
+                        exposure with active management</span></div>
             </div>
             <div class="strategy-card-detail">
                 <div class="strategy-name">Futures Strategy</div>
                 <div class="strategy-risk">Nasdaq futures</div>
-                <p class="strategy-desc">Algorithmic strategy focused on Nasdaq futures. Designed to capture directional moves in the index with built-in risk controls and systematic entry/exit rules.</p>
-                <div class="strategy-detail-row"><span class="label">What it trades</span><span class="value">Nasdaq futures (NQ)</span></div>
-                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Directional futures trading</span></div>
-                <div class="strategy-detail-row"><span class="label">Market correlation</span><span class="value">Higher</span></div>
-                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Growth-oriented, higher risk tolerance</span></div>
+                <p class="strategy-desc">Algorithmic strategy focused on Nasdaq futures. Designed to capture directional
+                    moves in the index with built-in risk controls and systematic entry/exit rules.</p>
+                <div class="strategy-detail-row"><span class="label">What it trades</span><span class="value">Nasdaq
+                        futures (NQ)</span></div>
+                <div class="strategy-detail-row"><span class="label">Approach</span><span class="value">Directional
+                        futures trading</span></div>
+                <div class="strategy-detail-row"><span class="label">Market correlation</span><span
+                        class="value">Higher</span></div>
+                <div class="strategy-detail-row"><span class="label">Best for</span><span class="value">Growth-oriented,
+                        higher risk tolerance</span></div>
             </div>
         </div>
         <div style="text-align:center;margin-top:40px;">
-            <a href="#get-started" class="btn-black" style="font-size:15px;padding:14px 28px;">Book a Free Strategy Session</a>
+            <a href="#get-started" class="btn-black" style="font-size:15px;padding:14px 28px;">Book a Free Strategy
+                Session</a>
         </div>
     </section>
 
@@ -2493,11 +2952,15 @@
         <div class="perf-inner" style="background: #131722; padding: 48px 40px;">
             <div style="text-align: center; margin-bottom: 32px;">
                 <p style="font-size: 14px; color: var(--gray-400); margin-bottom: 16px;">Live Performance</p>
-                <h3 style="font-size: clamp(28px, 3.5vw, 44px); color: var(--white); letter-spacing: -0.02em; margin-bottom: 12px;">See how we stack up</h3>
-                <p style="font-size: 15px; color: var(--gray-500); max-width: 500px; margin: 0 auto;">Our Beef Futures strategy vs the S&P 500. Add more to compare.</p>
+                <h3
+                    style="font-size: clamp(28px, 3.5vw, 44px); color: var(--white); letter-spacing: -0.02em; margin-bottom: 12px;">
+                    See how we stack up</h3>
+                <p style="font-size: 15px; color: var(--gray-500); max-width: 500px; margin: 0 auto;">Our Beef Futures
+                    strategy vs the S&P 500. Add more to compare.</p>
             </div>
             <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;">
-                <button class="strat-btn active" data-strat="Grass%20Fed%20Prime%20Beef%20Futures" data-color="8d6e63">Beef Futures</button>
+                <button class="strat-btn active" data-strat="Grass%20Fed%20Prime%20Beef%20Futures"
+                    data-color="8d6e63">Beef Futures</button>
                 <button class="strat-btn" data-strat="Multi_Strat" data-color="26a69a">Multi-Strategy</button>
                 <button class="strat-btn" data-strat="AAPL_1H" data-color="e2e8f0">AAPL</button>
                 <button class="strat-btn" data-strat="TSLA_1H" data-color="f781bf">TSLA</button>
@@ -2505,17 +2968,12 @@
                 <button class="strat-btn" data-strat="AMZN_1H" data-color="ff9900">AMZN</button>
                 <button class="strat-btn" data-strat="PLTR_1H" data-color="4a4e59">PLTR</button>
             </div>
-            <iframe
-                id="perf-widget"
+            <iframe id="perf-widget"
                 src="https://fyntrak-348113805849.us-west1.run.app/?widget=true&strategies=Grass%20Fed%20Prime%20Beef%20Futures&benchmarks=S%26P%20500%20(SPY)&colors=8d6e63&range=1M&bg=131722"
-                width="100%"
-                height="550px"
-                frameborder="0"
-                scrolling="no"
-                style="display: block; border: none; border-radius: 8px;"
-                title="Vector Capital Performance"
-            ></iframe>
-            <div class="perf-range-tabs" style="display: flex; justify-content: center; gap: 8px; margin-top: 24px; flex-wrap: wrap;">
+                width="100%" height="550px" frameborder="0" scrolling="no"
+                style="display: block; border: none; border-radius: 8px;" title="Vector Capital Performance"></iframe>
+            <div class="perf-range-tabs"
+                style="display: flex; justify-content: center; gap: 8px; margin-top: 24px; flex-wrap: wrap;">
                 <button class="range-btn active" data-range="1M">1M</button>
                 <button class="range-btn" data-range="3M">3M</button>
                 <button class="range-btn" data-range="6M">6M</button>
@@ -2523,7 +2981,8 @@
                 <button class="range-btn" data-range="1Y">1Y</button>
                 <button class="range-btn" data-range="All">All</button>
             </div>
-            <p class="perf-note" style="color: var(--gray-500);">Past performance, whether backtested or live, does not guarantee future results. All trading involves risk, including potential loss of principal.</p>
+            <p class="perf-note" style="color: var(--gray-500);">Past performance, whether backtested or live, does not
+                guarantee future results. All trading involves risk, including potential loss of principal.</p>
         </div>
     </section>
 
@@ -2600,28 +3059,51 @@
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                <p><strong>Real diversification, not cosmetic.</strong> Multiple algorithmic strategies working across different market conditions simultaneously. Not stocks and bonds rearranged to look different.</p>
+                <div class="feature-icon"><svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                            d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                    </svg></div>
+                <p><strong>Real diversification, not cosmetic.</strong> Multiple algorithmic strategies working across
+                    different market conditions simultaneously. Not stocks and bonds rearranged to look different.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                <p><strong>Volatility is built into the strategy.</strong> Most approaches treat market swings as something to endure. Vector's algorithms are designed to adapt during volatile periods — not just survive them.</p>
+                <div class="feature-icon"><svg viewBox="0 0 24 24">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg></div>
+                <p><strong>Volatility is built into the strategy.</strong> Most approaches treat market swings as
+                    something to endure. Vector's algorithms are designed to adapt during volatile periods — not just
+                    survive them.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                <p><strong>Real-time execution.</strong> When conditions change, your strategies adapt automatically. Not next quarter. Not after a phone call. In the moment.</p>
+                <div class="feature-icon"><svg viewBox="0 0 24 24">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg></div>
+                <p><strong>Real-time execution.</strong> When conditions change, your strategies adapt automatically.
+                    Not next quarter. Not after a phone call. In the moment.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <p><strong>Risk management is structural.</strong> Position limits, stop-losses, and drawdown protection are built into every strategy. Not bolted on as an afterthought.</p>
+                <div class="feature-icon"><svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg></div>
+                <p><strong>Risk management is structural.</strong> Position limits, stop-losses, and drawdown protection
+                    are built into every strategy. Not bolted on as an afterthought.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                <p><strong>Stress-tested against real history.</strong> Every strategy backtested against decades of market data — crashes, rallies, flash events — before going live. Documented, not theoretical.</p>
+                <div class="feature-icon"><svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg></div>
+                <p><strong>Stress-tested against real history.</strong> Every strategy backtested against decades of
+                    market data — crashes, rallies, flash events — before going live. Documented, not theoretical.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-                <p><strong>Every trade, visible.</strong> Live dashboard with every position, every metric, in real time. No more waiting 90 days for a report that raises more questions than it answers.</p>
+                <div class="feature-icon"><svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
+                    </svg></div>
+                <p><strong>Every trade, visible.</strong> Live dashboard with every position, every metric, in real
+                    time. No more waiting 90 days for a report that raises more questions than it answers.</p>
             </div>
         </div>
         <div class="support-bar">
@@ -2629,7 +3111,8 @@
                 <div class="support-avatar">VC</div>
                 <div class="support-text">
                     <div class="primary">Questions? Talk to our team.</div>
-                    <div class="secondary">No sales pitch. Just a real conversation about whether this fits your situation.</div>
+                    <div class="secondary">No sales pitch. Just a real conversation about whether this fits your
+                        situation.</div>
                 </div>
                 <a href="#get-started" class="btn-white">Schedule a call</a>
             </div>
@@ -2641,27 +3124,38 @@
         <div class="fee-header">
             <p class="kicker">Fee Structure</p>
             <h2>Your success shouldn't cost you more</h2>
-            <p>Traditional advisors charge a percentage of your assets. Their fee grows every time your account does. Vector doesn't work that way.</p>
+            <p>Traditional advisors charge a percentage of your assets. Their fee grows every time your account does.
+                Vector doesn't work that way.</p>
         </div>
         <div class="fee-compare">
             <div class="fee-card fee-card-old">
                 <h3>Traditional Advisor (1% AUM)</h3>
-                <div class="fee-line"><span class="amount">$5,000/year</span><span class="context">on a $500K portfolio</span></div>
-                <div class="fee-line"><span class="amount">$10,000/year</span><span class="context">on a $1M portfolio</span></div>
-                <div class="fee-line"><span class="amount">$20,000/year</span><span class="context">on a $2M portfolio</span></div>
-                <div class="fee-line"><span class="amount">Your fee grows as you grow</span><span class="context">You're penalized for your own success</span></div>
+                <div class="fee-line"><span class="amount">$5,000/year</span><span class="context">on a $500K
+                        portfolio</span></div>
+                <div class="fee-line"><span class="amount">$10,000/year</span><span class="context">on a $1M
+                        portfolio</span></div>
+                <div class="fee-line"><span class="amount">$20,000/year</span><span class="context">on a $2M
+                        portfolio</span></div>
+                <div class="fee-line"><span class="amount">Your fee grows as you grow</span><span class="context">You're
+                        penalized for your own success</span></div>
             </div>
             <div class="fee-card fee-card-new">
                 <h3>Vector Capital</h3>
-                <div class="fee-line"><span class="amount">Flat subscription</span><span class="context">Same fee regardless of account size</span></div>
-                <div class="fee-line"><span class="amount">No AUM percentage</span><span class="context">Your fee never scales with your success</span></div>
-                <div class="fee-line"><span class="amount">No hidden charges</span><span class="context">No performance fees, no exit fees</span></div>
-                <div class="fee-line"><span class="amount">Specific pricing in your consultation</span><span class="context">Our team walks through exact costs during your call</span></div>
+                <div class="fee-line"><span class="amount">Flat subscription</span><span class="context">Same fee
+                        regardless of account size</span></div>
+                <div class="fee-line"><span class="amount">No AUM percentage</span><span class="context">Your fee never
+                        scales with your success</span></div>
+                <div class="fee-line"><span class="amount">No hidden charges</span><span class="context">No performance
+                        fees, no exit fees</span></div>
+                <div class="fee-line"><span class="amount">Specific pricing in your consultation</span><span
+                        class="context">Our team walks through exact costs during your call</span></div>
             </div>
         </div>
-        <p class="fee-bottom-note">Standard brokerage commissions and regulatory fees through your brokerage still apply. These are not Vector Capital charges.</p>
+        <p class="fee-bottom-note">Standard brokerage commissions and regulatory fees through your brokerage still
+            apply. These are not Vector Capital charges.</p>
         <div style="text-align:center;margin-top:32px;">
-            <a href="#get-started" class="btn-black" style="font-size:15px;padding:14px 28px;">See Exact Pricing in Your Consultation</a>
+            <a href="#get-started" class="btn-black" style="font-size:15px;padding:14px 28px;">See Exact Pricing in Your
+                Consultation</a>
         </div>
     </section>
 
@@ -2673,34 +3167,57 @@
         </div>
         <div class="dd-grid">
             <div class="dd-card">
-                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div class="dd-icon"><svg viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg></div>
                 <h3>Verify Max's credentials</h3>
-                <p>Look up <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener" style="text-decoration:underline;color:var(--black);">Maxwell Hines on LinkedIn</a> and FINRA BrokerCheck. His 10+ years of market experience, institutional background, and Series 63 licensure are public record.</p>
+                <p>Look up <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener"
+                        style="text-decoration:underline;color:var(--black);">Maxwell Hines on LinkedIn</a> and FINRA
+                    BrokerCheck. His 10+ years of market experience, institutional background, and Series 63 licensure
+                    are public record.</p>
             </div>
             <div class="dd-card">
-                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div class="dd-icon"><svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg></div>
                 <h3>Confirm brokerage regulation</h3>
-                <p>Your account is held at an SEC/FINRA-regulated brokerage. Verify their registration independently on the SEC website.</p>
+                <p>Your account is held at an SEC/FINRA-regulated brokerage. Verify their registration independently on
+                    the SEC website.</p>
             </div>
             <div class="dd-card">
-                <div class="dd-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <div class="dd-icon"><svg viewBox="0 0 24 24">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg></div>
                 <h3>Review strategy documentation</h3>
-                <p>Full backtesting methodology, risk parameters, and performance data available during your consultation. Ask the hard questions.</p>
+                <p>Full backtesting methodology, risk parameters, and performance data available during your
+                    consultation. Ask the hard questions.</p>
             </div>
             <div class="dd-card">
-                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                <div class="dd-icon"><svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg></div>
                 <h3>Read the risk disclosures</h3>
-                <p>Full risk disclosure is at the bottom of this page and in every document we provide. All trading involves risk, including loss of principal.</p>
+                <p>Full risk disclosure is at the bottom of this page and in every document we provide. All trading
+                    involves risk, including loss of principal.</p>
             </div>
             <div class="dd-card">
-                <div class="dd-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+                <div class="dd-icon"><svg viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg></div>
                 <h3>Talk to existing clients</h3>
-                <p>Client references available upon request during your consultation. Hear directly from people using Vector's strategies.</p>
+                <p>Client references available upon request during your consultation. Hear directly from people using
+                    Vector's strategies.</p>
             </div>
             <div class="dd-card">
-                <div class="dd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div class="dd-icon"><svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg></div>
                 <h3>Take your time</h3>
-                <p>No pressure. No artificial urgency. No "limited spots." If Vector is right for you, it'll still be here when you're ready.</p>
+                <p>No pressure. No artificial urgency. No "limited spots." If Vector is right for you, it'll still be
+                    here when you're ready.</p>
             </div>
         </div>
     </section>
@@ -2736,20 +3253,36 @@
         <div class="max-card">
             <div class="max-content">
                 <p class="kicker">Meet the Founder</p>
-                <h2>10+ years in the markets. 7 years inside major institutions. Then he opened the door for everyone else.</h2>
-                <p class="body">With over a decade of market experience and seven years inside major institutions including AllianceBernstein, Max saw firsthand how sophisticated strategies delivered better risk-adjusted returns — but were gatekept for the ultra-wealthy. Vector Capital is his answer to that gap.</p>
+                <h2>10+ years in the markets. 7 years inside major institutions. Then he opened the door for everyone
+                    else.</h2>
+                <p class="body">With over a decade of market experience and seven years inside major institutions
+                    including AllianceBernstein, Max saw firsthand how sophisticated strategies delivered better
+                    risk-adjusted returns — but were gatekept for the ultra-wealthy. Vector Capital is his answer to
+                    that gap.</p>
                 <div class="max-quote-block">
-                    <p>"As a former financial advisor and portfolio manager, I know exactly how the math works when advisors charge 1% per year, and over time, it compounds more in their favor than yours. That never sat right with me. I also know the strategies that sophisticated institutions use to build real wealth, but they're gatekept for the ultra-wealthy. That didn't sit right with me either. So I asked a simple question: why can't everyday investors access institutional-grade strategies without being ultra wealthy or surrendering 1% of their wealth every single year? That's exactly what we've built with Vector Capital."</p>
+                    <p>"As a former financial advisor and portfolio manager, I know exactly how the math works when
+                        advisors charge 1% per year, and over time, it compounds more in their favor than yours. That
+                        never sat right with me. I also know the strategies that sophisticated institutions use to build
+                        real wealth, but they're gatekept for the ultra-wealthy. That didn't sit right with me either.
+                        So I asked a simple question: why can't everyday investors access institutional-grade strategies
+                        without being ultra wealthy or surrendering 1% of their wealth every single year? That's exactly
+                        what we've built with Vector Capital."</p>
                     <span class="attr">— Maxwell Hines, Founder</span>
                 </div>
                 <div class="max-badges">
                     <span class="max-badge">10+ Years Market Experience</span>
                     <span class="max-badge">Series 63 Licensed</span>
                     <span class="max-badge">Aspiring Chess GM</span>
-                    <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener" class="max-badge" style="background:var(--gray-700);cursor:pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gray-300)" style="flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/maxwell-hines-702004194/" target="_blank" rel="noopener"
+                        class="max-badge" style="background:var(--gray-700);cursor:pointer;"><svg width="14" height="14"
+                            viewBox="0 0 24 24" fill="var(--gray-300)" style="flex-shrink:0;">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg> LinkedIn</a>
                 </div>
             </div>
-            <div class="max-image"><img src="max-headshot-2.jpg" alt="Maxwell Hines" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="max-image"><img src="max-headshot-2.jpg" alt="Maxwell Hines"
+                    style="width:100%;height:100%;object-fit:cover;"></div>
         </div>
     </section>
 
@@ -2759,30 +3292,36 @@
             <div class="timeline-left">
                 <p class="kicker">Getting Started</p>
                 <h2>Three steps. No jargon. No pressure.</h2>
-                <p>You don't need trading experience. You don't need to understand algorithms. You just need a conversation.</p>
+                <p>You don't need trading experience. You don't need to understand algorithms. You just need a
+                    conversation.</p>
                 <a href="#get-started" class="btn-black">Schedule a Consultation</a>
             </div>
             <div class="timeline-right">
                 <div class="timeline-line"></div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-filled">
-                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="white" stroke-width="3"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" fill="none" stroke="white" stroke-width="3" />
+                        </svg>
                     </div>
                     <div class="timeline-step">Step 1</div>
                     <div class="timeline-title">Have a real conversation</div>
-                    <div class="timeline-desc">See the platform live. Review the performance data. Ask anything. Our team walks through every detail — no pressure, no runaround.</div>
+                    <div class="timeline-desc">See the platform live. Review the performance data. Ask anything. Our
+                        team walks through every detail — no pressure, no runaround.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-outline"></div>
                     <div class="timeline-step">Step 2</div>
                     <div class="timeline-title">Choose your strategies</div>
-                    <div class="timeline-desc">Select the Equities strategy, the Futures strategy, or both — based on your risk tolerance and goals. Your call.</div>
+                    <div class="timeline-desc">Select the Equities strategy, the Futures strategy, or both — based on
+                        your risk tolerance and goals. Your call.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot timeline-dot-outline"></div>
                     <div class="timeline-step">Step 3</div>
                     <div class="timeline-title">Connect your brokerage account</div>
-                    <div class="timeline-desc">Link your existing brokerage via API. Your money stays put. The strategies begin executing. You watch everything in real time on your dashboard.</div>
+                    <div class="timeline-desc">Link your existing brokerage via API. Your money stays put. The
+                        strategies begin executing. You watch everything in real time on your dashboard.</div>
                 </div>
             </div>
         </div>
@@ -2794,40 +3333,112 @@
             <h2>FAQ</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">What exactly is Vector Capital?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Vector Capital provides algorithmic portfolio strategies — algorithmic systems that analyze market conditions and execute trades based on data. You connect your own brokerage account, choose your strategies, and the algorithms handle execution. Maxwell Hines, with 10+ years of market experience and 7 years inside major institutions, Series 63 licensee, oversees every strategy. You retain full ownership and control of your account at all times.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">What exactly is Vector Capital?<svg
+                            viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Vector Capital provides algorithmic portfolio strategies — algorithmic
+                            systems that analyze market conditions and execute trades based on data. You connect your
+                            own brokerage account, choose your strategies, and the algorithms handle execution. Maxwell
+                            Hines, with 10+ years of market experience and 7 years inside major institutions, Series 63
+                            licensee, oversees every strategy. You retain full ownership and control of your account at
+                            all times.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Do I need trading experience?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">No. The algorithms handle trade execution. You choose which strategies match your goals — equities, futures, or both — and the technology does the rest. You decide which strategies to run and how much capital to allocate.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Do I need trading experience?<svg
+                            viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">No. The algorithms handle trade execution. You choose which strategies
+                            match your goals — equities, futures, or both — and the technology does the rest. You decide
+                            which strategies to run and how much capital to allocate.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">How is this different from a robo-advisor?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Robo-advisors are mostly index funds with automatic rebalancing — a digital wrapper on the same 60/40 strategy. Vector's algorithmic strategies actively respond to market conditions in real time, particularly around volatility. These are institutional-grade algorithms, the kind typically reserved for hedge fund clients, not a set-it-and-forget-it index wrapper.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">How is this different from a robo-advisor?<svg
+                            viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Robo-advisors are mostly index funds with automatic rebalancing — a
+                            digital wrapper on the same 60/40 strategy. Vector's algorithmic strategies actively respond
+                            to market conditions in real time, particularly around volatility. These are
+                            institutional-grade algorithms, the kind typically reserved for hedge fund clients, not a
+                            set-it-and-forget-it index wrapper.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Is my capital at risk?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Yes. All trading involves risk, including potential loss of principal. That's true with any investment approach. Vector's strategies include built-in risk controls — position limits, stop-losses, drawdown protection — but no system eliminates market risk entirely. Past performance does not guarantee future results. Only allocate capital you can afford to lose.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Is my capital at risk?<svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Yes. All trading involves risk, including potential loss of principal.
+                            That's true with any investment approach. Vector's strategies include built-in risk controls
+                            — position limits, stop-losses, drawdown protection — but no system eliminates market risk
+                            entirely. Past performance does not guarantee future results. Only allocate capital you can
+                            afford to lose.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Who is Maxwell Hines?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Maxwell Hines is the founder of Vector Capital. With 10+ years of market experience and 7 years inside major institutions including AllianceBernstein, he holds a Series 63 license. He saw firsthand how institutional clients accessed algorithmic strategies that delivered better risk-adjusted returns than anything available to individual investors. He started Vector to make that same caliber of technology accessible to everyone, with full transparency and professional oversight.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Who is Maxwell Hines?<svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Maxwell Hines is the founder of Vector Capital. With 10+ years of
+                            market experience and 7 years inside major institutions including AllianceBernstein, he
+                            holds a Series 63 license. He saw firsthand how institutional clients accessed algorithmic
+                            strategies that delivered better risk-adjusted returns than anything available to individual
+                            investors. He started Vector to make that same caliber of technology accessible to everyone,
+                            with full transparency and professional oversight.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Where does my money go?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Nowhere. Your money stays in your own account at a US-regulated brokerage, in your name. Vector connects via API to execute trades based on the strategies you've selected. We never hold, transfer, or have withdrawal access to your funds. You can revoke API access at any time.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Where does my money go?<svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Nowhere. Your money stays in your own account at a US-regulated
+                            brokerage, in your name. Vector connects via API to execute trades based on the strategies
+                            you've selected. We never hold, transfer, or have withdrawal access to your funds. You can
+                            revoke API access at any time.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">What are the fees?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Vector charges a flat subscription fee — not a percentage of your assets. Your fee doesn't grow as your account grows. No AUM percentage, no performance fees, no hidden charges, no exit fees. Specific pricing is discussed during your consultation. Standard brokerage commissions through your brokerage still apply separately.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">What are the fees?<svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Vector charges a flat subscription fee — not a percentage of your
+                            assets. Your fee doesn't grow as your account grows. No AUM percentage, no performance fees,
+                            no hidden charges, no exit fees. Specific pricing is discussed during your consultation.
+                            Standard brokerage commissions through your brokerage still apply separately.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Can I see performance data before I commit?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Yes. Full backtesting methodology, historical performance data, and risk metrics are reviewed during your consultation. Once onboarded, your dashboard shows live trading activity, positions, and performance — available anytime, not just when someone decides to send you a report.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Can I see performance data before I commit?<svg
+                            viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Yes. Full backtesting methodology, historical performance data, and
+                            risk metrics are reviewed during your consultation. Once onboarded, your dashboard shows
+                            live trading activity, positions, and performance — available anytime, not just when someone
+                            decides to send you a report.</div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" onclick="toggleFaq(this)">Can I disconnect at any time?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-                    <div class="faq-a"><div class="faq-a-inner">Yes. No lock-ups, no exit fees, no penalties. Revoke Vector's API access from your brokerage at any time. Your money stays in your account. Your positions remain as-is. It's your account — you're always in control.</div></div>
+                    <button class="faq-q" onclick="toggleFaq(this)">Can I disconnect at any time?<svg
+                            viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Yes. No lock-ups, no exit fees, no penalties. Revoke Vector's API
+                            access from your brokerage at any time. Your money stays in your account. Your positions
+                            remain as-is. It's your account — you're always in control.</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2837,7 +3448,8 @@
     <section class="smart-capture-section" id="get-started">
         <div class="smart-capture-header">
             <h2>See the data. Ask the hard questions. Decide for yourself.</h2>
-            <p class="sub">Book a free strategy session — review live performance data, understand the risk controls, and see exactly how Vector would handle your capital. No obligation, no sales pitch.</p>
+            <p class="sub">Book a free strategy session — review live performance data, understand the risk controls,
+                and see exactly how Vector would handle your capital. No obligation, no sales pitch.</p>
         </div>
         <div class="page-shell" id="smartCaptureShell">
             <main class="capture-layout">
@@ -2855,13 +3467,15 @@
                             <p class="eyebrow" id="panelEyebrow">Lead screen</p>
                             <p class="step-meta" id="stepMeta">Step 1 of 2</p>
                             <h1 class="panel-title" id="panelTitle">Book a Strategy Session</h1>
-                            <p class="panel-description" id="panelDescription">One focused call to see exactly how our all-weather approach would treat your capital.</p>
+                            <p class="panel-description" id="panelDescription">One focused call to see exactly how our
+                                all-weather approach would treat your capital.</p>
                         </div>
 
                         <div class="panel-body" id="panelBody"></div>
 
                         <div class="panel-actions">
-                            <button class="button button-secondary" type="button" id="secondaryAction" hidden>Back</button>
+                            <button class="button button-secondary" type="button" id="secondaryAction"
+                                hidden>Back</button>
                             <button class="button button-primary" type="button" id="primaryAction">Continue</button>
                         </div>
 
@@ -2871,8 +3485,10 @@
                     <aside class="calendar-panel" id="calendarPanel">
                         <div class="calendar-header">
                             <div>
-                                <p class="calendar-kicker" id="calendarKicker">Times shown in <strong data-user-timezone>your timezone</strong></p>
-                                <h2 class="calendar-title" id="calendarTitle" style="display:none">Your booking page</h2>
+                                <p class="calendar-kicker" id="calendarKicker">Times shown in <strong
+                                        data-user-timezone>your timezone</strong></p>
+                                <h2 class="calendar-title" id="calendarTitle" style="display:none">Your booking page
+                                </h2>
                             </div>
                             <p class="calendar-note" id="calendarNote">Complete the intake to unlock the calendar.</p>
                         </div>
@@ -2880,23 +3496,19 @@
                         <div class="calendar-frame-wrap">
                             <div class="calendar-overlay" id="calendarOverlay">
                                 <div class="overlay-card">
-                                    <p class="overlay-title" id="calendarOverlayTitle">Please fill out the form before choosing your time slot.</p>
+                                    <p class="overlay-title" id="calendarOverlayTitle">Please fill out the form before
+                                        choosing your time slot.</p>
                                     <p class="overlay-copy" id="calendarOverlayCopy"></p>
                                 </div>
                             </div>
 
                             <div class="calendar-placeholder" id="calendarPlaceholder" hidden>
-                                <p id="calendarPlaceholderText">Add your GHL booking URL in <code>config.js</code> to render the calendar here.</p>
+                                <p id="calendarPlaceholderText">Add your GHL booking URL in <code>config.js</code> to
+                                    render the calendar here.</p>
                             </div>
 
-                            <iframe
-                                class="calendar-frame"
-                                id="bookingFrame"
-                                title="Book your event"
-                                loading="lazy"
-                                scrolling="auto"
-                                src="about:blank"
-                            ></iframe>
+                            <iframe class="calendar-frame" id="bookingFrame" title="Book your event" loading="lazy"
+                                scrolling="auto" src="about:blank"></iframe>
                         </div>
                     </aside>
                 </section>
@@ -2959,13 +3571,30 @@
                 <span class="footer-copy">&copy; 2026 Vector Capital by Vector Algorithmics</span>
             </div>
             <div class="footer-socials">
-                <a href="#"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                <a href="#"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                <a href="#"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="#"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg></a>
+                <a href="#"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg></a>
+                <a href="#"><svg viewBox="0 0 24 24">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg></a>
             </div>
         </div>
         <div class="footer-disclaimer">
-            <strong>Important Disclosures:</strong> Vector Capital provides algorithmic trading technology and algorithmic portfolio strategies. Vector Capital does not provide personalized financial advice, investment management, or act as a fiduciary. All investment decisions are made by you, the account owner. Maxwell Hines oversees strategy design and operation as a Series 63 licensed professional. All trading involves substantial risk of loss and is not suitable for all investors. Past performance, whether backtested or live, is not indicative of future results. Your capital is held in your own account at a US-regulated brokerage; Vector Capital does not hold, manage, or have withdrawal access to client funds. You should carefully consider your investment objectives, level of experience, and risk appetite before using these strategies. Only risk capital you can afford to lose should be used for trading.
+            <strong>Important Disclosures:</strong> Vector Capital provides algorithmic trading technology and
+            algorithmic portfolio strategies. Vector Capital does not provide personalized financial advice, investment
+            management, or act as a fiduciary. All investment decisions are made by you, the account owner. Maxwell
+            Hines oversees strategy design and operation as a Series 63 licensed professional. All trading involves
+            substantial risk of loss and is not suitable for all investors. Past performance, whether backtested or
+            live, is not indicative of future results. Your capital is held in your own account at a US-regulated
+            brokerage; Vector Capital does not hold, manage, or have withdrawal access to client funds. You should
+            carefully consider your investment objectives, level of experience, and risk appetite before using these
+            strategies. Only risk capital you can afford to lose should be used for trading.
         </div>
     </footer>
 
@@ -3001,7 +3630,7 @@
         }
 
         document.querySelectorAll('.strat-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 this.classList.toggle('active');
                 if (document.querySelectorAll('.strat-btn.active').length === 0) {
                     this.classList.add('active');
@@ -3012,7 +3641,7 @@
         });
 
         document.querySelectorAll('.range-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 updateWidget();
@@ -3020,13 +3649,13 @@
         });
 
         document.querySelectorAll('.nav-links a').forEach(a => {
-            a.addEventListener('click', function() {
+            a.addEventListener('click', function () {
                 document.querySelector('.nav-links').classList.remove('show');
             });
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function(e) {
+            a.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href === '#') return;
                 e.preventDefault();
@@ -3043,14 +3672,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         // Timezone detection for smart capture
-        (function() {
+        (function () {
             try {
                 var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
                 var el = document.querySelector('[data-user-timezone]');
                 if (el && tz) {
                     el.textContent = tz.replace(/_/g, ' ').replace(/\//g, ' / ');
                 }
-            } catch(e) {}
+            } catch (e) { }
         })();
     </script>
     <script src="./config.js"></script>
@@ -3058,4 +3687,5 @@
     <!-- GHL form embed script for calendar -->
     <script src="https://links.vectoralgorithmics.io/js/form_embed.js" type="text/javascript"></script>
 </body>
+
 </html>

@@ -72,7 +72,9 @@
       "wbraid",
       "gbraid",
       "country",
-      "MB"
+      "MB",
+      "_fbp",
+      "_fbc"
     ]
   };
 
@@ -600,6 +602,11 @@
       .then(function () {
         state.status = "qualified";
         state.qualified = qualification.qualified;
+
+        if (qualification.qualified) {
+          updateVirtualUrl();
+        }
+
         persistDraft();
         pushDataLayer(qualification.qualified ? "lead_qualified" : "lead_disqualified", {
           first_name: leadPayload.first_name,
@@ -618,6 +625,11 @@
         console.error("Lead persistence failed:", error);
         state.status = "qualified";
         state.qualified = qualification.qualified;
+
+        if (qualification.qualified) {
+          updateVirtualUrl();
+        }
+
         persistDraft();
         pushDataLayer(qualification.qualified ? "lead_qualified" : "lead_disqualified", {
           qualified: qualification.qualified
@@ -780,8 +792,50 @@
       if (data.contact && data.contact.id) {
         state.ghlContactId = data.contact.id;
         console.log("GHL contact upserted:", data.contact.id);
+        createContactNote(data.contact.id, ghl);
       }
       return data;
+    });
+  }
+
+  function createContactNote(contactId, ghl) {
+    var answers = buildAnswerPayload();
+    var leadFieldIds = {};
+    flattenFields().forEach(function (field) {
+      if (field.leadField) {
+        leadFieldIds[field.id] = true;
+      }
+    });
+
+    var lines = [];
+    Object.keys(answers).forEach(function (key) {
+      if (leadFieldIds[key]) return;
+      var entry = answers[key];
+      lines.push("Q. " + entry.label);
+      lines.push("A. " + entry.display_value);
+      lines.push("");
+    });
+
+    if (!lines.length) return;
+
+    var noteBody = lines.join("\n").trim();
+
+    fetch("https://services.leadconnectorhq.com/contacts/" + contactId + "/notes", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + ghl.apiToken,
+        "Version": "2021-07-28",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ body: noteBody })
+    }).then(function (response) {
+      if (!response.ok) {
+        console.warn("GHL note creation failed:", response.status);
+      } else {
+        console.log("GHL note created for contact:", contactId);
+      }
+    }).catch(function (error) {
+      console.warn("GHL note creation error:", error);
     });
   }
 
@@ -974,6 +1028,13 @@
 
     Object.keys(tracking).forEach(function (key) {
       url.searchParams.set(key, tracking[key]);
+      // Convert underscore-prefixed names to standard names for calendar
+      if (key === "_fbp") {
+        url.searchParams.set("fbp", tracking[key]);
+      }
+      if (key === "_fbc") {
+        url.searchParams.set("fbc", tracking[key]);
+      }
     });
 
     url.searchParams.set("parentUrl", getPageUrl());
@@ -1003,9 +1064,68 @@
       if (nameParts.lastName) {
         url.searchParams.set("last_name", nameParts.lastName);
       }
+
+      var customAnswers = buildAnswerPayload();
+      Object.keys(customAnswers).forEach(function (key) {
+        if (key !== lead.email && key !== lead.phone && key !== lead.full_name) {
+          url.searchParams.set(key, customAnswers[key].value);
+        }
+      });
     }
 
     return url.toString();
+  }
+
+  function updateVirtualUrl() {
+    try {
+      if (!window.history || !window.history.replaceState) {
+        return;
+      }
+
+      var currentUrl = new URL(window.location.href);
+      var tracking = getTrackingSnapshot();
+
+      Object.keys(tracking).forEach(function (key) {
+        currentUrl.searchParams.set(key, tracking[key]);
+        if (key === "_fbp") {
+          currentUrl.searchParams.set("fbp", tracking[key]);
+        }
+        if (key === "_fbc") {
+          currentUrl.searchParams.set("fbc", tracking[key]);
+        }
+      });
+
+      var lead = extractLeadFields();
+      var nameParts = splitFullName(lead.full_name || "");
+
+      if (lead.full_name) {
+        currentUrl.searchParams.set("name", lead.full_name);
+        currentUrl.searchParams.set("full_name", lead.full_name);
+      }
+      if (lead.email) {
+        currentUrl.searchParams.set("email", lead.email);
+      }
+      if (lead.phone) {
+        currentUrl.searchParams.set("phone", lead.phone);
+      }
+      if (nameParts.firstName) {
+        currentUrl.searchParams.set("first_name", nameParts.firstName);
+      }
+      if (nameParts.lastName) {
+        currentUrl.searchParams.set("last_name", nameParts.lastName);
+      }
+
+      var customAnswers = buildAnswerPayload();
+      Object.keys(customAnswers).forEach(function (key) {
+        if (key !== lead.email && key !== lead.phone && key !== lead.full_name) {
+          currentUrl.searchParams.set(key, customAnswers[key].value);
+        }
+      });
+
+      window.history.replaceState({}, document.title, currentUrl.toString());
+    } catch (error) {
+      console.warn("Virtual URL update failed:", error);
+    }
   }
 
   function updateCalendarLock(unlocked, title, copy) {
@@ -1405,6 +1525,11 @@
         tracking[key] = value;
       }
     });
+
+    // Generate _fbc from fbclid if not already present
+    if (!tracking["_fbc"] && tracking["fbclid"]) {
+      tracking["_fbc"] = "fb.1." + Date.now() + "." + tracking["fbclid"];
+    }
 
     return tracking;
   }

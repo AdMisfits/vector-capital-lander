@@ -40,10 +40,14 @@ window.SMART_CAPTURE_CONFIG = {
     apiToken: "pit-25a96551-8770-4f0d-946c-6c72f7d9e763",
     locationId: "dlGhpYm3nOX6E7eC0Sdr",
     source: "Smart Capture - Strategy Session",
-    tags: ["smart-capture", "strategy-session"],
+    tags: ["smart-capture", "strategy-session", "smart-capture-optin"],
     customFieldMap: {
       capital_range: "contact.capital_range",
       timeline: "contact.timeline"
+    },
+    pipeline: {
+      id: "ndXBIdMJQV7KGR69HO0L",
+      stageId: "6adc41c9-583e-4180-923d-d969a25be72c"
     }
   },
   legalLinks: [
@@ -69,27 +73,18 @@ window.SMART_CAPTURE_CONFIG = {
       fields: [
         {
           id: "capital_range",
-          label: "How much capital are you looking to allocate?",
+          label: "Do you have a minimum of $80k capital?",
           type: "radio",
           required: true,
-          requiredMessage: "Please choose a capital range.",
+          requiredMessage: "Please select an answer.",
           options: [
             {
-              label: "Under $20k",
-              value: "under_20k",
-              description: "Our systems require certain portfolio minimums for optimal results."
+              label: "Yes",
+              value: "yes"
             },
             {
-              label: "$20k to $50k",
-              value: "20k_50k"
-            },
-            {
-              label: "$50k to $100k",
-              value: "50k_100k"
-            },
-            {
-              label: "$100k+",
-              value: "100k_plus"
+              label: "No",
+              value: "no"
             }
           ]
         },
@@ -178,7 +173,7 @@ window.SMART_CAPTURE_CONFIG = {
       {
         field: "capital_range",
         operator: "in",
-        value: ["20k_50k", "50k_100k", "100k_plus"],
+        value: ["yes"],
         label: "Capital threshold met"
       }
     ],
@@ -190,7 +185,7 @@ window.SMART_CAPTURE_CONFIG = {
     },
     failure: {
       title: "Thanks for your interest",
-      description: "Our managed accounts currently require a minimum allocation of $20k. If that changes, use the link below and we can revisit fit.",
+      description: "Our managed accounts currently require a minimum allocation of $80k. If that changes, use the link below and we can revisit fit.",
       ctaLabel: "Review eligibility",
       ctaUrl: "https://start.vectoralgorithmics.com/"
     }
