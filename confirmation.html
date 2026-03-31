@@ -1,0 +1,1560 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reservation Confirmed | Vector Capital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Wistia Player -->
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/bx77f24oe5.js" async type="module"></script>
+    
+    <style>
+        :root {
+            --bg-primary: #f5f5f7;
+            --bg-card: #ffffff;
+            --bg-hover: #fafafa;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-tertiary: #86868b;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --success: #34c759;
+            --success-bg: rgba(52, 199, 89, 0.1);
+            --border: rgba(0,0,0,0.06);
+            --border-strong: rgba(0,0,0,0.1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+            --radius-sm: 12px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- CONTAINER --- */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            padding-bottom: 120px;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeUp 0.6s ease-out 0.1s forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-badge {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 24px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(52, 199, 89, 0.3);
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        .success-badge svg {
+            width: 32px;
+            height: 32px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        .success-badge svg polyline {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: drawCheck 0.4s ease-out 0.5s forwards;
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* --- VIDEO CTA BANNER --- */
+        .video-cta-banner {
+            text-align: center;
+            margin-bottom: 32px;
+            padding: 0 20px;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeUp 0.6s ease-out 0.15s forwards;
+        }
+
+        .cta-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .cta-body {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* --- SESSION CARD --- */
+        .session-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeUp 0.6s ease-out 0.2s forwards;
+        }
+
+        .session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .session-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .session-time {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .session-meta {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .session-meta svg {
+            width: 14px;
+            height: 14px;
+            opacity: 0.6;
+        }
+
+        .status-pill {
+            background: var(--success-bg);
+            color: var(--success);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .specialist-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .specialist-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: var(--bg-primary);
+            flex-shrink: 0;
+        }
+
+        .specialist-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .specialist-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .preparing-badge {
+            margin-left: auto;
+            background: rgba(0, 113, 227, 0.08);
+            color: var(--accent);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .spinner {
+            width: 10px;
+            height: 10px;
+            border: 2px solid rgba(0, 113, 227, 0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- TRUST BAR --- */
+        .trust-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-bottom: 40px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeUp 0.6s ease-out 0.25s forwards;
+        }
+
+        .trust-bar:hover {
+            border-color: var(--border-strong);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .trust-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .trust-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .trust-rating {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .trust-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .trust-stars svg {
+            width: 16px;
+            height: 16px;
+            color: #00B67A;
+        }
+
+        .trust-stars .star-half {
+            opacity: 0.5;
+        }
+
+        .trust-source {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-left: 4px;
+        }
+
+        .trustpilot-logo {
+            height: 18px;
+            width: auto;
+            margin-left: 4px;
+        }
+
+        .trust-arrow {
+            width: 20px;
+            height: 20px;
+            color: var(--text-tertiary);
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .trust-bar:hover .trust-arrow {
+            transform: translateX(3px);
+        }
+
+        /* --- SECTION STYLING --- */
+        .section {
+            margin-bottom: 48px;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 16px;
+            padding: 0 4px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .section-link {
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .section-link:hover {
+            opacity: 0.7;
+        }
+
+        /* --- REVIEW CAROUSEL --- */
+        .review-carousel {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 4px 0 16px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .review-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .review-stars svg {
+            width: 14px;
+            height: 14px;
+            color: #00B67A;
+        }
+
+        .review-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .author-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .author-source {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            background: var(--bg-primary);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* --- FEATURED VIDEO (Wistia) --- */
+        .featured-video {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .wistia-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        wistia-player[media-id='bx77f24oe5']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bx77f24oe5/swatch');
+            display: block;
+            filter: blur(5px);
+            padding-top: 56.25%;
+        }
+
+        .featured-caption {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .featured-caption h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .featured-caption p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* --- VIDEO CAROUSEL --- */
+        .carousel-container {
+            margin: 0 -20px;
+            padding: 0 20px;
+        }
+
+        .video-carousel {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 4px 0 16px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .video-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-card {
+            flex: 0 0 240px;
+            scroll-snap-align: start;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid var(--border);
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .carousel-card:active {
+            transform: scale(0.98);
+        }
+
+        .carousel-thumb {
+            aspect-ratio: 16/9;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .carousel-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-card:hover .carousel-thumb img {
+            transform: scale(1.05);
+        }
+
+        .carousel-thumb .duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .carousel-thumb .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .carousel-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .play-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--text-primary);
+            margin-left: 2px;
+        }
+
+        .carousel-content {
+            padding: 14px;
+        }
+
+        .carousel-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 3px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .carousel-content p {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        /* --- ACCORDION --- */
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .accordion-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            padding: 18px 20px;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .accordion-trigger:hover {
+            background: var(--bg-hover);
+        }
+
+        .accordion-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .accordion-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent);
+        }
+
+        .accordion-text {
+            flex: 1;
+        }
+
+        .accordion-text h5 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 1px;
+        }
+
+        .accordion-text p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .accordion-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-arrow svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--text-tertiary);
+        }
+
+        .accordion-item.open .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .accordion-item.open .accordion-content {
+            max-height: 400px;
+        }
+
+        .accordion-inner {
+            padding: 0 20px 20px;
+            padding-left: 70px;
+        }
+
+        .accordion-inner ul {
+            list-style: none;
+        }
+
+        .accordion-inner li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.4;
+        }
+
+        .accordion-inner li:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-inner li svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--success);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* --- TIMELINE --- */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--border-strong) 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 28px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -28px;
+            top: 3px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-item.pending .timeline-dot {
+            background: var(--bg-card);
+            border: 2px solid var(--text-tertiary);
+        }
+
+        .timeline-item h6 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* --- STICKY FOOTER --- */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 14px 20px;
+            z-index: 100;
+            transform: translateY(100%);
+            animation: slideUp 0.4s ease-out 1s forwards;
+        }
+
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* --- VIDEO MODAL --- */
+        .video-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .video-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16/9;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+        }
+
+        .video-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius-lg);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .modal-close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 0 32px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .success-badge {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 20px;
+            }
+
+            .success-badge svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .session-card {
+                padding: 20px;
+            }
+
+            .session-header {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+
+            .session-time {
+                font-size: 20px;
+            }
+
+            .specialist-row {
+                flex-wrap: wrap;
+            }
+
+            .preparing-badge {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            .carousel-card {
+                flex: 0 0 200px;
+            }
+
+            .carousel-content {
+                padding: 12px;
+            }
+
+            .carousel-content h4 {
+                font-size: 13px;
+            }
+
+            .review-card {
+                flex: 0 0 260px;
+                padding: 16px;
+            }
+
+            .review-text {
+                font-size: 13px;
+            }
+
+            .trust-bar {
+                padding: 12px 16px;
+            }
+
+            .trust-content {
+                gap: 6px;
+            }
+
+            .trust-rating {
+                font-size: 16px;
+            }
+
+            .trust-stars svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .trustpilot-logo {
+                height: 14px;
+            }
+
+            .trust-label,
+            .trust-source {
+                font-size: 12px;
+            }
+
+            .accordion-inner {
+                padding-left: 20px;
+            }
+
+            .accordion-inner li {
+                font-size: 13px;
+            }
+
+            .timeline-item h6 {
+                font-size: 14px;
+            }
+
+            .timeline-item p {
+                font-size: 13px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+
+
+
+
+
+<body>
+    <div class="page-container">
+        
+        <!-- Hero -->
+        <section class="hero">
+            <div class="success-badge">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h1>You're all set.</h1>
+            <p>Your demo is confirmed. Check your email to accept the calendar invite.</p>
+        </section>
+
+        <!-- Video CTA Banner -->
+        <div class="video-cta-banner">
+            <p class="cta-heading">Watching this video is required and will save you significant time in the decision-making process.</p>
+            <p class="cta-body">We will also be emailing you important company docs that allow you to understand the scope of your investment.</p>
+        </div>
+
+        <!-- Featured Video (Wistia) -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Now Is the Time To Do Your Due Diligence.</h2>
+                    <span class="section-subtitle">Required viewing · 12 mins</span>
+            </div>
+            <div class="featured-video">
+                <div class="wistia-wrapper">
+                    <wistia-player media-id="k1mht72s31" aspect="1.7777777777777777"></wistia-player>
+                </div>
+                <div class="featured-caption">
+                    <h3>What to Do Before Your Demo</h3>
+                    <p>Quick overview of next steps and how to prepare</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Session Card -->
+        <div class="session-card">
+            <div class="session-header">
+                <div>
+                    <div class="session-label">Your Session</div>
+                    <div class="session-time">Check your email for details</div>
+                    <div class="session-meta">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15.6 11.6L22 7v10l-6.4-4.5v-1zM4 5h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7c0-1.1.9-2 2-2z"/>
+                        </svg>
+                        30 min · Live on Zoom
+                    </div>
+                </div>
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    Confirmed
+                </div>
+            </div>
+
+            <div class="specialist-row">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop" alt="Specialist" class="specialist-avatar">
+                <div class="specialist-info">
+                    <h4>A Vector Specialist</h4>
+                    <p>Will be assigned based on your goals</p>
+                </div>
+                <div class="preparing-badge">
+                    <div class="spinner"></div>
+                    Preparing demo
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Bar -->
+        <div class="trust-bar">
+            <div class="trust-content">
+                <span class="trust-label">Rated</span>
+                <span class="trust-rating">4.6/5</span>
+                <div class="trust-stars">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="star-half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <span class="trust-source">on Trustpilot</span>
+            </div>
+        </div>
+
+        <!-- 2025 Performance Carousel -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">2025 Performance</h2>
+                <span class="section-subtitle">Full transparency</span>
+            </div>
+            <div class="carousel-container">
+                <div class="video-carousel">
+                    <div class="carousel-card" data-video-id="MkYO17GpqtQ">
+                        <div class="carousel-thumb">
+                            <img src="https://img.youtube.com/vi/MkYO17GpqtQ/mqdefault.jpg" alt="Jan-Sept 2025">
+                            <span class="duration">11:24</span>
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="carousel-content">
+                            <h4>2025 Performance Breakdown</h4>
+                            <p>January – September</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card" data-video-id="9ktL3EMW8_0">
+                        <div class="carousel-thumb">
+                            <img src="https://img.youtube.com/vi/9ktL3EMW8_0/mqdefault.jpg" alt="September Losses">
+                            <span class="duration">8:15</span>
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="carousel-content">
+                            <h4>No One Will Show You This</h4>
+                            <p>September – Full Transparency</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card" data-video-id="CiYlnZH924Y">
+                        <div class="carousel-thumb">
+                            <img src="https://img.youtube.com/vi/CiYlnZH924Y/mqdefault.jpg" alt="October Bounce Back">
+                            <span class="duration">7:42</span>
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="carousel-content">
+                            <h4>The Bounce Back</h4>
+                            <p>October Recovery</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card" data-video-id="BX-68K-ZX8s">
+                        <div class="carousel-thumb">
+                            <img src="https://img.youtube.com/vi/BX-68K-ZX8s/mqdefault.jpg" alt="November Performance">
+                            <span class="duration">6:30</span>
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="carousel-content">
+                            <h4>November Performance</h4>
+                            <p>Latest Results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Carousel -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Client Stories</h2>
+                <span class="section-subtitle">Real results</span>
+            </div>
+            <div class="carousel-container">
+                <div class="video-carousel">
+                    <div class="carousel-card" data-video-id="Mz54w0eHvcY">
+                        <div class="carousel-thumb">
+                            <img src="https://img.youtube.com/vi/Mz54w0eHvcY/mqdefault.jpg" alt="Doctor Testimonial">
+                            <span class="duration">5:18</span>
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="carousel-content">
+                            <h4>Doctor's Experience</h4>
+                            <p>Medical Professional</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card" data-video-id="1nQdZLrcYyk">
+                        <div class="carousel-thumb">
+                            <img src="https://img.youtube.com/vi/1nQdZLrcYyk/mqdefault.jpg" alt="Finance Professional">
+                            <span class="duration">6:45</span>
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="carousel-content">
+                            <h4>Finance Professional</h4>
+                            <p>Industry Expert's Take</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card" data-video-id="JjotsADL2nU">
+                        <div class="carousel-thumb">
+                            <img src="https://img.youtube.com/vi/JjotsADL2nU/mqdefault.jpg" alt="ROI Story">
+                            <span class="duration">4:52</span>
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="carousel-content">
+                            <h4>Recouped Investment</h4>
+                            <p>ROI in First Month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Written Reviews Carousel -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">What Members Say</h2>
+                <span class="section-subtitle">Real results</span>
+            </div>
+            <div class="carousel-container">
+                <div class="review-carousel">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"They won me over with their transparency. They never pitch it as a get-rich-quick scheme. Yes, you will take losses, but there's definitely been a lot more wins. The support team is super responsive and the Discord community is great."</p>
+                        <div class="review-author">
+                            <span class="author-name">Myles Humphrey</span>
+                            <span class="author-source">Trustpilot</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"I'm not tech savvy and they made it easy to get started with terrific customer support. This company is honest and transparent. They advertised 5-7% monthly returns and 2.5 months in they are right on target."</p>
+                        <div class="review-author">
+                            <span class="author-name">leegaleez</span>
+                            <span class="author-source">Trustpilot</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="review-text">"9 months using Vector and I'm up around 90% using the Grass Fed Beef algorithm. I've been burned by other companies before. Vector has been the most promising — nice community, nice people, and results that show."</p>
+                        <div class="review-author">
+                            <span class="author-name">Ted Hughes</span>
+                            <span class="author-source">Trustpilot</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preparation Accordion -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Prepare for Your Demo</h2>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item open">
+                    <button class="accordion-trigger">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <div class="accordion-text">
+                            <h5>Demo Environment</h5>
+                            <p>Best experience tips</p>
+                        </div>
+                        <div class="accordion-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Join from a laptop or desktop (recommended)
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Use Chrome or Safari for best compatibility
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="accordion-text">
+                            <h5>Questions to Consider</h5>
+                            <p>Get the most from your call</p>
+                        </div>
+                        <div class="accordion-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    What's your risk framework: volatility targeting, max drawdown rules, hard stops, kill-switches, concentration limits?
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Who holds client funds?
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    How is my capital protected?
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    What are the top 3 worst drawdowns and what caused them?
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="accordion-text">
+                            <h5>What to Expect</h5>
+                            <p>Your 30-minute demo agenda</p>
+                        </div>
+                        <div class="accordion-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Introduction & your goals (5 min)
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Live platform demonstration (15 min)
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Q&A and next steps (10 min)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">What Happens Next</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h6>Calendar Invite Sent</h6>
+                    <p>Check your inbox (and spam folder) for the Zoom link and meeting details.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h6>SMS Confirmation</h6>
+                    <p>You'll receive a text message shortly to verify your number for secure access.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h6>Reminder Before Your Call</h6>
+                    <p>We'll send a reminder with everything you need before your demo.</p>
+                </div>
+                <div class="timeline-item pending">
+                    <div class="timeline-dot"></div>
+                    <h6>Your Demo</h6>
+                    <p>Join a couple minutes early from a desktop for the best experience.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Sticky Footer -->
+    <div class="sticky-footer">
+        <div class="footer-content">
+            <a href="mailto:" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Check Your Email
+            </a>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div id="modal-player"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- ACCORDION ---
+            document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const item = this.closest('.accordion-item');
+                    const wasOpen = item.classList.contains('open');
+                    
+                    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+                    
+                    if (!wasOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+
+            // --- VIDEO MODAL ---
+            const modal = document.getElementById('video-modal');
+            const modalPlayer = document.getElementById('modal-player');
+            const modalClose = document.getElementById('modal-close');
+
+            function openVideo(videoId) {
+                modalPlayer.innerHTML = `
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src="https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                `;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeVideo() {
+                modal.classList.remove('active');
+                modalPlayer.innerHTML = '';
+                document.body.style.overflow = '';
+            }
+
+            // Carousel videos
+            document.querySelectorAll('.carousel-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    openVideo(this.dataset.videoId);
+                });
+            });
+
+            modalClose.addEventListener('click', closeVideo);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeVideo();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeVideo();
+            });
+        });
+    </script>
+</body>
